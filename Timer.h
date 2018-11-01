@@ -3,10 +3,12 @@
 #include <QString>
 #include <QFile>
 #include <QTextStream>
+#include <QCoreApplication>
 
 class Timer
 {
 public:
+    Timer(QString name,int ordinals_object);
     Timer();
 
     QString hours;
@@ -16,8 +18,8 @@ public:
     QString name_timer;
     int ordinals_object;
 
-    void SavingTimers(Timer *timer);
-    void LoadingTimers(Timer *timer);
+    void SavingTimers();
+    void LoadingTimers();
 };
 
 #endif // TIMER_H

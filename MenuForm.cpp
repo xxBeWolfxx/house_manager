@@ -65,13 +65,13 @@ void MenuForm::on_Button_save_quit_clicked()
 
 void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item)
 {
-    timer->ordinals_object=object->number_object;
-    timer->name_timer=item->text();
+    timer = new Timer (item->text(),
+                    object->number_object);
 
-    timer->path=QCoreApplication::applicationDirPath();
-    QMessageBox::information(this,"",name);
-    timer->LoadingTimers(ordinals, timer, name);
+    QMessageBox::information(this,"",timer->name_timer);
+    timer->LoadingTimers();
 
     ui->tabWidget->setTabEnabled(1,true);  //set tabs able for customer
     ui->tabWidget->setTabEnabled(2,true);
+    ui->Name->setText(item->text());
 }
