@@ -69,9 +69,10 @@ void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item)
     timer->name_timer=item->text();
 
     timer->path=QCoreApplication::applicationDirPath();
-    QMessageBox::information(this,"",name);
-    timer->LoadingTimers(ordinals, timer, name);
+    QMessageBox::information(this,"",timer->name_timer);
+    timer->LoadingTimers(timer);
 
     ui->tabWidget->setTabEnabled(1,true);  //set tabs able for customer
     ui->tabWidget->setTabEnabled(2,true);
+    ui->Name->setText(timer->name_timer);
 }
