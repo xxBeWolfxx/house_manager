@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <QListWidgetItem>
+#include <QCoreApplication>
 #include "MainWindow.h"
 #include "Arduino.h"
 #include "Timer.h"
