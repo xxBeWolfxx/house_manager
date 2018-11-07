@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MainWindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.0
+** Created by: Qt User Interface Compiler version 5.11.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -36,6 +36,21 @@ public:
     QWidget *menu_view;
     QGridLayout *window;
     QGridLayout *gridLayout_2;
+    QHBoxLayout *horizontalLayout_5;
+    QPushButton *set_arduino;
+    QCheckBox *checkBox;
+    QHBoxLayout *horizontalLayout;
+    QGridLayout *gridLayout_3;
+    QPushButton *Button_light_shed;
+    QGridLayout *gridLayout_7;
+    QPushButton *Button_chandelier;
+    QGridLayout *gridLayout_8;
+    QPushButton *Button_light_door;
+    QGridLayout *gridLayout_9;
+    QPushButton *pushButton_4;
+    QGridLayout *gridLayout_4;
+    QPushButton *pushButton_5;
+    QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QLabel *label;
@@ -51,19 +66,6 @@ public:
     QCheckBox *checkBox_3;
     QGridLayout *gridLayout_5;
     QCheckBox *checkBox_2;
-    QHBoxLayout *horizontalLayout;
-    QGridLayout *gridLayout_3;
-    QPushButton *Button_light_shed;
-    QGridLayout *gridLayout_7;
-    QPushButton *Button_chandelier;
-    QGridLayout *gridLayout_8;
-    QPushButton *Button_light_door;
-    QGridLayout *gridLayout_9;
-    QPushButton *pushButton_4;
-    QGridLayout *gridLayout_4;
-    QPushButton *pushButton_5;
-    QSpacerItem *verticalSpacer_2;
-    QSpacerItem *verticalSpacer;
     QSpacerItem *verticalSpacer_3;
     QMenuBar *menuBar;
     QMenu *menuStaff;
@@ -113,6 +115,95 @@ public:
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(6);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        set_arduino = new QPushButton(menu_view);
+        set_arduino->setObjectName(QStringLiteral("set_arduino"));
+        set_arduino->setMinimumSize(QSize(0, 30));
+
+        horizontalLayout_5->addWidget(set_arduino);
+
+        checkBox = new QCheckBox(menu_view);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+
+        horizontalLayout_5->addWidget(checkBox);
+
+
+        gridLayout_2->addLayout(horizontalLayout_5, 5, 0, 1, 1);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        gridLayout_3 = new QGridLayout();
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        Button_light_shed = new QPushButton(menu_view);
+        Button_light_shed->setObjectName(QStringLiteral("Button_light_shed"));
+        Button_light_shed->setMinimumSize(QSize(0, 40));
+        Button_light_shed->setCheckable(true);
+        Button_light_shed->setChecked(false);
+
+        gridLayout_3->addWidget(Button_light_shed, 0, 0, 1, 1);
+
+
+        horizontalLayout->addLayout(gridLayout_3);
+
+        gridLayout_7 = new QGridLayout();
+        gridLayout_7->setSpacing(6);
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        Button_chandelier = new QPushButton(menu_view);
+        Button_chandelier->setObjectName(QStringLiteral("Button_chandelier"));
+        Button_chandelier->setMinimumSize(QSize(0, 40));
+
+        gridLayout_7->addWidget(Button_chandelier, 0, 0, 1, 1);
+
+
+        horizontalLayout->addLayout(gridLayout_7);
+
+        gridLayout_8 = new QGridLayout();
+        gridLayout_8->setSpacing(6);
+        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        Button_light_door = new QPushButton(menu_view);
+        Button_light_door->setObjectName(QStringLiteral("Button_light_door"));
+        Button_light_door->setMinimumSize(QSize(0, 40));
+
+        gridLayout_8->addWidget(Button_light_door, 0, 0, 1, 1);
+
+
+        horizontalLayout->addLayout(gridLayout_8);
+
+        gridLayout_9 = new QGridLayout();
+        gridLayout_9->setSpacing(6);
+        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
+        pushButton_4 = new QPushButton(menu_view);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setMinimumSize(QSize(0, 40));
+
+        gridLayout_9->addWidget(pushButton_4, 0, 0, 1, 1);
+
+
+        horizontalLayout->addLayout(gridLayout_9);
+
+        gridLayout_4 = new QGridLayout();
+        gridLayout_4->setSpacing(6);
+        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        pushButton_5 = new QPushButton(menu_view);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setMinimumSize(QSize(0, 40));
+
+        gridLayout_4->addWidget(pushButton_5, 0, 0, 1, 1);
+
+
+        horizontalLayout->addLayout(gridLayout_4);
+
+
+        gridLayout_2->addLayout(horizontalLayout, 3, 0, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout_2->addItem(verticalSpacer_2, 2, 0, 1, 1);
+
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
@@ -122,6 +213,7 @@ public:
 
         label = new QLabel(menu_view);
         label->setObjectName(QStringLiteral("label"));
+        label->setMaximumSize(QSize(16777215, 50));
         label->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
@@ -218,86 +310,10 @@ public:
 
         gridLayout_2->addLayout(horizontalLayout_3, 4, 0, 1, 1);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        gridLayout_3 = new QGridLayout();
-        gridLayout_3->setSpacing(6);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        Button_light_shed = new QPushButton(menu_view);
-        Button_light_shed->setObjectName(QStringLiteral("Button_light_shed"));
-        Button_light_shed->setMinimumSize(QSize(0, 40));
-        Button_light_shed->setCheckable(true);
-        Button_light_shed->setChecked(false);
-
-        gridLayout_3->addWidget(Button_light_shed, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(gridLayout_3);
-
-        gridLayout_7 = new QGridLayout();
-        gridLayout_7->setSpacing(6);
-        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
-        Button_chandelier = new QPushButton(menu_view);
-        Button_chandelier->setObjectName(QStringLiteral("Button_chandelier"));
-        Button_chandelier->setMinimumSize(QSize(0, 40));
-
-        gridLayout_7->addWidget(Button_chandelier, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(gridLayout_7);
-
-        gridLayout_8 = new QGridLayout();
-        gridLayout_8->setSpacing(6);
-        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
-        Button_light_door = new QPushButton(menu_view);
-        Button_light_door->setObjectName(QStringLiteral("Button_light_door"));
-        Button_light_door->setMinimumSize(QSize(0, 40));
-
-        gridLayout_8->addWidget(Button_light_door, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(gridLayout_8);
-
-        gridLayout_9 = new QGridLayout();
-        gridLayout_9->setSpacing(6);
-        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
-        pushButton_4 = new QPushButton(menu_view);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setMinimumSize(QSize(0, 40));
-
-        gridLayout_9->addWidget(pushButton_4, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(gridLayout_9);
-
-        gridLayout_4 = new QGridLayout();
-        gridLayout_4->setSpacing(6);
-        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
-        pushButton_5 = new QPushButton(menu_view);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setMinimumSize(QSize(0, 40));
-
-        gridLayout_4->addWidget(pushButton_5, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(gridLayout_4);
-
-
-        gridLayout_2->addLayout(horizontalLayout, 3, 0, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        gridLayout_2->addItem(verticalSpacer_2, 2, 0, 1, 1);
-
-        verticalSpacer = new QSpacerItem(20, 140, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        gridLayout_2->addItem(verticalSpacer, 5, 0, 1, 1);
-
 
         window->addLayout(gridLayout_2, 1, 0, 1, 1);
 
-        verticalSpacer_3 = new QSpacerItem(20, 80, QSizePolicy::Minimum, QSizePolicy::Fixed);
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         window->addItem(verticalSpacer_3, 0, 0, 1, 1);
 
@@ -330,17 +346,19 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         actionSettings->setText(QApplication::translate("MainWindow", "Settings", nullptr));
         actionOnly_staff->setText(QApplication::translate("MainWindow", "Only staff", nullptr));
+        set_arduino->setText(QApplication::translate("MainWindow", "Za\305\202\304\205cz ARDUINO", nullptr));
+        checkBox->setText(QApplication::translate("MainWindow", "ARDUINO", nullptr));
+        Button_light_shed->setText(QApplication::translate("MainWindow", "Lampa wiata", nullptr));
+        Button_chandelier->setText(QApplication::translate("MainWindow", "\305\273yrandol wiata", nullptr));
+        Button_light_door->setText(QApplication::translate("MainWindow", "Drzwi", nullptr));
+        pushButton_4->setText(QApplication::translate("MainWindow", "Przeka\305\272nik 4", nullptr));
+        pushButton_5->setText(QApplication::translate("MainWindow", "Przeka\305\272nik 5", nullptr));
         label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600; text-decoration: underline;\">Inteligentny Dom</span></p></body></html>", nullptr));
         Box_light_shed->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         Box_chandelier->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         Box_light_door->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         checkBox_3->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         checkBox_2->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
-        Button_light_shed->setText(QApplication::translate("MainWindow", "Lampa wiata", nullptr));
-        Button_chandelier->setText(QApplication::translate("MainWindow", "\305\273yrandol wiata", nullptr));
-        Button_light_door->setText(QApplication::translate("MainWindow", "Drzwi", nullptr));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Przeka\305\272nik 4", nullptr));
-        pushButton_5->setText(QApplication::translate("MainWindow", "Przeka\305\272nik 5", nullptr));
         menuStaff->setTitle(QApplication::translate("MainWindow", "Staff", nullptr));
     } // retranslateUi
 

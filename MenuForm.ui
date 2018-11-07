@@ -38,19 +38,6 @@ border-color: black;
      <widget class="QListWidget" name="timerlist"/>
     </item>
     <item>
-     <widget class="QPushButton" name="Button_save_quit">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Save/Quit</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QProgressBar" name="progressBar">
       <property name="value">
        <number>0</number>
@@ -142,7 +129,7 @@ QTabBar::tab:only-one {
 </string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <property name="movable">
     <bool>true</bool>
@@ -326,6 +313,23 @@ background-color: white;
           </property>
           <property name="text">
            <string>OFF</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QPushButton" name="Button_save_quit">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Save/Quit</string>
           </property>
          </widget>
         </item>
