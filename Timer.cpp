@@ -1,14 +1,21 @@
 #include "Timer.h"
 
+Timer::Timer(QString name, int ordinals_object)
+{
+    this->name_timer=name;
+    this->ordinals_object=ordinals_object;
+}
+
 Timer::Timer()
 {
 
 }
 
 
-void Timer::SavingTimers(Timer *timer)
+void Timer::SavingTimers()
 {
-    path = path + "/Timer/" + QString::number(timer->ordinals_object)+"/"+ timer->name_timer + ".txt";
+    path = QCoreApplication::applicationDirPath();
+    path = path + "/Timer/" + QString::number(ordinals_object)+"/"+ name_timer + ".txt";
     QFile file(path);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
@@ -17,9 +24,9 @@ void Timer::SavingTimers(Timer *timer)
     }
     QTextStream in(&file);
     file.open(QIODevice::WriteOnly | QIODevice::Text);
-    in<<timer->hours<<endl;
-    in<<timer->minutes<<endl;
-    in<<timer->duration<<endl;
+    in<<hours<<endl;
+    in<<minutes<<endl;
+    in<<duration<<endl;
 
     file.close();
 
@@ -28,9 +35,10 @@ void Timer::SavingTimers(Timer *timer)
 }
 
 
-void Timer::LoadingTimers(Timer *timer)
+void Timer::LoadingTimers()
 {
-    path = path + "/Timer/" + QString::number(timer->ordinals_object)+"/"+ timer->name_timer + ".txt";
+    path = QCoreApplication::applicationDirPath();
+    path = path + "/Timer/" + QString::number(ordinals_object)+"/"+ name_timer + ".txt";
     QFile file(path);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
@@ -39,9 +47,9 @@ void Timer::LoadingTimers(Timer *timer)
     }
     QTextStream in(&file);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
-    timer->hours = in.readLine(10);
-    timer->minutes = in.readLine(10);
-    timer->duration = in.readLine(10);
+    hours = in.readLine(10);
+    minutes = in.readLine(10);
+    duration = in.readLine(10);
 
     file.close();
 
