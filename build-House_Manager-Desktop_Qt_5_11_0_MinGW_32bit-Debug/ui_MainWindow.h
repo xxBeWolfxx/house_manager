@@ -21,7 +21,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -70,7 +69,6 @@ public:
     QMenuBar *menuBar;
     QMenu *menuStaff;
     QToolBar *mainToolBar;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -107,7 +105,7 @@ public:
 "}"));
         menu_view = new QWidget(centralWidget);
         menu_view->setObjectName(QStringLiteral("menu_view"));
-        menu_view->setGeometry(QRect(0, 0, 621, 331));
+        menu_view->setGeometry(QRect(0, 0, 621, 351));
         window = new QGridLayout(menu_view);
         window->setSpacing(6);
         window->setContentsMargins(11, 11, 11, 11);
@@ -327,9 +325,6 @@ public:
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuStaff->menuAction());
         menuStaff->addAction(actionSettings);

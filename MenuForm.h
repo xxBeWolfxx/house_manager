@@ -36,6 +36,10 @@ private slots:
 
     void on_timerlist_itemClicked(QListWidgetItem *item);
 
+    void on_Button_on_clicked();
+
+    void on_Button_off_clicked();
+
 private:
     Ui::MenuForm *ui;
 };

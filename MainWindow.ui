@@ -46,7 +46,7 @@ background-color: grey;
       <x>0</x>
       <y>0</y>
       <width>621</width>
-      <height>331</height>
+      <height>351</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="window">
@@ -402,7 +402,6 @@ background-color: grey;
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionSettings">
    <property name="text">
     <string>Settings</string>
