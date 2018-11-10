@@ -59,6 +59,8 @@ void MenuForm::SetTimerList()
 
 void MenuForm::on_Button_save_quit_clicked()
 {
+    timer->SavingTimers();
+    object->SavingData();
     MenuForm::hide();
 
 }
@@ -99,4 +101,21 @@ void MenuForm::on_Button_on_clicked()
 void MenuForm::on_Button_off_clicked()
 {
     object->pin_state='0';
+}
+
+void MenuForm::on_Timer_on_clicked()
+{
+    timer->status="1";
+}
+
+void MenuForm::on_Timer_off_clicked()
+{
+    timer->status="0";
+}
+
+void MenuForm::on_Button_set_clicked()
+{
+
+
+    timer->SavingTimers();
 }

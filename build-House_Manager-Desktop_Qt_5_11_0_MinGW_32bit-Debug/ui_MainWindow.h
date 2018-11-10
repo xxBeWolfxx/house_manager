@@ -38,6 +38,7 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QPushButton *set_arduino;
     QCheckBox *checkBox;
+    QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
     QPushButton *Button_light_shed;
@@ -119,13 +120,19 @@ public:
         set_arduino = new QPushButton(menu_view);
         set_arduino->setObjectName(QStringLiteral("set_arduino"));
         set_arduino->setMinimumSize(QSize(0, 30));
+        set_arduino->setMaximumSize(QSize(300, 16777215));
 
         horizontalLayout_5->addWidget(set_arduino);
 
         checkBox = new QCheckBox(menu_view);
         checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setMaximumSize(QSize(80, 16777215));
 
         horizontalLayout_5->addWidget(checkBox);
+
+        horizontalSpacer_3 = new QSpacerItem(200, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_3);
 
 
         gridLayout_2->addLayout(horizontalLayout_5, 5, 0, 1, 1);

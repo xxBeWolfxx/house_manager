@@ -40,6 +40,12 @@ private slots:
 
     void on_Button_off_clicked();
 
+    void on_Timer_on_clicked();
+
+    void on_Timer_off_clicked();
+
+    void on_Button_set_clicked();
+
 private:
     Ui::MenuForm *ui;
 };

@@ -5,16 +5,19 @@ int Arduino::total_number_pin;
 
 Arduino::Arduino()
 {
+
     if(total_number_pin != 3)
     {
     total_number_pin++;
     number_object=total_number_pin;
+    path=QCoreApplication::applicationDirPath();
+    path=path+"/"+QString::number(number_object)+".txt";
     }
 }
 
 void Arduino::SavingData()
 {
-    path=path+"/"+QString::number(number_object)+".txt";
+
     QFile file(path);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
@@ -33,7 +36,7 @@ void Arduino::SavingData()
 
 void Arduino::LoadingData()
 {
-    path=path+"/"+QString::number(number_object)+".txt";
+
     QFile file(path);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
