@@ -30,7 +30,7 @@ border-color: black;
      <x>0</x>
      <y>0</y>
      <width>261</width>
-     <height>351</height>
+     <height>381</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -80,7 +80,7 @@ border-color: black;
      <x>260</x>
      <y>0</y>
      <width>361</width>
-     <height>351</height>
+     <height>381</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -129,7 +129,7 @@ QTabBar::tab:only-one {
 </string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <property name="movable">
     <bool>true</bool>
@@ -144,7 +144,7 @@ QTabBar::tab:only-one {
        <x>20</x>
        <y>10</y>
        <width>331</width>
-       <height>311</height>
+       <height>331</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -210,7 +210,7 @@ background-color: white;
            <string/>
           </property>
           <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -280,7 +280,7 @@ background-color: white;
              <string/>
             </property>
             <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -442,6 +442,17 @@ background-color: grey;
             <kerning>true</kerning>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel
+{
+border-style: outset;
+border-width: 2px;
+color:black;
+border-radius: 10px;
+border-color: black;
+background-color: white;
+}</string>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -479,6 +490,17 @@ background-color: grey;
             <pointsize>11</pointsize>
             <kerning>true</kerning>
            </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel
+{
+border-style: outset;
+border-width: 2px;
+color:black;
+border-radius: 10px;
+border-color: black;
+background-color: white;
+}</string>
           </property>
           <property name="text">
            <string/>

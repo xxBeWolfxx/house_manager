@@ -21,7 +21,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -39,6 +38,7 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QPushButton *set_arduino;
     QCheckBox *checkBox;
+    QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
     QPushButton *Button_light_shed;
@@ -70,7 +70,6 @@ public:
     QMenuBar *menuBar;
     QMenu *menuStaff;
     QToolBar *mainToolBar;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -107,7 +106,7 @@ public:
 "}"));
         menu_view = new QWidget(centralWidget);
         menu_view->setObjectName(QStringLiteral("menu_view"));
-        menu_view->setGeometry(QRect(0, 0, 621, 331));
+        menu_view->setGeometry(QRect(0, 0, 621, 351));
         window = new QGridLayout(menu_view);
         window->setSpacing(6);
         window->setContentsMargins(11, 11, 11, 11);
@@ -121,13 +120,19 @@ public:
         set_arduino = new QPushButton(menu_view);
         set_arduino->setObjectName(QStringLiteral("set_arduino"));
         set_arduino->setMinimumSize(QSize(0, 30));
+        set_arduino->setMaximumSize(QSize(300, 16777215));
 
         horizontalLayout_5->addWidget(set_arduino);
 
         checkBox = new QCheckBox(menu_view);
         checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setMaximumSize(QSize(80, 16777215));
 
         horizontalLayout_5->addWidget(checkBox);
+
+        horizontalSpacer_3 = new QSpacerItem(200, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_3);
 
 
         gridLayout_2->addLayout(horizontalLayout_5, 5, 0, 1, 1);
@@ -327,9 +332,6 @@ public:
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuStaff->menuAction());
         menuStaff->addAction(actionSettings);

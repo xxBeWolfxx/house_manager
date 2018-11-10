@@ -59,19 +59,63 @@ void MenuForm::SetTimerList()
 
 void MenuForm::on_Button_save_quit_clicked()
 {
+    timer->SavingTimers();
+    object->SavingData();
     MenuForm::hide();
 
 }
 
 void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item)
 {
+    QString set_time;
     timer = new Timer (item->text(),
                     object->number_object);
 
     QMessageBox::information(this,"",timer->name_timer);
     timer->LoadingTimers();
+    set_time=timer->hours+":"+timer->minutes;
+
 
     ui->tabWidget->setTabEnabled(1,true);  //set tabs able for customer
     ui->tabWidget->setTabEnabled(2,true);
     ui->Name->setText(item->text());
+    if(timer->hours != "" && timer->minutes!= "")
+    {
+        ui->duration->setText(timer->duration);
+        ui->set_time->setText(set_time);
+    }
+    else
+    {
+        ui->duration->setText("00");
+        ui->set_time->setText("00:00");
+    }
+
+
+}
+
+void MenuForm::on_Button_on_clicked()
+{
+    object->pin_state="1";
+}
+
+void MenuForm::on_Button_off_clicked()
+{
+    object->pin_state='0';
+}
+
+void MenuForm::on_Timer_on_clicked()
+{
+    timer->status="1";
+}
+
+void MenuForm::on_Timer_off_clicked()
+{
+    timer->status="0";
+}
+
+void MenuForm::on_Button_set_clicked()
+{
+
+
+    timer->SavingTimers();
 }

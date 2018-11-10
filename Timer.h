@@ -14,6 +14,8 @@ public:
     QString hours;
     QString minutes;
     QString duration;
+    QString status;
+
     QString path;
     QString name_timer;
     int ordinals_object;
