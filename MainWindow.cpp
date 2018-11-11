@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     total_path=QCoreApplication::applicationDirPath();
     ui->setupUi(this);
 
-    light_shed.path=chandelier.path=light_door.path=total_path;
+
     light_shed.LoadingData();
     chandelier.LoadingData();
     light_door.LoadingData();

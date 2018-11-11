@@ -3,6 +3,7 @@
 #include <QString>
 #include <QFile>
 #include <QTextStream>
+#include <QCoreApplication>
 
 
 class Arduino

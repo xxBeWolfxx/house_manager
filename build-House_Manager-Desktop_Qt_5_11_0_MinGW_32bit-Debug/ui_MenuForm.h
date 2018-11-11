@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MenuForm.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.0
+** Created by: Qt User Interface Compiler version 5.11.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -31,7 +31,6 @@ public:
     QWidget *verticalLayoutWidget_4;
     QVBoxLayout *verticalLayout_5;
     QListWidget *timerlist;
-    QPushButton *Button_save_quit;
     QProgressBar *progressBar;
     QSpacerItem *verticalSpacer;
     QTabWidget *tabWidget;
@@ -48,6 +47,8 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *Button_on;
     QPushButton *Button_off;
+    QVBoxLayout *verticalLayout_2;
+    QPushButton *Button_save_quit;
     QWidget *Timer;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_11;
@@ -92,7 +93,7 @@ public:
 "}"));
         verticalLayoutWidget_4 = new QWidget(MenuForm);
         verticalLayoutWidget_4->setObjectName(QStringLiteral("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(0, 0, 261, 351));
+        verticalLayoutWidget_4->setGeometry(QRect(0, 0, 261, 381));
         verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_4);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -100,12 +101,6 @@ public:
         timerlist->setObjectName(QStringLiteral("timerlist"));
 
         verticalLayout_5->addWidget(timerlist);
-
-        Button_save_quit = new QPushButton(verticalLayoutWidget_4);
-        Button_save_quit->setObjectName(QStringLiteral("Button_save_quit"));
-        Button_save_quit->setMinimumSize(QSize(0, 30));
-
-        verticalLayout_5->addWidget(Button_save_quit);
 
         progressBar = new QProgressBar(verticalLayoutWidget_4);
         progressBar->setObjectName(QStringLiteral("progressBar"));
@@ -123,7 +118,7 @@ public:
 
         tabWidget = new QTabWidget(MenuForm);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(260, 0, 361, 351));
+        tabWidget->setGeometry(QRect(260, 0, 361, 381));
         tabWidget->setStyleSheet(QLatin1String("QTabWidget::tab-bar {\n"
 "    left: 120%; \n"
 "}\n"
@@ -173,7 +168,7 @@ public:
         tab->setObjectName(QStringLiteral("tab"));
         verticalLayoutWidget_3 = new QWidget(tab);
         verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(20, 10, 331, 311));
+        verticalLayoutWidget_3->setGeometry(QRect(20, 10, 331, 331));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -211,7 +206,7 @@ public:
 "border-color: black;\n"
 "background-color: white;\n"
 "}"));
-        name_object->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        name_object->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_5->addWidget(name_object);
 
@@ -252,7 +247,7 @@ public:
 "border-color: black;\n"
 "background-color: white;\n"
 "}"));
-        pinout->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        pinout->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_3->addWidget(pinout);
 
@@ -278,6 +273,17 @@ public:
 
 
         verticalLayout->addLayout(horizontalLayout_2);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        Button_save_quit = new QPushButton(verticalLayoutWidget_3);
+        Button_save_quit->setObjectName(QStringLiteral("Button_save_quit"));
+        Button_save_quit->setMinimumSize(QSize(0, 30));
+
+        verticalLayout_2->addWidget(Button_save_quit);
+
+
+        verticalLayout->addLayout(verticalLayout_2);
 
         tabWidget->addTab(tab, QString());
         Timer = new QWidget();
@@ -341,6 +347,15 @@ public:
         font2.setPointSize(11);
         font2.setKerning(true);
         set_time->setFont(font2);
+        set_time->setStyleSheet(QLatin1String("QLabel\n"
+"{\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"color:black;\n"
+"border-radius: 10px;\n"
+"border-color: black;\n"
+"background-color: white;\n"
+"}"));
         set_time->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_20->addWidget(set_time);
@@ -367,6 +382,15 @@ public:
         duration = new QLabel(verticalLayoutWidget_2);
         duration->setObjectName(QStringLiteral("duration"));
         duration->setFont(font2);
+        duration->setStyleSheet(QLatin1String("QLabel\n"
+"{\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"color:black;\n"
+"border-radius: 10px;\n"
+"border-color: black;\n"
+"background-color: white;\n"
+"}"));
         duration->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_21->addWidget(duration);
@@ -466,7 +490,7 @@ public:
 
         retranslateUi(MenuForm);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MenuForm);
@@ -475,13 +499,13 @@ public:
     void retranslateUi(QWidget *MenuForm)
     {
         MenuForm->setWindowTitle(QApplication::translate("MenuForm", "Form", nullptr));
-        Button_save_quit->setText(QApplication::translate("MenuForm", "Save/Quit", nullptr));
         label_7->setText(QApplication::translate("MenuForm", "Name:", nullptr));
         name_object->setText(QString());
         label_9->setText(QApplication::translate("MenuForm", "Pinout:", nullptr));
         pinout->setText(QString());
         Button_on->setText(QApplication::translate("MenuForm", "ON", nullptr));
         Button_off->setText(QApplication::translate("MenuForm", "OFF", nullptr));
+        Button_save_quit->setText(QApplication::translate("MenuForm", "Save/Quit", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MenuForm", "Device", nullptr));
         Name->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
         label->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; text-decoration: underline;\">Set on:</span></p></body></html>", nullptr));
