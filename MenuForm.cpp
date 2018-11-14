@@ -60,6 +60,8 @@ void MenuForm::SetTimerList()
 void MenuForm::on_Button_save_quit_clicked()
 {
     timer->SavingTimers();
+    object->path=QCoreApplication::applicationDirPath();
+    object->path=object->path+"/"+QString::number(object->number_object)+".txt";
     object->SavingData();
     MenuForm::hide();
 
