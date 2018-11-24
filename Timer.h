@@ -4,6 +4,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <QCoreApplication>
+#include <QDateTime>
+#include <QDebug>
 
 class Timer
 {

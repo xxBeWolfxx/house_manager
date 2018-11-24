@@ -11,16 +11,23 @@ MenuForm::MenuForm(QWidget *parent) :
     ui->progressBar->hide();
 
     ui->tabWidget->setCurrentIndex(0);
-    ui->tabWidget->setTabEnabled(1,false);  //set tabs unable for customer
+    ui->tabWidget->setTabEnabled(1,false);  //to set tabs unable for customer
     ui->tabWidget->setTabEnabled(2,false);
 
-    SetTimerList();
+    SetTimerList(); // creating list of timers
 
     object=new Arduino;
     timer=new Timer;
     QString name=ReadingBufor(object);
     ui->name_object->setText(name);
+
     ui->pinout->setText(object->number_pin);
+    ui->minutes_dur->setRange(0,120); //to set range duration of timer
+    ui->minutes_dur->setSingleStep(5);
+
+
+
+
 
 }
 
@@ -43,8 +50,8 @@ QString MenuForm::ReadingBufor(Arduino *object)
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     name=in.readLine(100);
     object->number_object=in.readLine(100).toInt();
-    object->number_pin=in.readLine(1);
-    object->pin_state=in.readLine(1);
+    object->number_pin=in.readLine(10);
+    object->pin_state=in.readLine(10);
     file.close();
     return name;
 
@@ -93,6 +100,7 @@ void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item)
     }
 
 
+
 }
 
 void MenuForm::on_Button_on_clicked()
@@ -117,7 +125,11 @@ void MenuForm::on_Timer_off_clicked()
 
 void MenuForm::on_Button_set_clicked()
 {
-
+    timer->hours=ui->timer_3->time().hour();
+    timer->minutes=ui->timer_3->time().minute();
+    timer->duration=ui->minutes_dur->value();
 
     timer->SavingTimers();
+
+
 }
