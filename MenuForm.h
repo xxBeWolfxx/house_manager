@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QListWidgetItem>
 #include <QCoreApplication>
+#include <QTimer>
 #include "MainWindow.h"
 #include "Arduino.h"
 #include "Timer.h"
@@ -27,6 +28,7 @@ public:
     QString path;
     Arduino *object;
     Timer *timer;
+    QTimer *counter;
 
     QString ReadingBufor(Arduino *object);
     void SetTimerList();

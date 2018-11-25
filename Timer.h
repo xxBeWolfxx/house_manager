@@ -24,6 +24,7 @@ public:
 
     void SavingTimers();
     void LoadingTimers();
+    int CalculationsPeriod();
 };
 
 #endif // TIMER_H

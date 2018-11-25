@@ -18,6 +18,7 @@ MenuForm::MenuForm(QWidget *parent) :
 
     object=new Arduino;
     timer=new Timer;
+    counter =new QTimer(this);
     QString name=ReadingBufor(object);
     ui->name_object->setText(name);
 
@@ -80,7 +81,6 @@ void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item)
     timer = new Timer (item->text(),
                     object->number_object);
 
-    QMessageBox::information(this,"",timer->name_timer);
     timer->LoadingTimers();
     set_time=timer->hours+":"+timer->minutes;
 
@@ -116,6 +116,12 @@ void MenuForm::on_Button_off_clicked()
 void MenuForm::on_Timer_on_clicked()
 {
     timer->status="1";
+    timer->name_timer=timer->name_timer.remove(0,6); //get ordinal number of timer
+    connect(counter, SIGNAL(timeout()),this, SLOT(object->SendingData();));
+
+
+    QMessageBox::information(this,"",timer->name_timer);
+
 }
 
 void MenuForm::on_Timer_off_clicked()
