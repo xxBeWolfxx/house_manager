@@ -14,11 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     light_shed.LoadingData();
     chandelier.LoadingData();
     light_door.LoadingData();
-
-    ui->Box_chandelier->setChecked(CheckBoxMarking(chandelier));
-    ui->Box_light_door->setChecked(CheckBoxMarking(light_door));
-    ui->Box_light_shed->setChecked(CheckBoxMarking(light_shed));
-    ui->Box_chandelier->setDisabled(true);
+    Checkingbox();
 
 }
 
@@ -27,7 +23,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::Checkingbox()
+{
+    ui->Box_chandelier->setChecked(CheckBoxMarking(chandelier));
+    ui->Box_light_door->setChecked(CheckBoxMarking(light_door));
+    ui->Box_light_shed->setChecked(CheckBoxMarking(light_shed));
+    ui->Box_chandelier->setDisabled(true);
 
+}
 
 bool MainWindow::CheckBoxMarking(Arduino object)
 {

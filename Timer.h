@@ -4,6 +4,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <QCoreApplication>
+#include <QDateTime>
+#include <QDebug>
 
 class Timer
 {
@@ -22,6 +24,7 @@ public:
 
     void SavingTimers();
     void LoadingTimers();
+    int CalculationsPeriod();
 };
 
 #endif // TIMER_H

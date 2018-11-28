@@ -28,6 +28,7 @@ public:
     void hide_menu();
     bool CheckBoxMarking(Arduino object);
     void SavingBufor(Arduino object, QString name);
+    void Checkingbox();
 
     ~MainWindow();
 

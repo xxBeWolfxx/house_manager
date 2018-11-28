@@ -11,16 +11,24 @@ MenuForm::MenuForm(QWidget *parent) :
     ui->progressBar->hide();
 
     ui->tabWidget->setCurrentIndex(0);
-    ui->tabWidget->setTabEnabled(1,false);  //set tabs unable for customer
+    ui->tabWidget->setTabEnabled(1,false);  //to set tabs unable for customer
     ui->tabWidget->setTabEnabled(2,false);
 
-    SetTimerList();
+    SetTimerList(); // creating list of timers
 
     object=new Arduino;
     timer=new Timer;
+    counter =new QTimer(this);
     QString name=ReadingBufor(object);
     ui->name_object->setText(name);
+
     ui->pinout->setText(object->number_pin);
+    ui->minutes_dur->setRange(0,120); //to set range duration of timer
+    ui->minutes_dur->setSingleStep(5);
+
+
+
+
 
 }
 
@@ -43,8 +51,8 @@ QString MenuForm::ReadingBufor(Arduino *object)
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     name=in.readLine(100);
     object->number_object=in.readLine(100).toInt();
-    object->number_pin=in.readLine(1);
-    object->pin_state=in.readLine(1);
+    object->number_pin=in.readLine(10);
+    object->pin_state=in.readLine(10);
     file.close();
     return name;
 
@@ -73,7 +81,6 @@ void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item)
     timer = new Timer (item->text(),
                     object->number_object);
 
-    QMessageBox::information(this,"",timer->name_timer);
     timer->LoadingTimers();
     set_time=timer->hours+":"+timer->minutes;
 
@@ -93,6 +100,7 @@ void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item)
     }
 
 
+
 }
 
 void MenuForm::on_Button_on_clicked()
@@ -108,6 +116,12 @@ void MenuForm::on_Button_off_clicked()
 void MenuForm::on_Timer_on_clicked()
 {
     timer->status="1";
+    timer->name_timer=timer->name_timer.remove(0,6); //get ordinal number of timer
+    connect(counter, SIGNAL(timeout()),this, SLOT(object->SendingData();));
+
+
+    QMessageBox::information(this,"",timer->name_timer);
+
 }
 
 void MenuForm::on_Timer_off_clicked()
@@ -117,7 +131,11 @@ void MenuForm::on_Timer_off_clicked()
 
 void MenuForm::on_Button_set_clicked()
 {
-
+    timer->hours=ui->timer_3->time().hour();
+    timer->minutes=ui->timer_3->time().minute();
+    timer->duration=ui->minutes_dur->value();
 
     timer->SavingTimers();
+
+
 }

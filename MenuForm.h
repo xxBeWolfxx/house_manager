@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QListWidgetItem>
 #include <QCoreApplication>
+#include <QTimer>
 #include "MainWindow.h"
 #include "Arduino.h"
 #include "Timer.h"
@@ -27,23 +28,18 @@ public:
     QString path;
     Arduino *object;
     Timer *timer;
+    QTimer *counter;
 
     QString ReadingBufor(Arduino *object);
     void SetTimerList();
 
 private slots:
     void on_Button_save_quit_clicked();
-
     void on_timerlist_itemClicked(QListWidgetItem *item);
-
     void on_Button_on_clicked();
-
     void on_Button_off_clicked();
-
     void on_Timer_on_clicked();
-
     void on_Timer_off_clicked();
-
     void on_Button_set_clicked();
 
 private:
