@@ -1,6 +1,7 @@
 #include "MenuForm.h"
 #include "ui_MenuForm.h"
 #include <QFile>
+#include <QApplication>
 
 MenuForm::MenuForm(QWidget *parent) :
     QWidget(parent),
@@ -19,6 +20,7 @@ MenuForm::MenuForm(QWidget *parent) :
     object=new Arduino;
     timer=new Timer;
     counter =new QTimer(this);
+    window = new MainWindow(this);
     QString name=ReadingBufor(object);
     ui->name_object->setText(name);
 
@@ -71,7 +73,11 @@ void MenuForm::on_Button_save_quit_clicked()
     object->path=QCoreApplication::applicationDirPath();
     object->path=object->path+"/"+QString::number(object->number_object)+".txt";
     object->SavingData();
+    emit Sending();
     MenuForm::hide();
+    MenuForm::destroyed();
+
+
 
 }
 
@@ -138,4 +144,8 @@ void MenuForm::on_Button_set_clicked()
     timer->SavingTimers();
 
 
+}
+void MenuForm::Sending()
+{
+    &MainWindow::Checkingbox;
 }

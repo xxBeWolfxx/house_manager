@@ -31,8 +31,11 @@ public:
     void Checkingbox();
 
     ~MainWindow();
+public slots:
+   void Slotbox();
 
 private slots:
+
     void on_Button_light_shed_clicked();
 
     void on_Button_chandelier_clicked();
