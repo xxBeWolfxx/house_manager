@@ -76,7 +76,10 @@ void MainWindow::on_Button_chandelier_clicked()
 {
     QString name="Chandelier";
     SavingBufor(chandelier, name);
+
     options=new MenuForm(this);
+    connect(options, &MenuForm::Sending,this,&MainWindow::Slotbox);
+
     options->show();
 
 
@@ -88,4 +91,8 @@ void MainWindow::on_Button_light_door_clicked()
     SavingBufor(light_door,name);
     options=new MenuForm(this);
     options->show();
+}
+void MainWindow::Slotbox()
+{
+   qDebug()<<"Andrzej";
 }

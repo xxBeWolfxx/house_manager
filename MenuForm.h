@@ -29,11 +29,15 @@ public:
     Arduino *object;
     Timer *timer;
     QTimer *counter;
+    MainWindow *window;
 
     QString ReadingBufor(Arduino *object);
     void SetTimerList();
+signals:
+    void Sending();
 
 private slots:
+
     void on_Button_save_quit_clicked();
     void on_timerlist_itemClicked(QListWidgetItem *item);
     void on_Button_on_clicked();
