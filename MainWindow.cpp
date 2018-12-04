@@ -92,7 +92,7 @@ void MainWindow::on_Button_light_door_clicked()
     options=new MenuForm(this);
     options->show();
 }
-void MainWindow::Slotbox()
+void MainWindow::Slotbox(const QString &name)
 {
-   qDebug()<<"Andrzej";
+    ui->label->setText(name);
 }

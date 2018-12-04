@@ -34,7 +34,7 @@ public:
     QString ReadingBufor(Arduino *object);
     void SetTimerList();
 signals:
-    void Sending();
+    void Sending(const QString &name);
 
 private slots:
 
