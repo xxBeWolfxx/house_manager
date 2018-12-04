@@ -73,9 +73,8 @@ void MenuForm::on_Button_save_quit_clicked()
     object->path=QCoreApplication::applicationDirPath();
     object->path=object->path+"/"+QString::number(object->number_object)+".txt";
     object->SavingData();
-    emit Sending();
+    emit Sending("Andrzej");
     MenuForm::hide();
-    MenuForm::destroyed();
 
 
 
@@ -145,7 +144,7 @@ void MenuForm::on_Button_set_clicked()
 
 
 }
-void MenuForm::Sending()
+void MenuForm::Sending(const QString &name)
 {
-    &MainWindow::Checkingbox;
+
 }

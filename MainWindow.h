@@ -32,7 +32,7 @@ public:
 
     ~MainWindow();
 public slots:
-   void Slotbox();
+   void Slotbox(const QString &);
 
 private slots:
 
