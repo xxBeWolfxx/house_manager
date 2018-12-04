@@ -78,7 +78,7 @@ void MainWindow::on_Button_chandelier_clicked()
     SavingBufor(chandelier, name);
 
     options=new MenuForm(this);
-    connect(options, &MenuForm::Sending,this,&MainWindow::Slotbox);
+    connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
 
     options->show();
 
@@ -92,7 +92,10 @@ void MainWindow::on_Button_light_door_clicked()
     options=new MenuForm(this);
     options->show();
 }
-void MainWindow::Slotbox(const QString &name)
+void MainWindow::Slotbox()
 {
-    ui->label->setText(name);
+    chandelier.LoadingData();
+    light_shed.LoadingData();
+    light_door.LoadingData();
+    Checkingbox();
 }

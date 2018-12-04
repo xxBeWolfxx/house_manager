@@ -18,7 +18,6 @@ MenuForm::MenuForm(QWidget *parent) :
     SetTimerList(); // creating list of timers
 
     object=new Arduino;
-    timer=new Timer;
     counter =new QTimer(this);
     window = new MainWindow(this);
     QString name=ReadingBufor(object);
@@ -73,7 +72,7 @@ void MenuForm::on_Button_save_quit_clicked()
     object->path=QCoreApplication::applicationDirPath();
     object->path=object->path+"/"+QString::number(object->number_object)+".txt";
     object->SavingData();
-    emit Sending("Andrzej");
+    emit Sending_Data();
     MenuForm::hide();
 
 
@@ -144,7 +143,4 @@ void MenuForm::on_Button_set_clicked()
 
 
 }
-void MenuForm::Sending(const QString &name)
-{
 
-}
