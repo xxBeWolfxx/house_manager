@@ -30,9 +30,12 @@ public:
     Timer *timer;
     QTimer *counter;
     MainWindow *window;
+    int tab_status=0;
 
     QString ReadingBufor(Arduino *object);
     void SetTimerList();
+    void seting_ui_timer(Timer *timer);
+
 signals:
     void Sending_Data();
 
@@ -45,6 +48,7 @@ private slots:
     void on_Timer_on_clicked();
     void on_Timer_off_clicked();
     void on_Button_set_clicked();
+    void counterout(Arduino *object);
 
 private:
     Ui::MenuForm *ui;

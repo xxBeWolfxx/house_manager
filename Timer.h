@@ -13,9 +13,9 @@ public:
     Timer(QString name,int ordinals_object);
     Timer();
 
-    QString hours;
-    QString minutes;
-    QString duration;
+    int hours=-1;
+    int minutes=-1;
+    int duration=-1;
     QString status;
 
     QString path;

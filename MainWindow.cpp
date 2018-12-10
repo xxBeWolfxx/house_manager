@@ -67,6 +67,8 @@ void MainWindow::on_Button_light_shed_clicked()
     QString name="Light shed";
     SavingBufor(light_shed, name);
     options = new MenuForm(this);
+    connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+
     options->show();
 
 
@@ -80,6 +82,7 @@ void MainWindow::on_Button_chandelier_clicked()
     options=new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
 
+    window_closing();
     options->show();
 
 
@@ -90,6 +93,8 @@ void MainWindow::on_Button_light_door_clicked()
     QString name="Light_door";
     SavingBufor(light_door,name);
     options=new MenuForm(this);
+    connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+
     options->show();
 }
 void MainWindow::Slotbox()
@@ -98,4 +103,9 @@ void MainWindow::Slotbox()
     light_shed.LoadingData();
     light_door.LoadingData();
     Checkingbox();
+    ui->centralWidget->show();
+}
+void MainWindow::window_closing()
+{
+    ui->centralWidget->hide();
 }
