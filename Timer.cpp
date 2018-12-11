@@ -46,10 +46,10 @@ void Timer::LoadingTimers()
     }
     QTextStream in(&file);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
-    hours = in.readLine(10);
-    minutes = in.readLine(10);
-    duration = in.readLine(10);
-    status = in.readLine(10);
+    hours = in.readLine(10).toInt();
+    minutes = in.readLine(10).toInt();
+    duration = in.readLine(10).toInt();
+    status = in.readLine(10).toInt();
 
     file.close();
 

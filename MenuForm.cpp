@@ -18,7 +18,6 @@ MenuForm::MenuForm(QWidget *parent) :
     SetTimerList(); // creating list of timers
 
     object=new Arduino;
-    timer=new Timer;
     counter =new QTimer(this);
     window = new MainWindow(this);
     QString name=ReadingBufor(object);
@@ -69,12 +68,14 @@ void MenuForm::SetTimerList()
 
 void MenuForm::on_Button_save_quit_clicked()
 {
+    if(tab_status==1)
     timer->SavingTimers();
+
     object->path=QCoreApplication::applicationDirPath();
     object->path=object->path+"/"+QString::number(object->number_object)+".txt";
     object->SavingData();
-    emit Sending("Andrzej");
-    MenuForm::hide();
+    emit Sending_Data();
+    MenuForm::close();
 
 
 
@@ -82,27 +83,19 @@ void MenuForm::on_Button_save_quit_clicked()
 
 void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item)
 {
-    QString set_time;
+
     timer = new Timer (item->text(),
                     object->number_object);
 
     timer->LoadingTimers();
-    set_time=timer->hours+":"+timer->minutes;
 
 
     ui->tabWidget->setTabEnabled(1,true);  //set tabs able for customer
     ui->tabWidget->setTabEnabled(2,true);
     ui->Name->setText(item->text());
-    if(timer->hours != "" && timer->minutes!= "")
-    {
-        ui->duration->setText(timer->duration);
-        ui->set_time->setText(set_time);
-    }
-    else
-    {
-        ui->duration->setText("00");
-        ui->set_time->setText("00:00");
-    }
+    tab_status=1;
+    seting_ui_timer(timer);
+
 
 
 
@@ -122,7 +115,7 @@ void MenuForm::on_Timer_on_clicked()
 {
     timer->status="1";
     timer->name_timer=timer->name_timer.remove(0,6); //get ordinal number of timer
-    connect(counter, SIGNAL(timeout()),this, SLOT(object->SendingData();));
+    connect(counter, SIGNAL(timeout()),this, SLOT(counterout(Arduino*)));
 
 
     QMessageBox::information(this,"",timer->name_timer);
@@ -141,10 +134,40 @@ void MenuForm::on_Button_set_clicked()
     timer->duration=ui->minutes_dur->value();
 
     timer->SavingTimers();
-
+    seting_ui_timer(timer);
 
 }
-void MenuForm::Sending(const QString &name)
+
+void MenuForm::seting_ui_timer(Timer *timer)
 {
+    QString set_time;
+    QString h_minutes; //variables to help set the proper timer
+    QString h_hours;
+    if(timer->hours != -1 && timer->minutes!= -1)
+    {
+        if(timer->hours<=9)
+            h_hours="0"+QString::number(timer->hours);
+        else
+            h_hours=QString::number(timer->hours);
+        if(timer->minutes<=9)
+            h_minutes="0"+QString::number(timer->minutes);
+        else
+            h_minutes=QString::number(timer->minutes);
+
+        set_time=h_hours+":"+h_minutes;
+        ui->duration->setText(QString::number(timer->duration));
+        ui->set_time->setText(set_time);
+    }
+    else
+    {
+        ui->duration->setText("00");
+        ui->set_time->setText("00:00");
+    }
+
+}
+
+void MenuForm::counterout(Arduino *object)
+{
+    object->SendingData();
 
 }

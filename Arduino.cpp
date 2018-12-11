@@ -49,3 +49,10 @@ void Arduino::LoadingData()
     pin_state=in.readLine(10);
     file.close();
 }
+
+void Arduino::SendingData()
+{
+
+
+
+}
