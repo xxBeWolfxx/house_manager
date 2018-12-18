@@ -29,6 +29,8 @@ void MainWindow::Checkingbox()
     ui->Box_light_door->setChecked(CheckBoxMarking(light_door));
     ui->Box_light_shed->setChecked(CheckBoxMarking(light_shed));
     ui->Box_chandelier->setDisabled(true);
+    ui->Box_light_door->setDisabled(true);
+    ui->Box_light_shed->setDisabled(true);
 
 }
 
@@ -69,6 +71,7 @@ void MainWindow::on_Button_light_shed_clicked()
     options = new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
 
+    window_closing();
     options->show();
 
 
@@ -95,6 +98,7 @@ void MainWindow::on_Button_light_door_clicked()
     options=new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
 
+    window_closing();
     options->show();
 }
 void MainWindow::Slotbox()

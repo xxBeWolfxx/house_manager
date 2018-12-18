@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QApplication>
 
+
 MenuForm::MenuForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MenuForm)
@@ -38,7 +39,7 @@ MenuForm::~MenuForm()
     delete ui;
 }
 
-QString MenuForm::ReadingBufor(Arduino *object)
+QString MenuForm::ReadingBufor(Arduino *object) //to read information of object
 {
     QString name;
     path=path +"/bufor.txt";
@@ -59,14 +60,14 @@ QString MenuForm::ReadingBufor(Arduino *object)
 
 }
 
-void MenuForm::SetTimerList()
+void MenuForm::SetTimerList() //to create list of timers in QWidgetList
 {
     for(int i=1;i<4;i++)
     ui->timerlist->addItem("Timer "+QString::number(i));
 
 }
 
-void MenuForm::on_Button_save_quit_clicked()
+void MenuForm::on_Button_save_quit_clicked() //function which saves info
 {
     if(tab_status==1)
     timer->SavingTimers();
@@ -81,7 +82,7 @@ void MenuForm::on_Button_save_quit_clicked()
 
 }
 
-void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item)
+void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item) //choosing item form the QWL
 {
 
     timer = new Timer (item->text(),
@@ -111,14 +112,12 @@ void MenuForm::on_Button_off_clicked()
     object->pin_state='0';
 }
 
-void MenuForm::on_Timer_on_clicked()
+void MenuForm::on_Timer_on_clicked() //swithing on timers
 {
     timer->status="1";
     timer->name_timer=timer->name_timer.remove(0,6); //get ordinal number of timer
-    connect(counter, SIGNAL(timeout()),this, SLOT(counterout(Arduino*)));
+    QTimer::singleShot(timer->CalculationsPeriod()-300,this,SLOT(counterout())); //set timers on
 
-
-    QMessageBox::information(this,"",timer->name_timer);
 
 }
 
@@ -141,7 +140,7 @@ void MenuForm::on_Button_set_clicked()
 void MenuForm::seting_ui_timer(Timer *timer)
 {
     QString set_time;
-    QString h_minutes; //variables to help set the proper timer
+    QString h_minutes; //variables helps to set properly the timer
     QString h_hours;
     if(timer->hours != -1 && timer->minutes!= -1)
     {
@@ -155,6 +154,7 @@ void MenuForm::seting_ui_timer(Timer *timer)
             h_minutes=QString::number(timer->minutes);
 
         set_time=h_hours+":"+h_minutes;
+
         ui->duration->setText(QString::number(timer->duration));
         ui->set_time->setText(set_time);
     }
@@ -166,8 +166,21 @@ void MenuForm::seting_ui_timer(Timer *timer)
 
 }
 
-void MenuForm::counterout(Arduino *object)
+void MenuForm::counterout()
 {
+    object->pin_state="1";
     object->SendingData();
+    QTimer::singleShot(timer->duration*60*1000,this,SLOT(stop_timer()));
+
+    QMessageBox::information(this,"","działa");
+
+}
+
+void MenuForm::stop_timer()
+{
+    object->pin_state="0";
+    object->SendingData();
+
+    QMessageBox::information(this,"","koniec");
 
 }

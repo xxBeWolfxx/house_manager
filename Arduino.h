@@ -20,6 +20,7 @@ public:
 
     int number_object;
     static int total_number_pin;
+public slots:
 
 
 };

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'MenuForm.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.0)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.12.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'MenuForm.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.11.0. It"
+#error "This file was generated using the moc from 5.12.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MenuForm_t {
-    QByteArrayData data[15];
-    char stringdata0[231];
+    QByteArrayData data[14];
+    char stringdata0[226];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,8 +44,7 @@ QT_MOC_LITERAL(9, 141, 19), // "on_Timer_on_clicked"
 QT_MOC_LITERAL(10, 161, 20), // "on_Timer_off_clicked"
 QT_MOC_LITERAL(11, 182, 21), // "on_Button_set_clicked"
 QT_MOC_LITERAL(12, 204, 10), // "counterout"
-QT_MOC_LITERAL(13, 215, 8), // "Arduino*"
-QT_MOC_LITERAL(14, 224, 6) // "object"
+QT_MOC_LITERAL(13, 215, 10) // "stop_timer"
 
     },
     "MenuForm\0Sending_Data\0\0"
@@ -54,17 +53,17 @@ QT_MOC_LITERAL(14, 224, 6) // "object"
     "item\0on_Button_on_clicked\0"
     "on_Button_off_clicked\0on_Timer_on_clicked\0"
     "on_Timer_off_clicked\0on_Button_set_clicked\0"
-    "counterout\0Arduino*\0object"
+    "counterout\0stop_timer"
 };
 #undef QT_MOC_LITERAL
 
 static const uint qt_meta_data_MenuForm[] = {
 
  // content:
-       7,       // revision
+       8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -72,17 +71,18 @@ static const uint qt_meta_data_MenuForm[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x06 /* Public */,
+       1,    0,   64,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   60,    2, 0x08 /* Private */,
-       4,    1,   61,    2, 0x08 /* Private */,
-       7,    0,   64,    2, 0x08 /* Private */,
-       8,    0,   65,    2, 0x08 /* Private */,
-       9,    0,   66,    2, 0x08 /* Private */,
-      10,    0,   67,    2, 0x08 /* Private */,
-      11,    0,   68,    2, 0x08 /* Private */,
-      12,    1,   69,    2, 0x08 /* Private */,
+       3,    0,   65,    2, 0x08 /* Private */,
+       4,    1,   66,    2, 0x08 /* Private */,
+       7,    0,   69,    2, 0x08 /* Private */,
+       8,    0,   70,    2, 0x08 /* Private */,
+       9,    0,   71,    2, 0x08 /* Private */,
+      10,    0,   72,    2, 0x08 /* Private */,
+      11,    0,   73,    2, 0x08 /* Private */,
+      12,    0,   74,    2, 0x08 /* Private */,
+      13,    0,   75,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -95,7 +95,8 @@ static const uint qt_meta_data_MenuForm[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 13,   14,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -114,7 +115,8 @@ void MenuForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 5: _t->on_Timer_on_clicked(); break;
         case 6: _t->on_Timer_off_clicked(); break;
         case 7: _t->on_Button_set_clicked(); break;
-        case 8: _t->counterout((*reinterpret_cast< Arduino*(*)>(_a[1]))); break;
+        case 8: _t->counterout(); break;
+        case 9: _t->stop_timer(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -129,10 +131,14 @@ void MenuForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject MenuForm::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_MenuForm.data,
-      qt_meta_data_MenuForm,  qt_static_metacall, nullptr, nullptr}
-};
+QT_INIT_METAOBJECT const QMetaObject MenuForm::staticMetaObject = { {
+    &QWidget::staticMetaObject,
+    qt_meta_stringdata_MenuForm.data,
+    qt_meta_data_MenuForm,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
 
 
 const QMetaObject *MenuForm::metaObject() const
@@ -154,13 +160,13 @@ int MenuForm::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

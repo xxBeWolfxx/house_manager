@@ -6,6 +6,7 @@
 #include <QListWidgetItem>
 #include <QCoreApplication>
 #include <QTimer>
+#include <QDateTime>
 #include "MainWindow.h"
 #include "Arduino.h"
 #include "Timer.h"
@@ -27,8 +28,10 @@ public:
     ~MenuForm();
     QString path;
     Arduino *object;
+    Arduino h_timer;
     Timer *timer;
     QTimer *counter;
+    QTime time;
     MainWindow *window;
     int tab_status=0;
 
@@ -48,7 +51,9 @@ private slots:
     void on_Timer_on_clicked();
     void on_Timer_off_clicked();
     void on_Button_set_clicked();
-    void counterout(Arduino *object);
+
+    void counterout();
+    void stop_timer();
 
 private:
     Ui::MenuForm *ui;
