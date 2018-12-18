@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MainWindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.1
+** Created by: Qt User Interface Compiler version 5.12.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -74,9 +74,9 @@ public:
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QStringLiteral("MainWindow"));
+            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(623, 385);
-        MainWindow->setStyleSheet(QLatin1String("QCheckBox:unchecked {\n"
+        MainWindow->setStyleSheet(QString::fromUtf8("QCheckBox:unchecked {\n"
 "  color: red;\n"
 "}\n"
 "QCheckBox:checked {\n"
@@ -91,12 +91,12 @@ public:
 "\n"
 ""));
         actionSettings = new QAction(MainWindow);
-        actionSettings->setObjectName(QStringLiteral("actionSettings"));
+        actionSettings->setObjectName(QString::fromUtf8("actionSettings"));
         actionOnly_staff = new QAction(MainWindow);
-        actionOnly_staff->setObjectName(QStringLiteral("actionOnly_staff"));
+        actionOnly_staff->setObjectName(QString::fromUtf8("actionOnly_staff"));
         centralWidget = new QWidget(MainWindow);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        centralWidget->setStyleSheet(QLatin1String("QPushButton\n"
+        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
@@ -105,27 +105,27 @@ public:
 "background-color: grey;\n"
 "}"));
         menu_view = new QWidget(centralWidget);
-        menu_view->setObjectName(QStringLiteral("menu_view"));
+        menu_view->setObjectName(QString::fromUtf8("menu_view"));
         menu_view->setGeometry(QRect(0, 0, 621, 351));
         window = new QGridLayout(menu_view);
         window->setSpacing(6);
         window->setContentsMargins(11, 11, 11, 11);
-        window->setObjectName(QStringLiteral("window"));
+        window->setObjectName(QString::fromUtf8("window"));
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(6);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
-        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         set_arduino = new QPushButton(menu_view);
-        set_arduino->setObjectName(QStringLiteral("set_arduino"));
+        set_arduino->setObjectName(QString::fromUtf8("set_arduino"));
         set_arduino->setMinimumSize(QSize(0, 30));
         set_arduino->setMaximumSize(QSize(300, 16777215));
 
         horizontalLayout_5->addWidget(set_arduino);
 
         checkBox = new QCheckBox(menu_view);
-        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
         checkBox->setMaximumSize(QSize(80, 16777215));
 
         horizontalLayout_5->addWidget(checkBox);
@@ -139,12 +139,12 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         gridLayout_3 = new QGridLayout();
         gridLayout_3->setSpacing(6);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         Button_light_shed = new QPushButton(menu_view);
-        Button_light_shed->setObjectName(QStringLiteral("Button_light_shed"));
+        Button_light_shed->setObjectName(QString::fromUtf8("Button_light_shed"));
         Button_light_shed->setMinimumSize(QSize(0, 40));
         Button_light_shed->setCheckable(true);
         Button_light_shed->setChecked(false);
@@ -156,9 +156,9 @@ public:
 
         gridLayout_7 = new QGridLayout();
         gridLayout_7->setSpacing(6);
-        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
         Button_chandelier = new QPushButton(menu_view);
-        Button_chandelier->setObjectName(QStringLiteral("Button_chandelier"));
+        Button_chandelier->setObjectName(QString::fromUtf8("Button_chandelier"));
         Button_chandelier->setMinimumSize(QSize(0, 40));
 
         gridLayout_7->addWidget(Button_chandelier, 0, 0, 1, 1);
@@ -168,9 +168,9 @@ public:
 
         gridLayout_8 = new QGridLayout();
         gridLayout_8->setSpacing(6);
-        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
         Button_light_door = new QPushButton(menu_view);
-        Button_light_door->setObjectName(QStringLiteral("Button_light_door"));
+        Button_light_door->setObjectName(QString::fromUtf8("Button_light_door"));
         Button_light_door->setMinimumSize(QSize(0, 40));
 
         gridLayout_8->addWidget(Button_light_door, 0, 0, 1, 1);
@@ -180,9 +180,9 @@ public:
 
         gridLayout_9 = new QGridLayout();
         gridLayout_9->setSpacing(6);
-        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
+        gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
         pushButton_4 = new QPushButton(menu_view);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setMinimumSize(QSize(0, 40));
 
         gridLayout_9->addWidget(pushButton_4, 0, 0, 1, 1);
@@ -192,9 +192,9 @@ public:
 
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setSpacing(6);
-        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         pushButton_5 = new QPushButton(menu_view);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setMinimumSize(QSize(0, 40));
 
         gridLayout_4->addWidget(pushButton_5, 0, 0, 1, 1);
@@ -211,15 +211,15 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalSpacer = new QSpacerItem(80, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
         label = new QLabel(menu_view);
-        label->setObjectName(QStringLiteral("label"));
+        label->setObjectName(QString::fromUtf8("label"));
         label->setMaximumSize(QSize(16777215, 50));
-        label->setStyleSheet(QLatin1String("QLabel\n"
+        label->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
@@ -240,12 +240,12 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         gridLayout_10 = new QGridLayout();
         gridLayout_10->setSpacing(6);
-        gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
+        gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
         Box_light_shed = new QCheckBox(menu_view);
-        Box_light_shed->setObjectName(QStringLiteral("Box_light_shed"));
+        Box_light_shed->setObjectName(QString::fromUtf8("Box_light_shed"));
         Box_light_shed->setLayoutDirection(Qt::LeftToRight);
         Box_light_shed->setCheckable(true);
         Box_light_shed->setTristate(false);
@@ -257,11 +257,11 @@ public:
 
         gridLayout_13 = new QGridLayout();
         gridLayout_13->setSpacing(6);
-        gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
+        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
         Box_chandelier = new QCheckBox(menu_view);
-        Box_chandelier->setObjectName(QStringLiteral("Box_chandelier"));
+        Box_chandelier->setObjectName(QString::fromUtf8("Box_chandelier"));
         Box_chandelier->setLayoutDirection(Qt::LeftToRight);
-        Box_chandelier->setStyleSheet(QStringLiteral(""));
+        Box_chandelier->setStyleSheet(QString::fromUtf8(""));
         Box_chandelier->setCheckable(true);
         Box_chandelier->setTristate(false);
 
@@ -272,9 +272,9 @@ public:
 
         gridLayout_14 = new QGridLayout();
         gridLayout_14->setSpacing(6);
-        gridLayout_14->setObjectName(QStringLiteral("gridLayout_14"));
+        gridLayout_14->setObjectName(QString::fromUtf8("gridLayout_14"));
         Box_light_door = new QCheckBox(menu_view);
-        Box_light_door->setObjectName(QStringLiteral("Box_light_door"));
+        Box_light_door->setObjectName(QString::fromUtf8("Box_light_door"));
         Box_light_door->setLayoutDirection(Qt::LeftToRight);
         Box_light_door->setCheckable(true);
         Box_light_door->setTristate(false);
@@ -286,9 +286,9 @@ public:
 
         gridLayout_12 = new QGridLayout();
         gridLayout_12->setSpacing(6);
-        gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
+        gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
         checkBox_3 = new QCheckBox(menu_view);
-        checkBox_3->setObjectName(QStringLiteral("checkBox_3"));
+        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
         checkBox_3->setLayoutDirection(Qt::LeftToRight);
         checkBox_3->setCheckable(true);
         checkBox_3->setTristate(false);
@@ -300,9 +300,9 @@ public:
 
         gridLayout_5 = new QGridLayout();
         gridLayout_5->setSpacing(6);
-        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         checkBox_2 = new QCheckBox(menu_view);
-        checkBox_2->setObjectName(QStringLiteral("checkBox_2"));
+        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
         checkBox_2->setLayoutDirection(Qt::LeftToRight);
         checkBox_2->setCheckable(true);
         checkBox_2->setTristate(false);
@@ -324,13 +324,13 @@ public:
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 623, 20));
+        menuBar->setObjectName(QString::fromUtf8("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 623, 25));
         menuStaff = new QMenu(menuBar);
-        menuStaff->setObjectName(QStringLiteral("menuStaff"));
+        menuStaff->setObjectName(QString::fromUtf8("menuStaff"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
+        mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
 
         menuBar->addAction(menuStaff->menuAction());

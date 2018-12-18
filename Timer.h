@@ -5,7 +5,6 @@
 #include <QTextStream>
 #include <QCoreApplication>
 #include <QDateTime>
-#include <QDebug>
 
 class Timer
 {
@@ -21,6 +20,7 @@ public:
     QString path;
     QString name_timer;
     int ordinals_object;
+    bool set_on_off=false;
 
     void SavingTimers();
     void LoadingTimers();
