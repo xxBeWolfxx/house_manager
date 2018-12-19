@@ -15,7 +15,8 @@ public:
     int hours=-1;
     int minutes=-1;
     int duration=-1;
-    QString status;
+    bool status=true;
+
 
     QString path;
     QString name_timer;
