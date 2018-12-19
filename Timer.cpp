@@ -1,4 +1,7 @@
 #include "Timer.h"
+#include <QTime>
+#include <cmath>
+
 
 Timer::Timer(QString name, int ordinals_object)
 {
@@ -46,12 +49,26 @@ void Timer::LoadingTimers()
     }
     QTextStream in(&file);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
-    hours = in.readLine(10);
-    minutes = in.readLine(10);
-    duration = in.readLine(10);
-    status = in.readLine(10);
+    hours = in.readLine(10).toInt();
+    minutes = in.readLine(10).toInt();
+    duration = in.readLine(10).toInt();
+    status = in.readLine(10).toInt();
 
     file.close();
+
+
+}
+
+int Timer::CalculationsPeriod()
+{
+    int h_minutes,h_hours, set_time;
+    h_hours=QTime::currentTime().hour()*3600*1000;
+    h_minutes=QTime::currentTime().minute()*60*1000;
+    set_time= abs(hours*3600*1000+minutes*60*1000-h_hours-h_minutes);
+
+
+    return set_time;
+
 
 
 }

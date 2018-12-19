@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QCoreApplication>
+#include <QDateTime>
 
 class Timer
 {
@@ -11,17 +12,20 @@ public:
     Timer(QString name,int ordinals_object);
     Timer();
 
-    QString hours;
-    QString minutes;
-    QString duration;
-    QString status;
+    int hours=-1;
+    int minutes=-1;
+    int duration=-1;
+    bool status=true;
+
 
     QString path;
     QString name_timer;
     int ordinals_object;
+    bool set_on_off=false;
 
     void SavingTimers();
     void LoadingTimers();
+    int CalculationsPeriod();
 };
 
 #endif // TIMER_H

@@ -26,12 +26,18 @@ public:
 
     void show_menu();
     void hide_menu();
+    void window_closing();
+    void window_opening();
     bool CheckBoxMarking(Arduino object);
     void SavingBufor(Arduino object, QString name);
+    void Checkingbox();
 
     ~MainWindow();
+public slots:
+   void Slotbox();
 
 private slots:
+
     void on_Button_light_shed_clicked();
 
     void on_Button_chandelier_clicked();
