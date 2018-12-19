@@ -21,6 +21,7 @@ MenuForm::MenuForm(QWidget *parent) :
     object=new Arduino;
     counter =new QTimer(this);
     window = new MainWindow(this);
+
     QString name=ReadingBufor(object);
     ui->name_object->setText(name);
 
@@ -114,16 +115,21 @@ void MenuForm::on_Button_off_clicked()
 
 void MenuForm::on_Timer_on_clicked() //swithing on timers
 {
-    timer->status="1";
     timer->name_timer=timer->name_timer.remove(0,6); //get ordinal number of timer
-    QTimer::singleShot(timer->CalculationsPeriod()-300,this,SLOT(counterout())); //set timers on
 
+    if(timer->status == true)
+    {
+    QTimer::singleShot(timer->CalculationsPeriod()-300,this,SLOT(counterout())); //set timers on
+    timer->status=false;
+    }
+    else if (timer->status == false)
+    QMessageBox::information(this, "UWAGA!","Timer jest załączony!");
 
 }
 
 void MenuForm::on_Timer_off_clicked()
 {
-    timer->status="0";
+    timer->status=0;
 }
 
 void MenuForm::on_Button_set_clicked()
@@ -180,7 +186,7 @@ void MenuForm::stop_timer()
 {
     object->pin_state="0";
     object->SendingData();
-
+    timer->status=true;
     QMessageBox::information(this,"","koniec");
 
 }

@@ -52,7 +52,7 @@ void Timer::LoadingTimers()
     hours = in.readLine(10).toInt();
     minutes = in.readLine(10).toInt();
     duration = in.readLine(10).toInt();
-    status = in.readLine(10);
+    status = in.readLine(10).toInt();
 
     file.close();
 
