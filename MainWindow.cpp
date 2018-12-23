@@ -1,6 +1,7 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 #include <QMessageBox>
+#include <QDebug>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -9,6 +10,12 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     total_path=QCoreApplication::applicationDirPath();
     ui->setupUi(this);
+
+    arduino_is_available = false;
+    arduino_port_name = "";
+    controller = new QSerialPort;
+
+
 
 
     light_shed.LoadingData();
@@ -101,8 +108,15 @@ void MainWindow::on_Button_light_door_clicked()
     window_closing();
     options->show();
 }
-void MainWindow::Slotbox()
+void MainWindow::Slotbox() //Sending date
 {
+  /*  QByteArray cos(informacje.toUtf8(),1000); befor add date to QString
+    if(controller->isWritable())
+    {
+
+       controller->write(cos);
+    } */
+
     chandelier.LoadingData();
     light_shed.LoadingData();
     light_door.LoadingData();
@@ -112,4 +126,41 @@ void MainWindow::Slotbox()
 void MainWindow::window_closing()
 {
     ui->centralWidget->hide();
+}
+
+void MainWindow::on_set_arduino_clicked()
+{
+    qDebug() << "Number of available ports: " << QSerialPortInfo::availablePorts().length();
+    foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
+    {
+        qDebug() << "Has vendor ID: " << serialPortInfo.hasVendorIdentifier();
+        if(serialPortInfo.hasVendorIdentifier())
+        {
+            qDebug() << "Vendor ID: " << serialPortInfo.vendorIdentifier();
+        }
+        qDebug() << "Has Product ID: " << serialPortInfo.hasProductIdentifier();
+        if(serialPortInfo.hasProductIdentifier())
+        {
+            qDebug() << "Product ID: " << serialPortInfo.productIdentifier();
+        }
+    }
+
+
+    foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
+    {
+        if(serialPortInfo.hasVendorIdentifier() && serialPortInfo.hasProductIdentifier())
+        {
+            if(serialPortInfo.vendorIdentifier() == arduino_uno_vendor_id){
+                if(serialPortInfo.productIdentifier() == arduino_uno_product_id){
+                    arduino_port_name = serialPortInfo.portName();
+                    arduino_is_available = true;
+                }
+            }
+        }
+    }
+    if(arduino_is_available==true)
+        QMessageBox::information(this,"Uwaga!","Połączenie się powiodło!");
+    else
+        QMessageBox::information(this,"Uwaga!","Połączenie nie udane");
+
 }

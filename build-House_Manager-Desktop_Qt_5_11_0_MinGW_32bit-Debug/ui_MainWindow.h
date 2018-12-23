@@ -34,6 +34,7 @@ public:
     QWidget *centralWidget;
     QWidget *menu_view;
     QGridLayout *window;
+    QSpacerItem *verticalSpacer_3;
     QGridLayout *gridLayout_2;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *set_arduino;
@@ -66,7 +67,6 @@ public:
     QCheckBox *checkBox_3;
     QGridLayout *gridLayout_5;
     QCheckBox *checkBox_2;
-    QSpacerItem *verticalSpacer_3;
     QMenuBar *menuBar;
     QMenu *menuStaff;
     QToolBar *mainToolBar;
@@ -96,14 +96,23 @@ public:
         actionOnly_staff->setObjectName(QString::fromUtf8("actionOnly_staff"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        centralWidget->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        centralWidget->setStyleSheet(QString::fromUtf8("QPushButton:pressed\n"
 "{\n"
+"background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
-"}"));
+"}\n"
+"QPushButton\n"
+"{\n"
+"background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(2, 255, 0, 255), stop:0.552885 rgba(7, 153, 0, 255), stop:0.995192 rgba(41, 81, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: black;\n"
+"}\n"
+"	"));
         menu_view = new QWidget(centralWidget);
         menu_view->setObjectName(QString::fromUtf8("menu_view"));
         menu_view->setGeometry(QRect(0, 0, 621, 351));
@@ -111,6 +120,10 @@ public:
         window->setSpacing(6);
         window->setContentsMargins(11, 11, 11, 11);
         window->setObjectName(QString::fromUtf8("window"));
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        window->addItem(verticalSpacer_3, 0, 0, 1, 1);
+
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(6);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
@@ -121,6 +134,7 @@ public:
         set_arduino->setObjectName(QString::fromUtf8("set_arduino"));
         set_arduino->setMinimumSize(QSize(0, 30));
         set_arduino->setMaximumSize(QSize(300, 16777215));
+        set_arduino->setStyleSheet(QString::fromUtf8(""));
 
         horizontalLayout_5->addWidget(set_arduino);
 
@@ -130,7 +144,7 @@ public:
 
         horizontalLayout_5->addWidget(checkBox);
 
-        horizontalSpacer_3 = new QSpacerItem(200, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(180, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         horizontalLayout_5->addItem(horizontalSpacer_3);
 
@@ -223,10 +237,10 @@ public:
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_2->addWidget(label);
@@ -317,10 +331,6 @@ public:
 
 
         window->addLayout(gridLayout_2, 1, 0, 1, 1);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        window->addItem(verticalSpacer_3, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);

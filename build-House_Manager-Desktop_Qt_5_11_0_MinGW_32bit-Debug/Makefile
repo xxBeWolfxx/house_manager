@@ -246,6 +246,7 @@ Makefile: ../House_Manager.pro ../../../Programatory/Qt/5.12.0/mingw73_64/mkspec
 		../House_Manager.pro \
 		../../../Programatory/Qt/5.12.0/mingw73_64/lib/Qt5Widgets.prl \
 		../../../Programatory/Qt/5.12.0/mingw73_64/lib/Qt5Gui.prl \
+		../../../Programatory/Qt/5.12.0/mingw73_64/lib/Qt5SerialPort.prl \
 		../../../Programatory/Qt/5.12.0/mingw73_64/lib/Qt5Core.prl \
 		../../../Programatory/Qt/5.12.0/mingw73_64/lib/qtmaind.prl
 	$(QMAKE) -o Makefile ..\House_Manager.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -434,6 +435,7 @@ Makefile: ../House_Manager.pro ../../../Programatory/Qt/5.12.0/mingw73_64/mkspec
 ../House_Manager.pro:
 ../../../Programatory/Qt/5.12.0/mingw73_64/lib/Qt5Widgets.prl:
 ../../../Programatory/Qt/5.12.0/mingw73_64/lib/Qt5Gui.prl:
+../../../Programatory/Qt/5.12.0/mingw73_64/lib/Qt5SerialPort.prl:
 ../../../Programatory/Qt/5.12.0/mingw73_64/lib/Qt5Core.prl:
 ../../../Programatory/Qt/5.12.0/mingw73_64/lib/qtmaind.prl:
 qmake: FORCE

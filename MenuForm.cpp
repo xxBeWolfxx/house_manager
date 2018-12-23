@@ -129,7 +129,8 @@ void MenuForm::on_Timer_on_clicked() //swithing on timers
 
 void MenuForm::on_Timer_off_clicked()
 {
-    timer->status=0;
+    timer->status=true;
+    QMessageBox::information(this, "Informacje", "Timer został wyłączony");
 }
 
 void MenuForm::on_Button_set_clicked()
@@ -174,12 +175,13 @@ void MenuForm::seting_ui_timer(Timer *timer)
 
 void MenuForm::counterout()
 {
+    if (timer->status==false)
+    {
     object->pin_state="1";
     object->SendingData();
     QTimer::singleShot(timer->duration*60*1000,this,SLOT(stop_timer()));
-
     QMessageBox::information(this,"","działa");
-
+    }
 }
 
 void MenuForm::stop_timer()

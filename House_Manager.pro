@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -40,6 +40,8 @@ HEADERS += \
 FORMS += \
         MainWindow.ui \
     MenuForm.ui
+
+QMAKE_CXXFLAGS += -std=gnu++14
 
 RESOURCES += \
     database.qrc

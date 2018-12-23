@@ -17,6 +17,7 @@ public:
     void SavingData();
     void LoadingData();
     void SendingData();
+    void ReceiveData();
 
     int number_object;
     static int total_number_pin;

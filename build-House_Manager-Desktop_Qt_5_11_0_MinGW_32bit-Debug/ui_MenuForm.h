@@ -82,14 +82,21 @@ public:
         if (MenuForm->objectName().isEmpty())
             MenuForm->setObjectName(QString::fromUtf8("MenuForm"));
         MenuForm->resize(626, 411);
-        MenuForm->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        MenuForm->setStyleSheet(QString::fromUtf8("QPushButton:pressed\n"
 "{\n"
-"background-color: grey;\n"
+"background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"\n"
+"}\n"
+"QPushButton\n"
+"{\n"
+"background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(2, 255, 0, 255), stop:0.552885 rgba(7, 153, 0, 255), stop:0.995192 rgba(41, 81, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: black;\n"
 "}"));
         verticalLayoutWidget_4 = new QWidget(MenuForm);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
@@ -184,10 +191,10 @@ public:
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
         label_7->setAlignment(Qt::AlignCenter);
 
@@ -225,10 +232,10 @@ public:
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
         label_9->setAlignment(Qt::AlignCenter);
 
@@ -333,10 +340,10 @@ public:
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_20->addWidget(label);
@@ -371,10 +378,10 @@ public:
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_21->addWidget(label_5);
@@ -432,10 +439,10 @@ public:
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_18->addWidget(label_3);
@@ -456,11 +463,12 @@ public:
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
+"color:white;\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_17->addWidget(label_2);
@@ -490,7 +498,7 @@ public:
 
         retranslateUi(MenuForm);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MenuForm);
