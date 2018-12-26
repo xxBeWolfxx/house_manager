@@ -23,7 +23,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     QString total_path;
-    Arduino light_shed, chandelier, light_door;
+    Arduino light_shed, chandelier, light_door, sending;
     QSerialPort *controller;
     static const quint16 arduino_uno_vendor_id = 10755;
     static const quint16 arduino_uno_product_id = 67;

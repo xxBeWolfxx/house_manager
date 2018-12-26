@@ -1,4 +1,4 @@
-Light shed
-1
+Light_door
 3
-0
+5
+1

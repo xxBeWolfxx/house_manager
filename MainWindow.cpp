@@ -14,7 +14,9 @@ MainWindow::MainWindow(QWidget *parent) :
     arduino_is_available = false;
     arduino_port_name = "";
     controller = new QSerialPort;
-
+    ui->Button_chandelier->setDisabled(true);
+    ui->Button_light_door->setDisabled(true);
+    ui->Button_light_shed->setDisabled(true);
 
 
 
@@ -35,7 +37,7 @@ void MainWindow::Checkingbox()
     ui->Box_chandelier->setChecked(CheckBoxMarking(chandelier));
     ui->Box_light_door->setChecked(CheckBoxMarking(light_door));
     ui->Box_light_shed->setChecked(CheckBoxMarking(light_shed));
-    ui->Box_chandelier->setDisabled(true);
+    ui->Box_chandelier->setDisabled(true); //to set disabling
     ui->Box_light_door->setDisabled(true);
     ui->Box_light_shed->setDisabled(true);
 
@@ -77,6 +79,8 @@ void MainWindow::on_Button_light_shed_clicked()
     SavingBufor(light_shed, name);
     options = new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+    sending.pin_state=light_shed.pin_state;
+    sending.number_pin=light_shed.number_pin;
 
     window_closing();
     options->show();
@@ -88,9 +92,10 @@ void MainWindow::on_Button_chandelier_clicked()
 {
     QString name="Chandelier";
     SavingBufor(chandelier, name);
-
     options=new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+    sending.pin_state=chandelier.pin_state;
+    sending.number_pin=chandelier.number_pin;
 
     window_closing();
     options->show();
@@ -104,18 +109,24 @@ void MainWindow::on_Button_light_door_clicked()
     SavingBufor(light_door,name);
     options=new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+    sending.pin_state=light_door.pin_state;
+    sending.number_pin=light_door.number_pin;
 
     window_closing();
     options->show();
 }
 void MainWindow::Slotbox() //Sending date
 {
-  /*  QByteArray cos(informacje.toUtf8(),1000); befor add date to QString
+    QString controller_date;
+    controller_date=sending.number_pin;
+    controller_date+=sending.pin_state;
+
+    QByteArray date(controller_date.toUtf8(),1000); //befor add date to QString
     if(controller->isWritable())
     {
 
-       controller->write(cos);
-    } */
+       controller->write(date);
+    }
 
     chandelier.LoadingData();
     light_shed.LoadingData();
@@ -158,9 +169,32 @@ void MainWindow::on_set_arduino_clicked()
             }
         }
     }
-    if(arduino_is_available==true)
-        QMessageBox::information(this,"Uwaga!","Połączenie się powiodło!");
+    if(arduino_is_available)
+    {
+        // open and configure the serialport
+        controller->setPortName(arduino_port_name);
+        controller->open(QSerialPort::WriteOnly);
+        controller->setBaudRate(QSerialPort::Baud9600);
+        controller->setDataBits(QSerialPort::Data8);
+        controller->setParity(QSerialPort::NoParity);
+        controller->setStopBits(QSerialPort::OneStop);
+        controller->setFlowControl(QSerialPort::NoFlowControl);
+    }
     else
-        QMessageBox::information(this,"Uwaga!","Połączenie nie udane");
+    {
+        // give error message if not available
+        QMessageBox::warning(this, "Uwaga!", "Nie wykryto Arduino!");
+    }
+
+    if(controller->isWritable())
+    {
+        QMessageBox::information(this,"Uwaga!","Połączenie się powiodło!");
+        ui->Button_chandelier->setDisabled(false);
+        ui->Button_light_door->setDisabled(false);
+        ui->Button_light_shed->setDisabled(false);
+        controller->write("1");
+    }
+
+
 
 }
