@@ -110,7 +110,7 @@ border-color: black;
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox">
+          <widget class="QCheckBox" name="box_arduino">
            <property name="maximumSize">
             <size>
              <width>80</width>

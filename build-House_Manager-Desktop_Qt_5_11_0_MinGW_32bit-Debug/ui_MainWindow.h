@@ -38,7 +38,7 @@ public:
     QGridLayout *gridLayout_2;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *set_arduino;
-    QCheckBox *checkBox;
+    QCheckBox *box_arduino;
     QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
@@ -146,11 +146,11 @@ public:
 
         horizontalLayout_5->addWidget(set_arduino);
 
-        checkBox = new QCheckBox(menu_view);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setMaximumSize(QSize(80, 16777215));
+        box_arduino = new QCheckBox(menu_view);
+        box_arduino->setObjectName(QString::fromUtf8("box_arduino"));
+        box_arduino->setMaximumSize(QSize(80, 16777215));
 
-        horizontalLayout_5->addWidget(checkBox);
+        horizontalLayout_5->addWidget(box_arduino);
 
         horizontalSpacer_3 = new QSpacerItem(180, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
@@ -367,7 +367,7 @@ public:
         actionSettings->setText(QApplication::translate("MainWindow", "Settings", nullptr));
         actionOnly_staff->setText(QApplication::translate("MainWindow", "Only staff", nullptr));
         set_arduino->setText(QApplication::translate("MainWindow", "Za\305\202\304\205cz ARDUINO", nullptr));
-        checkBox->setText(QApplication::translate("MainWindow", "ARDUINO", nullptr));
+        box_arduino->setText(QApplication::translate("MainWindow", "ARDUINO", nullptr));
         Button_light_shed->setText(QApplication::translate("MainWindow", "Lampa wiata", nullptr));
         Button_chandelier->setText(QApplication::translate("MainWindow", "\305\273yrandol wiata", nullptr));
         Button_light_door->setText(QApplication::translate("MainWindow", "Drzwi", nullptr));

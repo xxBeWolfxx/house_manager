@@ -2,6 +2,7 @@
 #include "ui_MenuForm.h"
 #include <QFile>
 #include <QApplication>
+#include <QDebug>
 
 
 MenuForm::MenuForm(QWidget *parent) :
@@ -21,8 +22,9 @@ MenuForm::MenuForm(QWidget *parent) :
     object=new Arduino;
     counter =new QTimer(this);
     window = new MainWindow(this);
+    controller = new QSerialPort(this);
 
-    QString name=ReadingBufor(object);
+    name=ReadingBufor(object);
     ui->name_object->setText(name);
 
     ui->pinout->setText(object->number_pin);
@@ -76,7 +78,12 @@ void MenuForm::on_Button_save_quit_clicked() //function which saves info
     object->path=QCoreApplication::applicationDirPath();
     object->path=object->path+"/"+QString::number(object->number_object)+".txt";
     object->SavingData();
+    SavingBufor(object);
     emit Sending_Data();
+
+
+
+
     MenuForm::close();
 
 
@@ -105,7 +112,7 @@ void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item) //choosing item f
 
 void MenuForm::on_Button_on_clicked()
 {
-    object->pin_state="1";
+    object->pin_state='1';
 }
 
 void MenuForm::on_Button_off_clicked()
@@ -178,7 +185,8 @@ void MenuForm::counterout()
     if (timer->status==false)
     {
     object->pin_state="1";
-    object->SendingData();
+    SavingBufor(object);
+    emit Sending_Data();
     QTimer::singleShot(timer->duration*60*1000,this,SLOT(stop_timer()));
     QMessageBox::information(this,"","działa");
     }
@@ -187,8 +195,29 @@ void MenuForm::counterout()
 void MenuForm::stop_timer()
 {
     object->pin_state="0";
-    object->SendingData();
+    SavingBufor(object);
+    emit Sending_Data();
     timer->status=true;
     QMessageBox::information(this,"","koniec");
+
+}
+
+void MenuForm::SavingBufor(Arduino *object)
+{
+
+    QFile file(path);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        // qDebug<<"Cant open file";
+        file.close();
+    }
+    QTextStream in(&file);
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    in<<name<<endl;
+    in<<object->number_object<<endl;
+    in<<object->number_pin<<endl;
+    in<<object->pin_state<<endl;
+    file.close();
+
 
 }

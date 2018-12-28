@@ -2,6 +2,7 @@
 #include "ui_MainWindow.h"
 #include <QMessageBox>
 #include <QDebug>
+#include <string.h>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -40,6 +41,7 @@ void MainWindow::Checkingbox()
     ui->Box_chandelier->setDisabled(true); //to set disabling
     ui->Box_light_door->setDisabled(true);
     ui->Box_light_shed->setDisabled(true);
+    ui->box_arduino->setDisabled(true);
 
 }
 
@@ -60,7 +62,7 @@ void MainWindow::SavingBufor(Arduino object, QString name)
     QFile file(path);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
-       // qDebug<<"Cant open file";
+        // qDebug<<"Cant open file";
         file.close();
     }
     QTextStream in(&file);
@@ -79,8 +81,7 @@ void MainWindow::on_Button_light_shed_clicked()
     SavingBufor(light_shed, name);
     options = new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
-    sending.pin_state=light_shed.pin_state;
-    sending.number_pin=light_shed.number_pin;
+
 
     window_closing();
     options->show();
@@ -94,8 +95,6 @@ void MainWindow::on_Button_chandelier_clicked()
     SavingBufor(chandelier, name);
     options=new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
-    sending.pin_state=chandelier.pin_state;
-    sending.number_pin=chandelier.number_pin;
 
     window_closing();
     options->show();
@@ -109,31 +108,31 @@ void MainWindow::on_Button_light_door_clicked()
     SavingBufor(light_door,name);
     options=new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
-    sending.pin_state=light_door.pin_state;
-    sending.number_pin=light_door.number_pin;
+
 
     window_closing();
     options->show();
 }
+
 void MainWindow::Slotbox() //Sending date
 {
-    QString controller_date;
-    controller_date=sending.number_pin;
-    controller_date+=sending.pin_state;
-
-    QByteArray date(controller_date.toUtf8(),1000); //befor add date to QString
-    if(controller->isWritable())
-    {
-
-       controller->write(date);
-    }
-
     chandelier.LoadingData();
     light_shed.LoadingData();
     light_door.LoadingData();
     Checkingbox();
     ui->centralWidget->show();
+
+    Arduino *h_object;
+    h_object= new Arduino;
+    ReadingBufor(h_object);
+    //qDebug()<<h_object->number_pin; to controlle a code
+    //qDebug()<<h_object->pin_state;
+    SendingData(h_object);
+
+
+
 }
+
 void MainWindow::window_closing()
 {
     ui->centralWidget->hide();
@@ -184,6 +183,8 @@ void MainWindow::on_set_arduino_clicked()
     {
         // give error message if not available
         QMessageBox::warning(this, "Uwaga!", "Nie wykryto Arduino!");
+        ui->box_arduino->setChecked(false);
+
     }
 
     if(controller->isWritable())
@@ -193,8 +194,62 @@ void MainWindow::on_set_arduino_clicked()
         ui->Button_light_door->setDisabled(false);
         ui->Button_light_shed->setDisabled(false);
         controller->write("1");
+        controller->waitForBytesWritten(-5);
+        ui->box_arduino->setChecked(true);
+
+
     }
 
 
 
+}
+
+
+void MainWindow::SendingData(Arduino *object)
+{
+    QString controller_date;
+    qDebug()<<object->pin_state;
+    controller_date=object->number_pin;
+    if(object->pin_state=="0")
+        controller_date+="2";
+    else
+        controller_date+=object->pin_state;
+
+    std::string helper=controller_date.toUtf8().constData();
+    QByteArray date=QByteArray::fromStdString(helper);
+    //qDebug()<<date; to controll a code
+    if(controller->isWritable())
+        {
+            controller->flush();
+            controller->waitForBytesWritten(-5);
+            controller->write(date);
+            controller->waitForBytesWritten(-5);
+            controller->clear();
+
+        }
+
+}
+
+void MainWindow::ReadingBufor(Arduino *h_object)
+{
+    QString name;
+    QString path=total_path +"/bufor.txt";
+    QFile file(path);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        // qDebug<<"Cant open file";
+        file.close();
+    }
+    QTextStream in(&file);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    name=in.readLine(100);
+    h_object->number_object=in.readLine(100).toInt();
+    h_object->number_pin=in.readLine(10);
+    h_object->pin_state=in.readLine(10);
+    file.close();
+
+    /* to controlle a code
+    qDebug()<<h_object->number_pin;
+    qDebug()<<h_object->pin_state;
+    */
 }
