@@ -172,7 +172,7 @@ void MainWindow::on_set_arduino_clicked()
     {
         // open and configure the serialport
         controller->setPortName(arduino_port_name);
-        controller->open(QSerialPort::WriteOnly);
+        controller->open(QSerialPort::ReadWrite);
         controller->setBaudRate(QSerialPort::Baud9600);
         controller->setDataBits(QSerialPort::Data8);
         controller->setParity(QSerialPort::NoParity);
@@ -189,13 +189,13 @@ void MainWindow::on_set_arduino_clicked()
 
     if(controller->isWritable())
     {
-        QMessageBox::information(this,"Uwaga!","Połączenie się powiodło!");
         ui->Button_chandelier->setDisabled(false);
         ui->Button_light_door->setDisabled(false);
         ui->Button_light_shed->setDisabled(false);
         controller->write("1");
         controller->waitForBytesWritten(-5);
         ui->box_arduino->setChecked(true);
+        QMessageBox::information(this,"Uwaga!","Połączenie się powiodło!");
 
 
     }

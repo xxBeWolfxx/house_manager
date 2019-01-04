@@ -21,7 +21,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent= nullptr);
     QString total_path;
     Arduino light_shed, chandelier, light_door;
     QSerialPort *controller;

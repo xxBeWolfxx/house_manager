@@ -199,40 +199,6 @@ border-color: black;
            </item>
           </layout>
          </item>
-         <item>
-          <layout class="QGridLayout" name="gridLayout_9">
-           <item row="0" column="0">
-            <widget class="QPushButton" name="pushButton_4">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>40</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Przekaźnik 4</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="0">
-            <widget class="QPushButton" name="pushButton_5">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>40</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Przekaźnik 5</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
         </layout>
        </item>
        <item row="2" column="0">
@@ -360,46 +326,6 @@ background-color: rgb(0, 85, 0);
           <layout class="QGridLayout" name="gridLayout_14">
            <item row="0" column="0" alignment="Qt::AlignHCenter">
             <widget class="QCheckBox" name="Box_light_door">
-             <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
-             </property>
-             <property name="text">
-              <string>Załączony</string>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-             <property name="tristate">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QGridLayout" name="gridLayout_12">
-           <item row="0" column="0" alignment="Qt::AlignHCenter">
-            <widget class="QCheckBox" name="checkBox_3">
-             <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
-             </property>
-             <property name="text">
-              <string>Załączony</string>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-             <property name="tristate">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QGridLayout" name="gridLayout_5">
-           <item row="0" column="0" alignment="Qt::AlignHCenter">
-            <widget class="QCheckBox" name="checkBox_2">
              <property name="layoutDirection">
               <enum>Qt::LeftToRight</enum>
              </property>

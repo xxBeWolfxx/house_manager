@@ -22,7 +22,6 @@ MenuForm::MenuForm(QWidget *parent) :
     object=new Arduino;
     counter =new QTimer(this);
     window = new MainWindow(this);
-    controller = new QSerialPort(this);
 
     name=ReadingBufor(object);
     ui->name_object->setText(name);

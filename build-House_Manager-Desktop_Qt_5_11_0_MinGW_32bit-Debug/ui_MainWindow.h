@@ -47,10 +47,6 @@ public:
     QPushButton *Button_chandelier;
     QGridLayout *gridLayout_8;
     QPushButton *Button_light_door;
-    QGridLayout *gridLayout_9;
-    QPushButton *pushButton_4;
-    QGridLayout *gridLayout_4;
-    QPushButton *pushButton_5;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
@@ -63,10 +59,6 @@ public:
     QCheckBox *Box_chandelier;
     QGridLayout *gridLayout_14;
     QCheckBox *Box_light_door;
-    QGridLayout *gridLayout_12;
-    QCheckBox *checkBox_3;
-    QGridLayout *gridLayout_5;
-    QCheckBox *checkBox_2;
     QMenuBar *menuBar;
     QMenu *menuStaff;
     QToolBar *mainToolBar;
@@ -200,30 +192,6 @@ public:
 
         horizontalLayout->addLayout(gridLayout_8);
 
-        gridLayout_9 = new QGridLayout();
-        gridLayout_9->setSpacing(6);
-        gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
-        pushButton_4 = new QPushButton(menu_view);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setMinimumSize(QSize(0, 40));
-
-        gridLayout_9->addWidget(pushButton_4, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(gridLayout_9);
-
-        gridLayout_4 = new QGridLayout();
-        gridLayout_4->setSpacing(6);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        pushButton_5 = new QPushButton(menu_view);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setMinimumSize(QSize(0, 40));
-
-        gridLayout_4->addWidget(pushButton_5, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(gridLayout_4);
-
 
         gridLayout_2->addLayout(horizontalLayout, 3, 0, 1, 1);
 
@@ -306,34 +274,6 @@ public:
 
         horizontalLayout_3->addLayout(gridLayout_14);
 
-        gridLayout_12 = new QGridLayout();
-        gridLayout_12->setSpacing(6);
-        gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
-        checkBox_3 = new QCheckBox(menu_view);
-        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
-        checkBox_3->setLayoutDirection(Qt::LeftToRight);
-        checkBox_3->setCheckable(true);
-        checkBox_3->setTristate(false);
-
-        gridLayout_12->addWidget(checkBox_3, 0, 0, 1, 1, Qt::AlignHCenter);
-
-
-        horizontalLayout_3->addLayout(gridLayout_12);
-
-        gridLayout_5 = new QGridLayout();
-        gridLayout_5->setSpacing(6);
-        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
-        checkBox_2 = new QCheckBox(menu_view);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
-        checkBox_2->setLayoutDirection(Qt::LeftToRight);
-        checkBox_2->setCheckable(true);
-        checkBox_2->setTristate(false);
-
-        gridLayout_5->addWidget(checkBox_2, 0, 0, 1, 1, Qt::AlignHCenter);
-
-
-        horizontalLayout_3->addLayout(gridLayout_5);
-
 
         gridLayout_2->addLayout(horizontalLayout_3, 4, 0, 1, 1);
 
@@ -371,14 +311,10 @@ public:
         Button_light_shed->setText(QApplication::translate("MainWindow", "Lampa wiata", nullptr));
         Button_chandelier->setText(QApplication::translate("MainWindow", "\305\273yrandol wiata", nullptr));
         Button_light_door->setText(QApplication::translate("MainWindow", "Drzwi", nullptr));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Przeka\305\272nik 4", nullptr));
-        pushButton_5->setText(QApplication::translate("MainWindow", "Przeka\305\272nik 5", nullptr));
         label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600; text-decoration: underline;\">Inteligentny Dom</span></p></body></html>", nullptr));
         Box_light_shed->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         Box_chandelier->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         Box_light_door->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
-        checkBox_3->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
-        checkBox_2->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         menuStaff->setTitle(QApplication::translate("MainWindow", "Staff", nullptr));
     } // retranslateUi
 
