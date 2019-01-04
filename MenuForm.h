@@ -24,9 +24,11 @@ class MenuForm : public QWidget
     Q_OBJECT
 
 public:
-    explicit MenuForm(QWidget *parent = 0);
+    explicit MenuForm(QWidget *parent = nullptr);
     ~MenuForm();
     QString path;
+    QString name;
+    QString xd;
     Arduino *object;
     Arduino h_timer;
     Timer *timer;
@@ -35,7 +37,9 @@ public:
     MainWindow *window;
     int tab_status=0;
 
+
     QString ReadingBufor(Arduino *object);
+    void SavingBufor(Arduino *object);
     void SetTimerList();
     void seting_ui_timer(Timer *timer);
 

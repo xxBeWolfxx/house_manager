@@ -14,14 +14,21 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton
+   <string notr="true">QPushButton:pressed
 {
-background-color: grey;
+background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));
 border-style: outset;
 border-width: 2px;
 border-radius: 10px;
 border-color: black;
-
+}
+QPushButton
+{
+background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(2, 255, 0, 255), stop:0.552885 rgba(7, 153, 0, 255), stop:0.995192 rgba(41, 81, 0, 255), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
 }</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget_4">
@@ -129,7 +136,7 @@ QTabBar::tab:only-one {
 </string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <property name="movable">
     <bool>true</bool>
@@ -168,10 +175,10 @@ QTabBar::tab:only-one {
 {
 border-style: outset;
 border-width: 2px;
-
+color:white;
 border-radius: 10px;
 border-color: black;
-background-color: grey;
+background-color: rgb(0, 85, 0);
 }</string>
           </property>
           <property name="text">
@@ -238,10 +245,10 @@ background-color: white;
 {
 border-style: outset;
 border-width: 2px;
-
+color:white;
 border-radius: 10px;
 border-color: black;
-background-color: grey;
+background-color: rgb(0, 85, 0);
 }</string>
             </property>
             <property name="text">
@@ -423,10 +430,10 @@ background-color: white;
 {
 border-style: outset;
 border-width: 2px;
-
+color:white;
 border-radius: 10px;
 border-color: black;
-background-color: grey;
+background-color: rgb(0, 85, 0);
 }</string>
           </property>
           <property name="text">
@@ -472,10 +479,10 @@ background-color: white;
 {
 border-style: outset;
 border-width: 2px;
-
+color:white;
 border-radius: 10px;
 border-color: black;
-background-color: grey;
+background-color: rgb(0, 85, 0);
 }</string>
           </property>
           <property name="text">
@@ -568,10 +575,10 @@ background-color: white;
 {
 border-style: outset;
 border-width: 2px;
-
+color:white;
 border-radius: 10px;
 border-color: black;
-background-color: grey;
+background-color: rgb(0, 85, 0);
 }</string>
           </property>
           <property name="text">
@@ -603,11 +610,12 @@ background-color: grey;
           <property name="styleSheet">
            <string notr="true">QLabel
 {
+color:white;
 border-style: outset;
 border-width: 2px;
 border-radius: 10px;
 border-color: black;
-background-color: grey;
+background-color: rgb(0, 85, 0);
 }</string>
           </property>
           <property name="text">

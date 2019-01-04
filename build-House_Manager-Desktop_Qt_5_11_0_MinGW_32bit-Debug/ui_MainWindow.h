@@ -34,10 +34,11 @@ public:
     QWidget *centralWidget;
     QWidget *menu_view;
     QGridLayout *window;
+    QSpacerItem *verticalSpacer_3;
     QGridLayout *gridLayout_2;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *set_arduino;
-    QCheckBox *checkBox;
+    QCheckBox *box_arduino;
     QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
@@ -46,10 +47,6 @@ public:
     QPushButton *Button_chandelier;
     QGridLayout *gridLayout_8;
     QPushButton *Button_light_door;
-    QGridLayout *gridLayout_9;
-    QPushButton *pushButton_4;
-    QGridLayout *gridLayout_4;
-    QPushButton *pushButton_5;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
@@ -62,11 +59,6 @@ public:
     QCheckBox *Box_chandelier;
     QGridLayout *gridLayout_14;
     QCheckBox *Box_light_door;
-    QGridLayout *gridLayout_12;
-    QCheckBox *checkBox_3;
-    QGridLayout *gridLayout_5;
-    QCheckBox *checkBox_2;
-    QSpacerItem *verticalSpacer_3;
     QMenuBar *menuBar;
     QMenu *menuStaff;
     QToolBar *mainToolBar;
@@ -96,14 +88,31 @@ public:
         actionOnly_staff->setObjectName(QString::fromUtf8("actionOnly_staff"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        centralWidget->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        centralWidget->setStyleSheet(QString::fromUtf8("QPushButton:pressed\n"
 "{\n"
+"background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
-"}"));
+"}\n"
+"QPushButton:disabled\n"
+"{\n"
+"background-color: qconicalgradient(cx:0.504808, cy:0.0795455, angle:332.19, stop:0.0913462 rgba(0, 255, 5, 227), stop:0.533654 rgba(0, 255, 101, 236), stop:0.846154 rgba(0, 255, 98, 238));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: black;\n"
+"}\n"
+"QPushButton\n"
+"{\n"
+"background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(2, 255, 0, 255), stop:0.552885 rgba(7, 153, 0, 255), stop:0.995192 rgba(41, 81, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: black;\n"
+"}\n"
+"	"));
         menu_view = new QWidget(centralWidget);
         menu_view->setObjectName(QString::fromUtf8("menu_view"));
         menu_view->setGeometry(QRect(0, 0, 621, 351));
@@ -111,6 +120,10 @@ public:
         window->setSpacing(6);
         window->setContentsMargins(11, 11, 11, 11);
         window->setObjectName(QString::fromUtf8("window"));
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        window->addItem(verticalSpacer_3, 0, 0, 1, 1);
+
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(6);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
@@ -121,16 +134,17 @@ public:
         set_arduino->setObjectName(QString::fromUtf8("set_arduino"));
         set_arduino->setMinimumSize(QSize(0, 30));
         set_arduino->setMaximumSize(QSize(300, 16777215));
+        set_arduino->setStyleSheet(QString::fromUtf8(""));
 
         horizontalLayout_5->addWidget(set_arduino);
 
-        checkBox = new QCheckBox(menu_view);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setMaximumSize(QSize(80, 16777215));
+        box_arduino = new QCheckBox(menu_view);
+        box_arduino->setObjectName(QString::fromUtf8("box_arduino"));
+        box_arduino->setMaximumSize(QSize(80, 16777215));
 
-        horizontalLayout_5->addWidget(checkBox);
+        horizontalLayout_5->addWidget(box_arduino);
 
-        horizontalSpacer_3 = new QSpacerItem(200, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(180, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         horizontalLayout_5->addItem(horizontalSpacer_3);
 
@@ -178,30 +192,6 @@ public:
 
         horizontalLayout->addLayout(gridLayout_8);
 
-        gridLayout_9 = new QGridLayout();
-        gridLayout_9->setSpacing(6);
-        gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
-        pushButton_4 = new QPushButton(menu_view);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setMinimumSize(QSize(0, 40));
-
-        gridLayout_9->addWidget(pushButton_4, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(gridLayout_9);
-
-        gridLayout_4 = new QGridLayout();
-        gridLayout_4->setSpacing(6);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        pushButton_5 = new QPushButton(menu_view);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setMinimumSize(QSize(0, 40));
-
-        gridLayout_4->addWidget(pushButton_5, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(gridLayout_4);
-
 
         gridLayout_2->addLayout(horizontalLayout, 3, 0, 1, 1);
 
@@ -223,10 +213,10 @@ public:
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_2->addWidget(label);
@@ -284,43 +274,11 @@ public:
 
         horizontalLayout_3->addLayout(gridLayout_14);
 
-        gridLayout_12 = new QGridLayout();
-        gridLayout_12->setSpacing(6);
-        gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
-        checkBox_3 = new QCheckBox(menu_view);
-        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
-        checkBox_3->setLayoutDirection(Qt::LeftToRight);
-        checkBox_3->setCheckable(true);
-        checkBox_3->setTristate(false);
-
-        gridLayout_12->addWidget(checkBox_3, 0, 0, 1, 1, Qt::AlignHCenter);
-
-
-        horizontalLayout_3->addLayout(gridLayout_12);
-
-        gridLayout_5 = new QGridLayout();
-        gridLayout_5->setSpacing(6);
-        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
-        checkBox_2 = new QCheckBox(menu_view);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
-        checkBox_2->setLayoutDirection(Qt::LeftToRight);
-        checkBox_2->setCheckable(true);
-        checkBox_2->setTristate(false);
-
-        gridLayout_5->addWidget(checkBox_2, 0, 0, 1, 1, Qt::AlignHCenter);
-
-
-        horizontalLayout_3->addLayout(gridLayout_5);
-
 
         gridLayout_2->addLayout(horizontalLayout_3, 4, 0, 1, 1);
 
 
         window->addLayout(gridLayout_2, 1, 0, 1, 1);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        window->addItem(verticalSpacer_3, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -349,18 +307,14 @@ public:
         actionSettings->setText(QApplication::translate("MainWindow", "Settings", nullptr));
         actionOnly_staff->setText(QApplication::translate("MainWindow", "Only staff", nullptr));
         set_arduino->setText(QApplication::translate("MainWindow", "Za\305\202\304\205cz ARDUINO", nullptr));
-        checkBox->setText(QApplication::translate("MainWindow", "ARDUINO", nullptr));
+        box_arduino->setText(QApplication::translate("MainWindow", "ARDUINO", nullptr));
         Button_light_shed->setText(QApplication::translate("MainWindow", "Lampa wiata", nullptr));
         Button_chandelier->setText(QApplication::translate("MainWindow", "\305\273yrandol wiata", nullptr));
         Button_light_door->setText(QApplication::translate("MainWindow", "Drzwi", nullptr));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Przeka\305\272nik 4", nullptr));
-        pushButton_5->setText(QApplication::translate("MainWindow", "Przeka\305\272nik 5", nullptr));
         label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600; text-decoration: underline;\">Inteligentny Dom</span></p></body></html>", nullptr));
         Box_light_shed->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         Box_chandelier->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         Box_light_door->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
-        checkBox_3->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
-        checkBox_2->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         menuStaff->setTitle(QApplication::translate("MainWindow", "Staff", nullptr));
     } // retranslateUi
 
