@@ -8,9 +8,11 @@
 #include <QSerialPortInfo>
 #include "MenuForm.h"
 #include "Arduino.h"
+#include "Staff.h"
 
 
 class MenuForm;
+class Staff;
 
 namespace Ui {
 class MainWindow;
