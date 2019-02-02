@@ -219,14 +219,14 @@ void MainWindow::SendingData(Arduino *object)
     QByteArray date=QByteArray::fromStdString(helper);
     //qDebug()<<date; to controll a code
     if(controller->isWritable())
-        {
-            controller->flush();
-            controller->waitForBytesWritten(-5);
-            controller->write(date);
-            controller->waitForBytesWritten(-5);
-            controller->clear();
+    {
+        controller->flush();
+        controller->waitForBytesWritten(-5);
+        controller->write(date);
+        controller->waitForBytesWritten(-5);
+        controller->clear();
 
-        }
+    }
 
 }
 
@@ -252,4 +252,25 @@ void MainWindow::ReadingBufor(Arduino *h_object)
     qDebug()<<h_object->number_pin;
     qDebug()<<h_object->pin_state;
     */
+}
+
+void MainWindow::ReceiveData()
+{
+    QByteArray *data;
+    data= new QByteArray;
+    if (controller->isWritable())
+    {
+        controller->flush();
+        controller->waitForBytesWritten(-5);
+        controller->write("6");
+        controller->waitForBytesWritten(-5);
+        controller->clear();
+
+        if(controller->isReadable())
+        {
+            controller->flush();
+            controller->waitForReadyRead(-5);
+            //controller->read(data);
+        }
+    }
 }

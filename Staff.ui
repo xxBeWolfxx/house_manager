@@ -57,6 +57,9 @@
        <height>131</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -363,8 +366,8 @@
      <y>266</y>
     </hint>
     <hint type="destinationlabel">
-     <x>402</x>
-     <y>194</y>
+     <x>404</x>
+     <y>191</y>
     </hint>
    </hints>
   </connection>
