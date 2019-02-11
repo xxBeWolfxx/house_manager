@@ -28,7 +28,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MenuForm
 {
 public:
-    QWidget *verticalLayoutWidget_4;
+    QHBoxLayout *horizontalLayout_6;
     QVBoxLayout *verticalLayout_5;
     QListWidget *timerlist;
     QProgressBar *progressBar;
@@ -81,7 +81,7 @@ public:
     {
         if (MenuForm->objectName().isEmpty())
             MenuForm->setObjectName(QString::fromUtf8("MenuForm"));
-        MenuForm->resize(626, 411);
+        MenuForm->resize(1142, 677);
         MenuForm->setStyleSheet(QString::fromUtf8("QPushButton:pressed\n"
 "{\n"
 "background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
@@ -98,18 +98,16 @@ public:
 "border-radius: 10px;\n"
 "border-color: black;\n"
 "}"));
-        verticalLayoutWidget_4 = new QWidget(MenuForm);
-        verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(0, 0, 261, 381));
-        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_4);
+        horizontalLayout_6 = new QHBoxLayout(MenuForm);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        timerlist = new QListWidget(verticalLayoutWidget_4);
+        timerlist = new QListWidget(MenuForm);
         timerlist->setObjectName(QString::fromUtf8("timerlist"));
 
         verticalLayout_5->addWidget(timerlist);
 
-        progressBar = new QProgressBar(verticalLayoutWidget_4);
+        progressBar = new QProgressBar(MenuForm);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
         progressBar->setValue(0);
         progressBar->setTextVisible(false);
@@ -123,9 +121,11 @@ public:
 
         verticalLayout_5->addItem(verticalSpacer);
 
+
+        horizontalLayout_6->addLayout(verticalLayout_5);
+
         tabWidget = new QTabWidget(MenuForm);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(260, 0, 361, 381));
         tabWidget->setStyleSheet(QString::fromUtf8("QTabWidget::tab-bar {\n"
 "    left: 120%; \n"
 "}\n"
@@ -175,7 +175,7 @@ public:
         tab->setObjectName(QString::fromUtf8("tab"));
         verticalLayoutWidget_3 = new QWidget(tab);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(20, 10, 331, 331));
+        verticalLayoutWidget_3->setGeometry(QRect(20, 10, 521, 601));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -297,7 +297,7 @@ public:
         Timer->setObjectName(QString::fromUtf8("Timer"));
         verticalLayoutWidget_2 = new QWidget(Timer);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(20, 10, 331, 301));
+        verticalLayoutWidget_2->setGeometry(QRect(20, 10, 511, 591));
         verticalLayout_11 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
         verticalLayout_11->setContentsMargins(0, 0, 0, 0);
@@ -427,7 +427,7 @@ public:
         Settings->setObjectName(QString::fromUtf8("Settings"));
         verticalLayoutWidget = new QWidget(Settings);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(30, 0, 311, 221));
+        verticalLayoutWidget->setGeometry(QRect(30, 0, 501, 611));
         verticalLayout_10 = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
         verticalLayout_10->setContentsMargins(0, 0, 0, 0);
@@ -495,6 +495,9 @@ public:
         verticalLayout_10->addLayout(horizontalLayout);
 
         tabWidget->addTab(Settings, QString());
+
+        horizontalLayout_6->addWidget(tabWidget);
+
 
         retranslateUi(MenuForm);
 

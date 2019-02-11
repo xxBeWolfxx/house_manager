@@ -43,10 +43,11 @@ public:
     void SavingBufor(Arduino object, QString name);
     void ReadingBufor(Arduino *h_object);
     void Checkingbox();
+    void ReceiveData();
 
     ~MainWindow();
 public slots:
-   void Slotbox();
+    void Slotbox();
 
 private slots:
 
