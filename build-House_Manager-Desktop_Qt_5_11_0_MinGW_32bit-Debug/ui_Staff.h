@@ -11,10 +11,13 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QDial>
-#include <QtWidgets/QFrame>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,7 +25,10 @@ QT_BEGIN_NAMESPACE
 class Ui_Staff
 {
 public:
-    QFrame *frame;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout;
+    QCalendarWidget *calendarWidget;
+    QSpacerItem *horizontalSpacer_2;
     QTabWidget *tabWidget;
     QWidget *tab;
     QDial *temp_1;
@@ -44,15 +50,25 @@ public:
     {
         if (Staff->objectName().isEmpty())
             Staff->setObjectName(QString::fromUtf8("Staff"));
-        Staff->resize(803, 533);
-        frame = new QFrame(Staff);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(-1, -1, 291, 531));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
+        Staff->resize(1141, 646);
+        horizontalLayout = new QHBoxLayout(Staff);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        calendarWidget = new QCalendarWidget(Staff);
+        calendarWidget->setObjectName(QString::fromUtf8("calendarWidget"));
+
+        verticalLayout->addWidget(calendarWidget);
+
+
+        horizontalLayout->addLayout(verticalLayout);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
+
         tabWidget = new QTabWidget(Staff);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(290, 0, 511, 531));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
         temp_1 = new QDial(tab);
@@ -136,6 +152,9 @@ public:
         dial_6->setNotchesVisible(true);
         tabWidget->addTab(tab_3, QString());
 
+        horizontalLayout->addWidget(tabWidget);
+
+
         retranslateUi(Staff);
         QObject::connect(temp_2, SIGNAL(valueChanged(int)), lcd_temp_2, SLOT(display(int)));
         QObject::connect(temp_1, SIGNAL(valueChanged(int)), lcd_temp_1, SLOT(display(int)));
@@ -144,7 +163,7 @@ public:
         QObject::connect(dial_5, SIGNAL(valueChanged(int)), lcdNumber_6, SLOT(display(int)));
         QObject::connect(dial_6, SIGNAL(valueChanged(int)), lcdNumber_5, SLOT(display(int)));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Staff);

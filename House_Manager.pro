@@ -30,14 +30,16 @@ SOURCES += \
     MenuForm.cpp \
     Arduino.cpp \
     Timer.cpp \
-    Staff.cpp
+    Staff.cpp \
+    TransferData.cpp
 
 HEADERS += \
         MainWindow.h \
     MenuForm.h \
     Arduino.h \
     Timer.h \
-    Staff.h
+    Staff.h \
+    TransferData.h
 
 FORMS += \
         MainWindow.ui \
