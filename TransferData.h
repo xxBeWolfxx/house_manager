@@ -10,15 +10,18 @@ class TransferData : public Arduino
 public:
     int arduino_id;
     QString arduino_port_name;
+    QString com;
+    QString value;
+    int tab_value[6];
 
+    TransferData();
 
-    TransferData(Arduino Object_receiver, int arduino_id, QString total_path, QString arduino_port_name);
+    void TranscriptValue(QString value);
 
 public slots:
-    void ReceiveData();
+    void ReceiveData(Arduino *object, QString arduino_port_name, int arduino_id, QString com, QString value);
 
-public signals:
-    void SendData();
+
 
 };
 

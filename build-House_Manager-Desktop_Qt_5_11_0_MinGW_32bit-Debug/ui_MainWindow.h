@@ -178,7 +178,7 @@ public:
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        horizontalSpacer_8 = new QSpacerItem(100, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+        horizontalSpacer_8 = new QSpacerItem(100, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
 
         horizontalLayout_3->addItem(horizontalSpacer_8);
 
@@ -192,8 +192,11 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(Box_light_shed->sizePolicy().hasHeightForWidth());
         Box_light_shed->setSizePolicy(sizePolicy2);
+        QFont font;
+        font.setPointSize(16);
+        Box_light_shed->setFont(font);
         Box_light_shed->setLayoutDirection(Qt::LeftToRight);
-        Box_light_shed->setIconSize(QSize(40, 40));
+        Box_light_shed->setIconSize(QSize(50, 50));
         Box_light_shed->setCheckable(true);
         Box_light_shed->setTristate(false);
 
@@ -202,7 +205,7 @@ public:
 
         horizontalLayout_3->addLayout(gridLayout_10);
 
-        horizontalSpacer_6 = new QSpacerItem(80, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+        horizontalSpacer_6 = new QSpacerItem(80, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_3->addItem(horizontalSpacer_6);
 
@@ -213,6 +216,7 @@ public:
         Box_chandelier->setObjectName(QString::fromUtf8("Box_chandelier"));
         sizePolicy2.setHeightForWidth(Box_chandelier->sizePolicy().hasHeightForWidth());
         Box_chandelier->setSizePolicy(sizePolicy2);
+        Box_chandelier->setFont(font);
         Box_chandelier->setLayoutDirection(Qt::LeftToRight);
         Box_chandelier->setStyleSheet(QString::fromUtf8(""));
         Box_chandelier->setCheckable(true);
@@ -223,7 +227,7 @@ public:
 
         horizontalLayout_3->addLayout(gridLayout_13);
 
-        horizontalSpacer_7 = new QSpacerItem(80, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+        horizontalSpacer_7 = new QSpacerItem(80, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_3->addItem(horizontalSpacer_7);
 
@@ -234,13 +238,14 @@ public:
         Box_light_door->setObjectName(QString::fromUtf8("Box_light_door"));
         sizePolicy2.setHeightForWidth(Box_light_door->sizePolicy().hasHeightForWidth());
         Box_light_door->setSizePolicy(sizePolicy2);
+        Box_light_door->setFont(font);
         Box_light_door->setLayoutDirection(Qt::LeftToRight);
         Box_light_door->setCheckable(true);
         Box_light_door->setTristate(false);
 
         gridLayout_14->addWidget(Box_light_door, 0, 0, 1, 1, Qt::AlignHCenter);
 
-        horizontalSpacer_9 = new QSpacerItem(100, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+        horizontalSpacer_9 = new QSpacerItem(100, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
 
         gridLayout_14->addItem(horizontalSpacer_9, 0, 1, 1, 1);
 
@@ -365,7 +370,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1135, 25));
+        menuBar->setGeometry(QRect(0, 0, 1135, 20));
         menuStaff = new QMenu(menuBar);
         menuStaff->setObjectName(QString::fromUtf8("menuStaff"));
         MainWindow->setMenuBar(menuBar);

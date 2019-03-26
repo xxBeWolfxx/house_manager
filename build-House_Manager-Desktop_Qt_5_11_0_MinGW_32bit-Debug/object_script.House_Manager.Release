@@ -4,6 +4,7 @@ release/MenuForm.o
 release/Arduino.o
 release/Timer.o
 release/Staff.o
+release/TransferData.o
 release/qrc_database.o
 release/moc_MainWindow.o
 release/moc_MenuForm.o

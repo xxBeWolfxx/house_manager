@@ -1,11 +1,26 @@
 #include "TransferData.h"
 
-TransferData::TransferData(Arduino Object_receiver, int arduino_id, QString total_path, QString arduino_port_name)
+
+TransferData::TransferData()
 {
-    this->path=total_path;
-    this->pin_state=Object_receiver.pin_state;
-    this->total_number_pin=Object_receiver.total_number_pin;
+
+}
+
+void TransferData::ReceiveData(Arduino *object, QString arduino_port_name, int arduino_id,QString com,QString value)
+{
+    this->path=object->path;
+    this->total_number_pin=object->total_number_pin;
     this->arduino_id=arduino_id;
     this->arduino_port_name=arduino_port_name;
+    this->value=value;
+    this->com=com;
+}
+void TransferData::TranscriptValue(QString value)
+{
+    for (int i = 0; i < value.size(); ++i)
+    {
+       if(value.at(i)==";")
 
+
+    }
 }

@@ -19,6 +19,8 @@ class Staff : public QWidget
 public:
     explicit Staff(QWidget *parent = nullptr);
     ~Staff();
+    int value_foto;
+    int
 
 private:
     Ui::Staff *ui;

@@ -5,6 +5,7 @@ Staff::Staff(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Staff)
 {
+
     ui->setupUi(this);
 }
 

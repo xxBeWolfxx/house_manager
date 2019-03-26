@@ -20,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->Button_light_shed->setDisabled(true);
 
 
-
     light_shed.LoadingData();
     chandelier.LoadingData();
     light_door.LoadingData();

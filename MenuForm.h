@@ -28,7 +28,6 @@ public:
     ~MenuForm();
     QString path;
     QString name;
-    QString xd;
     Arduino *object;
     Arduino h_timer;
     Timer *timer;
