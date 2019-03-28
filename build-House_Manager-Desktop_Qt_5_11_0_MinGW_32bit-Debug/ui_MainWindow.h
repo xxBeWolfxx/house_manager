@@ -156,6 +156,9 @@ public:
         sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy1);
         label->setMaximumSize(QSize(16777215, 100));
+        QFont font;
+        font.setPointSize(20);
+        label->setFont(font);
         label->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-style: outset;\n"
@@ -165,6 +168,7 @@ public:
 "border-color: black;\n"
 "background-color: rgb(0, 85, 0);\n"
 "}"));
+        label->setFrameShape(QFrame::NoFrame);
 
         horizontalLayout_2->addWidget(label);
 
@@ -178,7 +182,7 @@ public:
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        horizontalSpacer_8 = new QSpacerItem(100, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+        horizontalSpacer_8 = new QSpacerItem(250, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         horizontalLayout_3->addItem(horizontalSpacer_8);
 
@@ -192,9 +196,9 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(Box_light_shed->sizePolicy().hasHeightForWidth());
         Box_light_shed->setSizePolicy(sizePolicy2);
-        QFont font;
-        font.setPointSize(16);
-        Box_light_shed->setFont(font);
+        QFont font1;
+        font1.setPointSize(16);
+        Box_light_shed->setFont(font1);
         Box_light_shed->setLayoutDirection(Qt::LeftToRight);
         Box_light_shed->setIconSize(QSize(50, 50));
         Box_light_shed->setCheckable(true);
@@ -216,7 +220,7 @@ public:
         Box_chandelier->setObjectName(QString::fromUtf8("Box_chandelier"));
         sizePolicy2.setHeightForWidth(Box_chandelier->sizePolicy().hasHeightForWidth());
         Box_chandelier->setSizePolicy(sizePolicy2);
-        Box_chandelier->setFont(font);
+        Box_chandelier->setFont(font1);
         Box_chandelier->setLayoutDirection(Qt::LeftToRight);
         Box_chandelier->setStyleSheet(QString::fromUtf8(""));
         Box_chandelier->setCheckable(true);
@@ -238,14 +242,14 @@ public:
         Box_light_door->setObjectName(QString::fromUtf8("Box_light_door"));
         sizePolicy2.setHeightForWidth(Box_light_door->sizePolicy().hasHeightForWidth());
         Box_light_door->setSizePolicy(sizePolicy2);
-        Box_light_door->setFont(font);
+        Box_light_door->setFont(font1);
         Box_light_door->setLayoutDirection(Qt::LeftToRight);
         Box_light_door->setCheckable(true);
         Box_light_door->setTristate(false);
 
         gridLayout_14->addWidget(Box_light_door, 0, 0, 1, 1, Qt::AlignHCenter);
 
-        horizontalSpacer_9 = new QSpacerItem(100, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+        horizontalSpacer_9 = new QSpacerItem(250, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         gridLayout_14->addItem(horizontalSpacer_9, 0, 1, 1, 1);
 
@@ -271,6 +275,9 @@ public:
         set_arduino->setSizePolicy(sizePolicy3);
         set_arduino->setMinimumSize(QSize(0, 30));
         set_arduino->setMaximumSize(QSize(1000, 80));
+        QFont font2;
+        font2.setPointSize(18);
+        set_arduino->setFont(font2);
         set_arduino->setStyleSheet(QString::fromUtf8(""));
 
         horizontalLayout_5->addWidget(set_arduino);
@@ -305,6 +312,7 @@ public:
         Button_light_shed->setSizePolicy(sizePolicy);
         Button_light_shed->setMinimumSize(QSize(0, 40));
         Button_light_shed->setMaximumSize(QSize(250, 300));
+        Button_light_shed->setFont(font2);
         Button_light_shed->setCheckable(true);
         Button_light_shed->setChecked(false);
 
@@ -329,6 +337,7 @@ public:
         Button_chandelier->setSizePolicy(sizePolicy5);
         Button_chandelier->setMinimumSize(QSize(0, 40));
         Button_chandelier->setMaximumSize(QSize(250, 300));
+        Button_chandelier->setFont(font2);
 
         gridLayout_7->addWidget(Button_chandelier, 0, 0, 1, 1);
 
@@ -348,6 +357,7 @@ public:
         Button_light_door->setSizePolicy(sizePolicy5);
         Button_light_door->setMinimumSize(QSize(20, 40));
         Button_light_door->setMaximumSize(QSize(250, 300));
+        Button_light_door->setFont(font2);
 
         gridLayout_8->addWidget(Button_light_door, 0, 0, 1, 1);
 
@@ -393,7 +403,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         actionSettings->setText(QApplication::translate("MainWindow", "Settings", nullptr));
         actionOnly_staff->setText(QApplication::translate("MainWindow", "Only staff", nullptr));
-        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600; text-decoration: underline;\">Inteligentny Dom</span></p></body></html>", nullptr));
+        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:28pt; font-weight:600; text-decoration: underline;\">Inteligentny Dom</span></p></body></html>", nullptr));
         Box_light_shed->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         Box_chandelier->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));
         Box_light_door->setText(QApplication::translate("MainWindow", "Za\305\202\304\205czony", nullptr));

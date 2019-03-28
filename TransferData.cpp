@@ -15,12 +15,8 @@ void TransferData::ReceiveData(Arduino *object, QString arduino_port_name, int a
     this->value=value;
     this->com=com;
 }
-void TransferData::TranscriptValue(QString value)
+void TransferData::TranscriptValue(QString value, Arduino *object)
 {
-    for (int i = 0; i < value.size(); ++i)
-    {
-       if(value.at(i)==";")
+    QStringList lista_values = value.split(';',QString::SkipEmptyParts);
 
-
-    }
 }

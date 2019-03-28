@@ -13,6 +13,12 @@ public:
     QString pin_state;
     QString number_pin;
     QString path;
+    //variables for inputs
+    int temp1;
+    int temp2;
+    int foto1;
+    int foto2;
+
 
     void SavingData();
     void LoadingData();

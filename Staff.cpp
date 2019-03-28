@@ -7,6 +7,10 @@ Staff::Staff(QWidget *parent) :
 {
 
     ui->setupUi(this);
+
+
+
+    staff_object = new Arduino;
 }
 
 Staff::~Staff()

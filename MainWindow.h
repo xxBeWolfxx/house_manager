@@ -9,6 +9,7 @@
 #include "MenuForm.h"
 #include "Arduino.h"
 #include "Staff.h"
+#include "TransferData.h"
 
 
 class MenuForm;
