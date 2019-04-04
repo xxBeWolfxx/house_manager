@@ -3,6 +3,8 @@
 
 
 #include <QWidget>
+#include "Arduino.h"
+#include "TransferData.h"
 
 
 
@@ -19,6 +21,9 @@ class Staff : public QWidget
 public:
     explicit Staff(QWidget *parent = nullptr);
     ~Staff();
+    int value_foto;
+    Arduino *staff_object;
+
 
 private:
     Ui::Staff *ui;

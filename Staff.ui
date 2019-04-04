@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1141</width>
-    <height>646</height>
+    <height>648</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,94 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QCalendarWidget" name="calendarWidget"/>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Arduino ID:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="ID">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>COM:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="COM">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>INPUTS/OYTPUTS:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QRadioButton" name="radioButton">
+             <property name="text">
+              <string>Object 1</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButton_2">
+             <property name="text">
+              <string>Object 2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButton_3">
+             <property name="text">
+              <string>Object 3</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButton_4">
+             <property name="text">
+              <string>Foto resistor</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButton_5">
+             <property name="text">
+              <string>RadioButton</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
@@ -40,89 +127,68 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
+      <property name="minimumSize">
+       <size>
+        <width>531</width>
+        <height>601</height>
+       </size>
+      </property>
       <attribute name="title">
        <string>Temperatura</string>
       </attribute>
-      <widget class="QDial" name="temp_1">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
+      <widget class="QLCDNumber" name="lcd_temp_2">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>170</y>
-         <width>121</width>
-         <height>131</height>
+         <x>350</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
         </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="invertedAppearance">
-        <bool>false</bool>
-       </property>
-       <property name="invertedControls">
-        <bool>false</bool>
-       </property>
-       <property name="wrapping">
-        <bool>false</bool>
-       </property>
-       <property name="notchesVisible">
-        <bool>true</bool>
        </property>
       </widget>
-      <widget class="QDial" name="temp_2">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
+      <widget class="QProgressBar" name="temp_bar2">
        <property name="geometry">
         <rect>
-         <x>340</x>
-         <y>170</y>
-         <width>121</width>
-         <height>131</height>
+         <x>390</x>
+         <y>160</y>
+         <width>31</width>
+         <height>331</height>
         </rect>
        </property>
+       <property name="value">
+        <number>24</number>
+       </property>
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="invertedAppearance">
-        <bool>false</bool>
-       </property>
-       <property name="invertedControls">
-        <bool>false</bool>
-       </property>
-       <property name="wrapping">
-        <bool>false</bool>
-       </property>
-       <property name="notchesVisible">
-        <bool>true</bool>
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
       <widget class="QLCDNumber" name="lcd_temp_1">
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>130</y>
+         <y>100</y>
          <width>101</width>
          <height>31</height>
         </rect>
        </property>
       </widget>
-      <widget class="QLCDNumber" name="lcd_temp_2">
+      <widget class="QProgressBar" name="temp_bar1">
        <property name="geometry">
         <rect>
-         <x>350</x>
-         <y>130</y>
-         <width>101</width>
-         <height>31</height>
+         <x>100</x>
+         <y>160</y>
+         <width>31</width>
+         <height>331</height>
         </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </widget>
@@ -134,76 +200,52 @@
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>130</y>
+         <y>100</y>
          <width>101</width>
          <height>31</height>
         </rect>
-       </property>
-      </widget>
-      <widget class="QDial" name="bright_2">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>340</x>
-         <y>170</y>
-         <width>121</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="invertedAppearance">
-        <bool>false</bool>
-       </property>
-       <property name="invertedControls">
-        <bool>false</bool>
-       </property>
-       <property name="wrapping">
-        <bool>false</bool>
-       </property>
-       <property name="notchesVisible">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QDial" name="bright_1">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>170</y>
-         <width>121</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="invertedAppearance">
-        <bool>false</bool>
-       </property>
-       <property name="invertedControls">
-        <bool>false</bool>
-       </property>
-       <property name="wrapping">
-        <bool>false</bool>
-       </property>
-       <property name="notchesVisible">
-        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLCDNumber" name="lcd_bright_2">
        <property name="geometry">
         <rect>
          <x>350</x>
-         <y>130</y>
+         <y>100</y>
          <width>101</width>
          <height>31</height>
         </rect>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="bright_bar1">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>160</y>
+         <width>31</width>
+         <height>331</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="bright_bar2">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>160</y>
+         <width>31</width>
+         <height>331</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </widget>
@@ -215,76 +257,52 @@
        <property name="geometry">
         <rect>
          <x>350</x>
-         <y>130</y>
+         <y>100</y>
          <width>101</width>
          <height>31</height>
         </rect>
-       </property>
-      </widget>
-      <widget class="QDial" name="dial_5">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>170</y>
-         <width>121</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="invertedAppearance">
-        <bool>false</bool>
-       </property>
-       <property name="invertedControls">
-        <bool>false</bool>
-       </property>
-       <property name="wrapping">
-        <bool>false</bool>
-       </property>
-       <property name="notchesVisible">
-        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLCDNumber" name="lcdNumber_6">
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>130</y>
+         <y>100</y>
          <width>101</width>
          <height>31</height>
         </rect>
        </property>
       </widget>
-      <widget class="QDial" name="dial_6">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
+      <widget class="QProgressBar" name="progressBar_5">
        <property name="geometry">
         <rect>
-         <x>340</x>
-         <y>170</y>
-         <width>121</width>
-         <height>131</height>
+         <x>100</x>
+         <y>160</y>
+         <width>31</width>
+         <height>331</height>
         </rect>
        </property>
+       <property name="value">
+        <number>24</number>
+       </property>
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Vertical</enum>
        </property>
-       <property name="invertedAppearance">
-        <bool>false</bool>
+      </widget>
+      <widget class="QProgressBar" name="progressBar_6">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>160</y>
+         <width>31</width>
+         <height>331</height>
+        </rect>
        </property>
-       <property name="invertedControls">
-        <bool>false</bool>
+       <property name="value">
+        <number>24</number>
        </property>
-       <property name="wrapping">
-        <bool>false</bool>
-       </property>
-       <property name="notchesVisible">
-        <bool>true</bool>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </widget>
@@ -295,98 +313,98 @@
  <resources/>
  <connections>
   <connection>
-   <sender>temp_2</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>lcd_temp_2</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>659</x>
-     <y>315</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>693</x>
-     <y>181</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>temp_1</sender>
+   <sender>temp_bar1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcd_temp_1</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>425</x>
-     <y>307</y>
+     <x>717</x>
+     <y>235</y>
     </hint>
     <hint type="destinationlabel">
-     <x>396</x>
-     <y>181</y>
+     <x>714</x>
+     <y>155</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>bright_1</sender>
+   <sender>temp_bar2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcd_temp_2</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1017</x>
+     <y>218</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1014</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bright_bar1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcd_bright_1</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>375</x>
-     <y>245</y>
+     <x>717</x>
+     <y>283</y>
     </hint>
     <hint type="destinationlabel">
-     <x>397</x>
-     <y>187</y>
+     <x>705</x>
+     <y>154</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>bright_2</sender>
+   <sender>bright_bar2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcd_bright_2</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>675</x>
-     <y>291</y>
+     <x>1017</x>
+     <y>265</y>
     </hint>
     <hint type="destinationlabel">
-     <x>666</x>
-     <y>180</y>
+     <x>983</x>
+     <y>158</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>dial_5</sender>
+   <sender>progressBar_5</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber_6</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>422</x>
-     <y>266</y>
+     <x>717</x>
+     <y>280</y>
     </hint>
     <hint type="destinationlabel">
-     <x>404</x>
-     <y>191</y>
+     <x>717</x>
+     <y>154</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>dial_6</sender>
+   <sender>progressBar_6</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber_5</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>705</x>
+     <x>1001</x>
      <y>289</y>
     </hint>
     <hint type="destinationlabel">
-     <x>695</x>
-     <y>189</y>
+     <x>1010</x>
+     <y>136</y>
     </hint>
    </hints>
   </connection>
