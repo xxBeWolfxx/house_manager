@@ -15,6 +15,7 @@
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
@@ -43,6 +44,7 @@ public:
     QRadioButton *radioButton_3;
     QRadioButton *radioButton_4;
     QRadioButton *radioButton_5;
+    QPushButton *pushButton;
     QSpacerItem *horizontalSpacer_2;
     QTabWidget *tabWidget;
     QWidget *tab;
@@ -74,6 +76,9 @@ public:
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         label_2 = new QLabel(Staff);
         label_2->setObjectName(QString::fromUtf8("label_2"));
+        QFont font;
+        font.setPointSize(10);
+        label_2->setFont(font);
 
         horizontalLayout_3->addWidget(label_2);
 
@@ -89,6 +94,7 @@ public:
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         label_3 = new QLabel(Staff);
         label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setFont(font);
 
         horizontalLayout_4->addWidget(label_3);
 
@@ -106,6 +112,7 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         label_5 = new QLabel(Staff);
         label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setFont(font);
 
         horizontalLayout_2->addWidget(label_5);
 
@@ -113,26 +120,31 @@ public:
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         radioButton = new QRadioButton(Staff);
         radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        radioButton->setFont(font);
 
         verticalLayout_2->addWidget(radioButton);
 
         radioButton_2 = new QRadioButton(Staff);
         radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        radioButton_2->setFont(font);
 
         verticalLayout_2->addWidget(radioButton_2);
 
         radioButton_3 = new QRadioButton(Staff);
         radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
+        radioButton_3->setFont(font);
 
         verticalLayout_2->addWidget(radioButton_3);
 
         radioButton_4 = new QRadioButton(Staff);
         radioButton_4->setObjectName(QString::fromUtf8("radioButton_4"));
+        radioButton_4->setFont(font);
 
         verticalLayout_2->addWidget(radioButton_4);
 
         radioButton_5 = new QRadioButton(Staff);
         radioButton_5->setObjectName(QString::fromUtf8("radioButton_5"));
+        radioButton_5->setFont(font);
 
         verticalLayout_2->addWidget(radioButton_5);
 
@@ -144,6 +156,11 @@ public:
 
 
         verticalLayout->addLayout(horizontalLayout_5);
+
+        pushButton = new QPushButton(Staff);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        verticalLayout->addWidget(pushButton);
 
 
         horizontalLayout->addLayout(verticalLayout);
@@ -242,7 +259,8 @@ public:
         radioButton_2->setText(QApplication::translate("Staff", "Object 2", nullptr));
         radioButton_3->setText(QApplication::translate("Staff", "Object 3", nullptr));
         radioButton_4->setText(QApplication::translate("Staff", "Foto resistor", nullptr));
-        radioButton_5->setText(QApplication::translate("Staff", "RadioButton", nullptr));
+        radioButton_5->setText(QApplication::translate("Staff", "Thermometer", nullptr));
+        pushButton->setText(QApplication::translate("Staff", "EXIT", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Staff", "Temperatura", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Staff", "Jasno\305\233\304\207", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("Staff", "Wilgo\304\207", nullptr));

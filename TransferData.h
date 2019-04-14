@@ -9,18 +9,15 @@
 class TransferData : public Arduino
 {
 public:
-    int arduino_id;
-    QString arduino_port_name;
-    QString com;
-    QString value;
+    QString value="46;68";
     int *tab_value[6];
 
     TransferData();
 
-    void TranscriptValue(QString value, Arduino *object);
+    void TranscriptValue();
 
 public slots:
-    void ReceiveData(Arduino *object, QString arduino_port_name, int arduino_id, QString com, QString value);
+    void ReceiveData(TransferData *object);
 
 
 

@@ -15,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent) :
     arduino_is_available = false;
     arduino_port_name = "";
     controller = new QSerialPort;
+    transfer = new TransferData;
+
+
     ui->Button_chandelier->setDisabled(true);
     ui->Button_light_door->setDisabled(true);
     ui->Button_light_shed->setDisabled(true);
@@ -124,8 +127,6 @@ void MainWindow::Slotbox() //Sending date
     Arduino *h_object;
     h_object= new Arduino;
     ReadingBufor(h_object);
-    //qDebug()<<h_object->number_pin; to controlle a code
-    //qDebug()<<h_object->pin_state;
     SendingData(h_object);
 
 
@@ -273,3 +274,28 @@ void MainWindow::ReceiveData()
         }
     }
 }
+
+void MainWindow::on_actionOnly_staff_triggered()
+{
+    if (!status_staff)
+    {
+        staff = new Staff;
+        staff->show();
+        status_staff =! status_staff;
+        connect(staff, SIGNAL(SendInfo()),this,SLOT(RefreshStaff()));
+        connect(this, SIGNAL(BuforTransfer(TransferData *)),staff,SLOT(CatchInfo(TransferData *)));
+        emit BuforTransfer(transfer);
+
+    }
+    else
+    {
+        QMessageBox::information(this,"UWAGA!","Nie można ponownie otworzyć okna!");
+    }
+
+}
+
+void MainWindow::RefreshStaff()
+{
+    status_staff=!status_staff;
+}
+
