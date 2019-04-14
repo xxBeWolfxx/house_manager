@@ -28,6 +28,9 @@ public:
     QString total_path;
     Arduino light_shed, chandelier, light_door;
     QSerialPort *controller;
+    TransferData *transfer;
+
+
     static const quint16 arduino_uno_vendor_id = 10755;
     static const quint16 arduino_uno_product_id = 67;
     QString arduino_port_name;
@@ -49,6 +52,7 @@ public:
     ~MainWindow();
 public slots:
     void Slotbox();
+    void RefreshStaff();
 
 private slots:
 
@@ -61,9 +65,16 @@ private slots:
     void on_set_arduino_clicked();
 
 
+    void on_actionOnly_staff_triggered();
+
+signals:
+    void BuforTransfer(TransferData *);
+
 private:
     Ui::MainWindow *ui;
     MenuForm *options;
+    Staff *staff;
+    bool status_staff=0;
 };
 
 #endif // MAINWINDOW_H

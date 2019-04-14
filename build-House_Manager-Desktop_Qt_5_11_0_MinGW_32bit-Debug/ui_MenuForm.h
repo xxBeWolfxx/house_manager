@@ -185,7 +185,7 @@ public:
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setMaximumSize(QSize(16777215, 50));
         QFont font;
-        font.setPointSize(11);
+        font.setPointSize(16);
         label_7->setFont(font);
         label_7->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
@@ -203,7 +203,9 @@ public:
         name_object = new QLabel(verticalLayoutWidget_3);
         name_object->setObjectName(QString::fromUtf8("name_object"));
         name_object->setMaximumSize(QSize(16777215, 50));
-        name_object->setFont(font);
+        QFont font1;
+        font1.setPointSize(11);
+        name_object->setFont(font1);
         name_object->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-style: outset;\n"
@@ -244,7 +246,7 @@ public:
         pinout = new QLabel(verticalLayoutWidget_3);
         pinout->setObjectName(QString::fromUtf8("pinout"));
         pinout->setMaximumSize(QSize(16777215, 50));
-        pinout->setFont(font);
+        pinout->setFont(font1);
         pinout->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-style: outset;\n"
@@ -269,12 +271,14 @@ public:
         Button_on = new QPushButton(verticalLayoutWidget_3);
         Button_on->setObjectName(QString::fromUtf8("Button_on"));
         Button_on->setMinimumSize(QSize(0, 30));
+        Button_on->setFont(font);
 
         horizontalLayout_2->addWidget(Button_on);
 
         Button_off = new QPushButton(verticalLayoutWidget_3);
         Button_off->setObjectName(QString::fromUtf8("Button_off"));
         Button_off->setMinimumSize(QSize(0, 30));
+        Button_off->setFont(font);
 
         horizontalLayout_2->addWidget(Button_off);
 
@@ -286,6 +290,7 @@ public:
         Button_save_quit = new QPushButton(verticalLayoutWidget_3);
         Button_save_quit->setObjectName(QString::fromUtf8("Button_save_quit"));
         Button_save_quit->setMinimumSize(QSize(0, 30));
+        Button_save_quit->setFont(font);
 
         verticalLayout_2->addWidget(Button_save_quit);
 
@@ -309,9 +314,9 @@ public:
 
         Name = new QLabel(verticalLayoutWidget_2);
         Name->setObjectName(QString::fromUtf8("Name"));
-        QFont font1;
-        font1.setPointSize(13);
-        Name->setFont(font1);
+        QFont font2;
+        font2.setPointSize(13);
+        Name->setFont(font2);
         Name->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-style: outset;\n"
@@ -336,6 +341,7 @@ public:
         horizontalLayout_20->setObjectName(QString::fromUtf8("horizontalLayout_20"));
         label = new QLabel(verticalLayoutWidget_2);
         label->setObjectName(QString::fromUtf8("label"));
+        label->setFont(font);
         label->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-style: outset;\n"
@@ -350,10 +356,10 @@ public:
 
         set_time = new QLabel(verticalLayoutWidget_2);
         set_time->setObjectName(QString::fromUtf8("set_time"));
-        QFont font2;
-        font2.setPointSize(11);
-        font2.setKerning(true);
-        set_time->setFont(font2);
+        QFont font3;
+        font3.setPointSize(11);
+        font3.setKerning(true);
+        set_time->setFont(font3);
         set_time->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-style: outset;\n"
@@ -388,7 +394,7 @@ public:
 
         duration = new QLabel(verticalLayoutWidget_2);
         duration->setObjectName(QString::fromUtf8("duration"));
-        duration->setFont(font2);
+        duration->setFont(font3);
         duration->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-style: outset;\n"
@@ -410,12 +416,14 @@ public:
         Timer_on = new QPushButton(verticalLayoutWidget_2);
         Timer_on->setObjectName(QString::fromUtf8("Timer_on"));
         Timer_on->setMinimumSize(QSize(0, 40));
+        Timer_on->setFont(font);
 
         horizontalLayout_19->addWidget(Timer_on);
 
         Timer_off = new QPushButton(verticalLayoutWidget_2);
         Timer_off->setObjectName(QString::fromUtf8("Timer_off"));
         Timer_off->setMinimumSize(QSize(0, 40));
+        Timer_off->setFont(font);
 
         horizontalLayout_19->addWidget(Timer_off);
 
@@ -435,6 +443,10 @@ public:
         horizontalLayout_18->setObjectName(QString::fromUtf8("horizontalLayout_18"));
         label_3 = new QLabel(verticalLayoutWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
+        QFont font4;
+        font4.setPointSize(16);
+        font4.setKerning(true);
+        label_3->setFont(font4);
         label_3->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-style: outset;\n"
@@ -450,7 +462,7 @@ public:
         timer_3 = new QTimeEdit(verticalLayoutWidget);
         timer_3->setObjectName(QString::fromUtf8("timer_3"));
         timer_3->setMinimumSize(QSize(0, 50));
-        timer_3->setFont(font);
+        timer_3->setFont(font1);
 
         horizontalLayout_18->addWidget(timer_3);
 
@@ -461,6 +473,7 @@ public:
         horizontalLayout_17->setObjectName(QString::fromUtf8("horizontalLayout_17"));
         label_2 = new QLabel(verticalLayoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setFont(font);
         label_2->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "color:white;\n"
@@ -476,7 +489,7 @@ public:
         minutes_dur = new QSpinBox(verticalLayoutWidget);
         minutes_dur->setObjectName(QString::fromUtf8("minutes_dur"));
         minutes_dur->setMinimumSize(QSize(0, 50));
-        minutes_dur->setFont(font);
+        minutes_dur->setFont(font1);
 
         horizontalLayout_17->addWidget(minutes_dur);
 
@@ -488,6 +501,7 @@ public:
         Button_set = new QPushButton(verticalLayoutWidget);
         Button_set->setObjectName(QString::fromUtf8("Button_set"));
         Button_set->setMinimumSize(QSize(0, 40));
+        Button_set->setFont(font);
 
         horizontalLayout->addWidget(Button_set);
 
@@ -519,15 +533,15 @@ public:
         Button_save_quit->setText(QApplication::translate("MenuForm", "Save/Quit", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MenuForm", "Device", nullptr));
         Name->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
-        label->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; text-decoration: underline;\">Set on:</span></p></body></html>", nullptr));
+        label->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" text-decoration: underline;\">Set on:</span></p></body></html>", nullptr));
         set_time->setText(QString());
-        label_5->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; text-decoration: underline;\">Duration (min):</span></p></body></html>", nullptr));
+        label_5->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; text-decoration: underline;\">Duration (min):</span></p></body></html>", nullptr));
         duration->setText(QString());
         Timer_on->setText(QApplication::translate("MenuForm", "Timer ON", nullptr));
         Timer_off->setText(QApplication::translate("MenuForm", "Timer OFF", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Timer), QApplication::translate("MenuForm", "Timer", nullptr));
-        label_3->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; text-decoration: underline;\">Set time:</span></p></body></html>", nullptr));
-        label_2->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; text-decoration: underline;\">The length of time:</span></p></body></html>", nullptr));
+        label_3->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" text-decoration: underline;\">Set time:</span></p></body></html>", nullptr));
+        label_2->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" text-decoration: underline;\">The length of time:</span></p></body></html>", nullptr));
         Button_set->setText(QApplication::translate("MenuForm", "Set", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Settings), QApplication::translate("MenuForm", "Settings", nullptr));
     } // retranslateUi

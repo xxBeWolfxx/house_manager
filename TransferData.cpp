@@ -6,17 +6,18 @@ TransferData::TransferData()
 
 }
 
-void TransferData::ReceiveData(Arduino *object, QString arduino_port_name, int arduino_id,QString com,QString value)
+void TransferData::ReceiveData(TransferData *object)
 {
     this->path=object->path;
     this->total_number_pin=object->total_number_pin;
-    this->arduino_id=arduino_id;
-    this->arduino_port_name=arduino_port_name;
-    this->value=value;
-    this->com=com;
+    this->value=object->value;
+    this->com_port=object->com_port;
+    this->arduino_id=object->arduino_id;
+
 }
-void TransferData::TranscriptValue(QString value, Arduino *object)
+void TransferData::TranscriptValue()
 {
     QStringList lista_values = value.split(';',QString::SkipEmptyParts);
+    temp1= lista_values [0].toInt();
 
 }
