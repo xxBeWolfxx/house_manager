@@ -12,12 +12,13 @@ MainWindow::MainWindow(QWidget *parent) :
     total_path=QCoreApplication::applicationDirPath();
     ui->setupUi(this);
 
+    //creating variables
     arduino_is_available = false;
     arduino_port_name = "";
     controller = new QSerialPort;
     transfer = new TransferData;
 
-
+    //ui settings
     ui->Button_chandelier->setDisabled(true);
     ui->Button_light_door->setDisabled(true);
     ui->Button_light_shed->setDisabled(true);
@@ -58,8 +59,13 @@ bool MainWindow::CheckBoxMarking(Arduino object)
         return false;
     }
 }
-void MainWindow::SavingBufor(Arduino object, QString name)
+void MainWindow::SavingBufor(Arduino object, QString name, TransferData *transfer)
 {
+    transfer->number_object=object.number_object;
+    transfer->number_pin=object.number_pin;
+    transfer->pin_state=object.pin_state;
+    transfer->arduino_name=name;
+    /*
     QString path=total_path +"/bufor.txt";
     QFile file(path);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -75,16 +81,19 @@ void MainWindow::SavingBufor(Arduino object, QString name)
     in<<object.pin_state<<endl;
     file.close();
 
+    */
 }
 
 void MainWindow::on_Button_light_shed_clicked()
 {
     QString name="Light shed";
-    SavingBufor(light_shed, name);
+    SavingBufor(light_shed, name,transfer);
     options = new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+    connect(this, SIGNAL(BuforTransfer(TransferData*)),options,SLOT(CatchBufor(TransferData *)));
 
 
+    emit BuforTransfer(transfer);
     window_closing();
     options->show();
 
@@ -94,9 +103,12 @@ void MainWindow::on_Button_light_shed_clicked()
 void MainWindow::on_Button_chandelier_clicked()
 {
     QString name="Chandelier";
-    SavingBufor(chandelier, name);
+    SavingBufor(chandelier, name,transfer);
     options=new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+    connect(this, SIGNAL(BuforTransfer(TransferData*)),options,SLOT(CatchBufor(TransferData *)));
+
+    emit BuforTransfer(transfer);
 
     window_closing();
     options->show();
@@ -107,10 +119,13 @@ void MainWindow::on_Button_chandelier_clicked()
 void MainWindow::on_Button_light_door_clicked()
 {
     QString name="Light_door";
-    SavingBufor(light_door,name);
+    SavingBufor(light_door,name,transfer);
     options=new MenuForm(this);
     connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+    connect(this, SIGNAL(BuforTransfer(TransferData*)),options,SLOT(CatchBufor(TransferData *)));
 
+
+    emit BuforTransfer(transfer);
 
     window_closing();
     options->show();
@@ -184,6 +199,10 @@ void MainWindow::on_set_arduino_clicked()
         // give error message if not available
         QMessageBox::warning(this, "Uwaga!", "Nie wykryto Arduino!");
         ui->box_arduino->setChecked(false);
+
+        ui->Button_chandelier->setDisabled(false);
+        ui->Button_light_door->setDisabled(false);
+        ui->Button_light_shed->setDisabled(false);
 
     }
 
@@ -279,7 +298,7 @@ void MainWindow::on_actionOnly_staff_triggered()
 {
     if (!status_staff)
     {
-        staff = new Staff;
+        staff = new Staff();
         staff->show();
         status_staff =! status_staff;
         connect(staff, SIGNAL(SendInfo()),this,SLOT(RefreshStaff()));

@@ -11,6 +11,7 @@ class TransferData : public Arduino
 public:
     QString value="46;68";
     int *tab_value[6];
+    QString arduino_name;
 
     TransferData();
 

@@ -22,11 +22,8 @@ MenuForm::MenuForm(QWidget *parent) :
     object=new Arduino;
     counter =new QTimer(this);
     window = new MainWindow(this);
+    transfer = new TransferData;
 
-    name=ReadingBufor(object);
-    ui->name_object->setText(name);
-
-    ui->pinout->setText(object->number_pin);
     ui->minutes_dur->setRange(0,120); //to set range duration of timer
     ui->minutes_dur->setSingleStep(5);
 
@@ -218,5 +215,15 @@ void MenuForm::SavingBufor(Arduino *object)
     in<<object->pin_state<<endl;
     file.close();
 
+
+}
+void MenuForm::CatchBufor(TransferData *bufor)
+{
+    object->pin_state=bufor->pin_state;
+    object->number_pin=bufor->number_pin;
+    object->number_object=bufor->number_object;
+
+    ui->name_object->setText(bufor->arduino_name);
+    ui->pinout->setText(bufor->number_pin);
 
 }

@@ -44,7 +44,7 @@ public:
     void window_opening();
     void SendingData(Arduino *object);
     bool CheckBoxMarking(Arduino object);
-    void SavingBufor(Arduino object, QString name);
+    void SavingBufor(Arduino object, QString name, TransferData *transfer);
     void ReadingBufor(Arduino *h_object);
     void Checkingbox();
     void ReceiveData();

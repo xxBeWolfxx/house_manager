@@ -30,6 +30,7 @@ class Ui_MenuForm
 public:
     QHBoxLayout *horizontalLayout_6;
     QVBoxLayout *verticalLayout_5;
+    QSpacerItem *verticalSpacer_2;
     QListWidget *timerlist;
     QProgressBar *progressBar;
     QSpacerItem *verticalSpacer;
@@ -102,6 +103,10 @@ public:
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_5->addItem(verticalSpacer_2);
+
         timerlist = new QListWidget(MenuForm);
         timerlist->setObjectName(QString::fromUtf8("timerlist"));
 
