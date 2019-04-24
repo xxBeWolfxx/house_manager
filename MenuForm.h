@@ -10,6 +10,7 @@
 #include "MainWindow.h"
 #include "Arduino.h"
 #include "Timer.h"
+#include "TransferData.h"
 
 
 class MainWindow;
@@ -34,6 +35,9 @@ public:
     QTimer *counter;
     QTime time;
     MainWindow *window;
+    TransferData *transfer;
+
+
     int tab_status=0;
 
 
@@ -44,6 +48,9 @@ public:
 
 signals:
     void Sending_Data();
+
+public slots:
+    void CatchBufor(TransferData *bufor);
 
 private slots:
 

@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
@@ -28,13 +29,17 @@ class Ui_Staff
 {
 public:
     QHBoxLayout *horizontalLayout;
+    QFrame *line;
     QVBoxLayout *verticalLayout;
+    QFrame *line_3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_2;
     QLabel *ID;
+    QFrame *line_7;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_3;
     QLabel *COM;
+    QFrame *line_6;
     QHBoxLayout *horizontalLayout_5;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_5;
@@ -45,7 +50,10 @@ public:
     QRadioButton *radioButton_4;
     QRadioButton *radioButton_5;
     QPushButton *pushButton;
+    QFrame *line_4;
+    QFrame *line_2;
     QSpacerItem *horizontalSpacer_2;
+    QFrame *line_5;
     QTabWidget *tabWidget;
     QWidget *tab;
     QLCDNumber *lcd_temp_2;
@@ -70,41 +78,73 @@ public:
         Staff->resize(1141, 648);
         horizontalLayout = new QHBoxLayout(Staff);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        line = new QFrame(Staff);
+        line->setObjectName(QString::fromUtf8("line"));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        horizontalLayout->addWidget(line);
+
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        line_3 = new QFrame(Staff);
+        line_3->setObjectName(QString::fromUtf8("line_3"));
+        line_3->setFrameShape(QFrame::HLine);
+        line_3->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout->addWidget(line_3);
+
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         label_2 = new QLabel(Staff);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         QFont font;
-        font.setPointSize(10);
+        font.setPointSize(13);
         label_2->setFont(font);
 
         horizontalLayout_3->addWidget(label_2);
 
         ID = new QLabel(Staff);
         ID->setObjectName(QString::fromUtf8("ID"));
+        QFont font1;
+        font1.setPointSize(12);
+        ID->setFont(font1);
 
         horizontalLayout_3->addWidget(ID);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
 
+        line_7 = new QFrame(Staff);
+        line_7->setObjectName(QString::fromUtf8("line_7"));
+        line_7->setFrameShape(QFrame::HLine);
+        line_7->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout->addWidget(line_7);
+
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         label_3 = new QLabel(Staff);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setFont(font);
+        label_3->setFont(font1);
 
         horizontalLayout_4->addWidget(label_3);
 
         COM = new QLabel(Staff);
         COM->setObjectName(QString::fromUtf8("COM"));
+        COM->setFont(font1);
 
         horizontalLayout_4->addWidget(COM);
 
 
         verticalLayout->addLayout(horizontalLayout_4);
+
+        line_6 = new QFrame(Staff);
+        line_6->setObjectName(QString::fromUtf8("line_6"));
+        line_6->setFrameShape(QFrame::HLine);
+        line_6->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout->addWidget(line_6);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
@@ -120,31 +160,33 @@ public:
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         radioButton = new QRadioButton(Staff);
         radioButton->setObjectName(QString::fromUtf8("radioButton"));
-        radioButton->setFont(font);
+        QFont font2;
+        font2.setPointSize(10);
+        radioButton->setFont(font2);
 
         verticalLayout_2->addWidget(radioButton);
 
         radioButton_2 = new QRadioButton(Staff);
         radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
-        radioButton_2->setFont(font);
+        radioButton_2->setFont(font2);
 
         verticalLayout_2->addWidget(radioButton_2);
 
         radioButton_3 = new QRadioButton(Staff);
         radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
-        radioButton_3->setFont(font);
+        radioButton_3->setFont(font2);
 
         verticalLayout_2->addWidget(radioButton_3);
 
         radioButton_4 = new QRadioButton(Staff);
         radioButton_4->setObjectName(QString::fromUtf8("radioButton_4"));
-        radioButton_4->setFont(font);
+        radioButton_4->setFont(font2);
 
         verticalLayout_2->addWidget(radioButton_4);
 
         radioButton_5 = new QRadioButton(Staff);
         radioButton_5->setObjectName(QString::fromUtf8("radioButton_5"));
-        radioButton_5->setFont(font);
+        radioButton_5->setFont(font2);
 
         verticalLayout_2->addWidget(radioButton_5);
 
@@ -162,12 +204,33 @@ public:
 
         verticalLayout->addWidget(pushButton);
 
+        line_4 = new QFrame(Staff);
+        line_4->setObjectName(QString::fromUtf8("line_4"));
+        line_4->setFrameShape(QFrame::HLine);
+        line_4->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout->addWidget(line_4);
+
 
         horizontalLayout->addLayout(verticalLayout);
+
+        line_2 = new QFrame(Staff);
+        line_2->setObjectName(QString::fromUtf8("line_2"));
+        line_2->setFrameShape(QFrame::VLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+
+        horizontalLayout->addWidget(line_2);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_2);
+
+        line_5 = new QFrame(Staff);
+        line_5->setObjectName(QString::fromUtf8("line_5"));
+        line_5->setFrameShape(QFrame::VLine);
+        line_5->setFrameShadow(QFrame::Sunken);
+
+        horizontalLayout->addWidget(line_5);
 
         tabWidget = new QTabWidget(Staff);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
@@ -180,7 +243,7 @@ public:
         temp_bar2 = new QProgressBar(tab);
         temp_bar2->setObjectName(QString::fromUtf8("temp_bar2"));
         temp_bar2->setGeometry(QRect(390, 160, 31, 331));
-        temp_bar2->setValue(24);
+        temp_bar2->setValue(0);
         temp_bar2->setOrientation(Qt::Vertical);
         lcd_temp_1 = new QLCDNumber(tab);
         lcd_temp_1->setObjectName(QString::fromUtf8("lcd_temp_1"));
@@ -188,7 +251,7 @@ public:
         temp_bar1 = new QProgressBar(tab);
         temp_bar1->setObjectName(QString::fromUtf8("temp_bar1"));
         temp_bar1->setGeometry(QRect(100, 160, 31, 331));
-        temp_bar1->setValue(24);
+        temp_bar1->setValue(0);
         temp_bar1->setOrientation(Qt::Vertical);
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
@@ -202,12 +265,12 @@ public:
         bright_bar1 = new QProgressBar(tab_2);
         bright_bar1->setObjectName(QString::fromUtf8("bright_bar1"));
         bright_bar1->setGeometry(QRect(100, 160, 31, 331));
-        bright_bar1->setValue(24);
+        bright_bar1->setValue(0);
         bright_bar1->setOrientation(Qt::Vertical);
         bright_bar2 = new QProgressBar(tab_2);
         bright_bar2->setObjectName(QString::fromUtf8("bright_bar2"));
         bright_bar2->setGeometry(QRect(390, 160, 31, 331));
-        bright_bar2->setValue(24);
+        bright_bar2->setValue(0);
         bright_bar2->setOrientation(Qt::Vertical);
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
@@ -221,12 +284,12 @@ public:
         progressBar_5 = new QProgressBar(tab_3);
         progressBar_5->setObjectName(QString::fromUtf8("progressBar_5"));
         progressBar_5->setGeometry(QRect(100, 160, 31, 331));
-        progressBar_5->setValue(24);
+        progressBar_5->setValue(0);
         progressBar_5->setOrientation(Qt::Vertical);
         progressBar_6 = new QProgressBar(tab_3);
         progressBar_6->setObjectName(QString::fromUtf8("progressBar_6"));
         progressBar_6->setGeometry(QRect(390, 160, 31, 331));
-        progressBar_6->setValue(24);
+        progressBar_6->setValue(0);
         progressBar_6->setOrientation(Qt::Vertical);
         tabWidget->addTab(tab_3, QString());
 
@@ -251,10 +314,10 @@ public:
     {
         Staff->setWindowTitle(QApplication::translate("Staff", "Form", nullptr));
         label_2->setText(QApplication::translate("Staff", "Arduino ID:", nullptr));
-        ID->setText(QApplication::translate("Staff", "TextLabel", nullptr));
+        ID->setText(QApplication::translate("Staff", "<tekst>", nullptr));
         label_3->setText(QApplication::translate("Staff", "COM:", nullptr));
-        COM->setText(QApplication::translate("Staff", "TextLabel", nullptr));
-        label_5->setText(QApplication::translate("Staff", "INPUTS/OYTPUTS:", nullptr));
+        COM->setText(QApplication::translate("Staff", "<tekst>", nullptr));
+        label_5->setText(QApplication::translate("Staff", "<html><head/><body><p>INPUTS/</p><p>OYTPUTS:</p></body></html>", nullptr));
         radioButton->setText(QApplication::translate("Staff", "Object 1", nullptr));
         radioButton_2->setText(QApplication::translate("Staff", "Object 2", nullptr));
         radioButton_3->setText(QApplication::translate("Staff", "Object 3", nullptr));
