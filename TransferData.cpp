@@ -21,3 +21,17 @@ void TransferData::TranscriptValue()
     temp1= lista_values [0].toInt();
 
 }
+
+void TransferData::TranscriptObject(Arduino *object)
+{
+    this->pin_state=object->pin_state;
+    this->number_pin=object->number_pin;
+    this->number_object=object->number_object;
+
+}
+void TransferData::SaveObject(Arduino *object)
+{
+    object->pin_state=this->pin_state;
+    object->number_pin=this->number_pin;
+    object->number_object=this->number_object;
+}

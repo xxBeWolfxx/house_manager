@@ -89,7 +89,7 @@ void MainWindow::on_Button_light_shed_clicked()
     QString name="Light shed";
     SavingBufor(light_shed, name,transfer);
     options = new MenuForm(this);
-    connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+    connect(options, SIGNAL(Sending_Data(TransferData*)),this,SLOT(Slotbox(TransferData*)));
     connect(this, SIGNAL(BuforTransfer(TransferData*)),options,SLOT(CatchBufor(TransferData *)));
 
 
@@ -105,7 +105,7 @@ void MainWindow::on_Button_chandelier_clicked()
     QString name="Chandelier";
     SavingBufor(chandelier, name,transfer);
     options=new MenuForm(this);
-    connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+    connect(options, SIGNAL(Sending_Data(TransferData*)),this,SLOT(Slotbox(TransferData*)));
     connect(this, SIGNAL(BuforTransfer(TransferData*)),options,SLOT(CatchBufor(TransferData *)));
 
     emit BuforTransfer(transfer);
@@ -121,7 +121,7 @@ void MainWindow::on_Button_light_door_clicked()
     QString name="Light_door";
     SavingBufor(light_door,name,transfer);
     options=new MenuForm(this);
-    connect(options, SIGNAL(Sending_Data()),this,SLOT(Slotbox()));
+    connect(options, SIGNAL(Sending_Data(TransferData*)),this,SLOT(Slotbox(TransferData*)));
     connect(this, SIGNAL(BuforTransfer(TransferData*)),options,SLOT(CatchBufor(TransferData *)));
 
 
@@ -131,18 +131,36 @@ void MainWindow::on_Button_light_door_clicked()
     options->show();
 }
 
-void MainWindow::Slotbox() //Sending date
+void MainWindow::Slotbox(TransferData *bufor) //Sending date
 {
-    chandelier.LoadingData();
-    light_shed.LoadingData();
-    light_door.LoadingData();
+
+    switch (bufor->number_object)
+    {
+    case 1: //light_shed
+    {
+        Arduino *temp=&light_shed;
+        bufor->SaveObject(temp);
+        break;
+    }
+    case 2: //chandelier
+    {
+        Arduino *temp=&chandelier;
+        bufor->SaveObject(temp);
+        break;
+    }
+    case 3: //light_door
+    {
+        Arduino *temp=&light_door;
+        bufor->SaveObject(temp);
+        break;
+    }
+
+
+    }
     Checkingbox();
     ui->centralWidget->show();
 
-    Arduino *h_object;
-    h_object= new Arduino;
-    ReadingBufor(h_object);
-    SendingData(h_object);
+    SendingData(bufor);
 
 
 
