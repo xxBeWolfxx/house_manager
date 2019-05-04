@@ -16,6 +16,8 @@ public:
     TransferData();
 
     void TranscriptValue();
+    void TranscriptObject(Arduino *object);
+    void SaveObject(Arduino *object);
 
 public slots:
     void ReceiveData(TransferData *object);

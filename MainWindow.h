@@ -51,7 +51,7 @@ public:
 
     ~MainWindow();
 public slots:
-    void Slotbox();
+    void Slotbox(TransferData *bufor);
     void RefreshStaff();
 
 private slots:

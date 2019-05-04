@@ -14,11 +14,12 @@ MenuForm::MenuForm(QWidget *parent) :
     ui->progressBar->hide();
 
     ui->tabWidget->setCurrentIndex(0);
-    ui->tabWidget->setTabEnabled(1,false);  //to set tabs unable for customer
+    ui->tabWidget->setTabEnabled(1,false);  //to set tabs unable for customer and start first tab
     ui->tabWidget->setTabEnabled(2,false);
 
     SetTimerList(); // creating list of timers
 
+    //******************************creating the variables*************************
     object=new Arduino;
     counter =new QTimer(this);
     window = new MainWindow(this);
@@ -38,26 +39,6 @@ MenuForm::~MenuForm()
     delete ui;
 }
 
-QString MenuForm::ReadingBufor(Arduino *object) //to read information of object
-{
-    QString name;
-    path=path +"/bufor.txt";
-    QFile file(path);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        // qDebug<<"Cant open file";
-        file.close();
-    }
-    QTextStream in(&file);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    name=in.readLine(100);
-    object->number_object=in.readLine(100).toInt();
-    object->number_pin=in.readLine(10);
-    object->pin_state=in.readLine(10);
-    file.close();
-    return name;
-
-}
 
 void MenuForm::SetTimerList() //to create list of timers in QWidgetList
 {
@@ -66,27 +47,21 @@ void MenuForm::SetTimerList() //to create list of timers in QWidgetList
 
 }
 
-void MenuForm::on_Button_save_quit_clicked() //function which saves info
+void MenuForm::on_Button_save_quit_clicked() //function which saves information and close window
 {
     if(tab_status==1)
     timer->SavingTimers();
 
-    object->path=QCoreApplication::applicationDirPath();
-    object->path=object->path+"/"+QString::number(object->number_object)+".txt";
-    object->SavingData();
-    SavingBufor(object);
-    emit Sending_Data();
 
-
-
-
+    transfer->TranscriptObject(object);
+    emit Sending_Data(transfer);
     MenuForm::close();
 
 
 
 }
 
-void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item) //choosing item form the QWL
+void MenuForm::on_timerlist_itemClicked(QListWidgetItem *item) //choosing item form the QLW
 {
 
     timer = new Timer (item->text(),
@@ -120,6 +95,7 @@ void MenuForm::on_Timer_on_clicked() //swithing on timers
 {
     timer->name_timer=timer->name_timer.remove(0,6); //get ordinal number of timer
 
+    //checking status of timers
     if(timer->status == true)
     {
     QTimer::singleShot(timer->CalculationsPeriod()-300,this,SLOT(counterout())); //set timers on
@@ -132,11 +108,15 @@ void MenuForm::on_Timer_on_clicked() //swithing on timers
 
 void MenuForm::on_Timer_off_clicked()
 {
+    if (timer->status==false) //switch off the timer
+    {
     timer->status=true;
     QMessageBox::information(this, "Informacje", "Timer został wyłączony");
+    }
+
 }
 
-void MenuForm::on_Button_set_clicked()
+void MenuForm::on_Button_set_clicked() //set timer:set hours and minutes to proper values
 {
     timer->hours=ui->timer_3->time().hour();
     timer->minutes=ui->timer_3->time().minute();
@@ -149,8 +129,9 @@ void MenuForm::on_Button_set_clicked()
 
 void MenuForm::seting_ui_timer(Timer *timer)
 {
+    //*****************temporary variables helps to set properly the timer***************************
     QString set_time;
-    QString h_minutes; //variables helps to set properly the timer
+    QString h_minutes;
     QString h_hours;
     if(timer->hours != -1 && timer->minutes!= -1)
     {
@@ -176,13 +157,14 @@ void MenuForm::seting_ui_timer(Timer *timer)
 
 }
 
-void MenuForm::counterout()
+void MenuForm::counterout()//after the timer, switch on the pins
 {
     if (timer->status==false)
     {
     object->pin_state="1";
-    SavingBufor(object);
-    emit Sending_Data();
+
+    transfer->TranscriptObject(object);
+    emit Sending_Data(transfer);
     QTimer::singleShot(timer->duration*60*1000,this,SLOT(stop_timer()));
     QMessageBox::information(this,"","działa");
     }
@@ -191,33 +173,16 @@ void MenuForm::counterout()
 void MenuForm::stop_timer()
 {
     object->pin_state="0";
-    SavingBufor(object);
-    emit Sending_Data();
+
+    transfer->TranscriptObject(object);
+    emit Sending_Data(transfer);
     timer->status=true;
     QMessageBox::information(this,"","koniec");
 
 }
 
-void MenuForm::SavingBufor(Arduino *object)
-{
 
-    QFile file(path);
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-        // qDebug<<"Cant open file";
-        file.close();
-    }
-    QTextStream in(&file);
-    file.open(QIODevice::WriteOnly | QIODevice::Text);
-    in<<name<<endl;
-    in<<object->number_object<<endl;
-    in<<object->number_pin<<endl;
-    in<<object->pin_state<<endl;
-    file.close();
-
-
-}
-void MenuForm::CatchBufor(TransferData *bufor)
+void MenuForm::CatchBufor(TransferData *bufor)//to catch information between windows
 {
     object->pin_state=bufor->pin_state;
     object->number_pin=bufor->number_pin;

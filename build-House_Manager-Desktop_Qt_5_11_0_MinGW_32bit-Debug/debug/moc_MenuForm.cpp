@@ -34,8 +34,8 @@ static const qt_meta_stringdata_MenuForm_t qt_meta_stringdata_MenuForm = {
 QT_MOC_LITERAL(0, 0, 8), // "MenuForm"
 QT_MOC_LITERAL(1, 9, 12), // "Sending_Data"
 QT_MOC_LITERAL(2, 22, 0), // ""
-QT_MOC_LITERAL(3, 23, 10), // "CatchBufor"
-QT_MOC_LITERAL(4, 34, 13), // "TransferData*"
+QT_MOC_LITERAL(3, 23, 13), // "TransferData*"
+QT_MOC_LITERAL(4, 37, 10), // "CatchBufor"
 QT_MOC_LITERAL(5, 48, 5), // "bufor"
 QT_MOC_LITERAL(6, 54, 27), // "on_Button_save_quit_clicked"
 QT_MOC_LITERAL(7, 82, 24), // "on_timerlist_itemClicked"
@@ -50,8 +50,8 @@ QT_MOC_LITERAL(15, 235, 10), // "counterout"
 QT_MOC_LITERAL(16, 246, 10) // "stop_timer"
 
     },
-    "MenuForm\0Sending_Data\0\0CatchBufor\0"
-    "TransferData*\0bufor\0on_Button_save_quit_clicked\0"
+    "MenuForm\0Sending_Data\0\0TransferData*\0"
+    "CatchBufor\0bufor\0on_Button_save_quit_clicked\0"
     "on_timerlist_itemClicked\0QListWidgetItem*\0"
     "item\0on_Button_on_clicked\0"
     "on_Button_off_clicked\0on_Timer_on_clicked\0"
@@ -74,25 +74,25 @@ static const uint qt_meta_data_MenuForm[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   69,    2, 0x06 /* Public */,
+       1,    1,   69,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    1,   70,    2, 0x0a /* Public */,
-       6,    0,   73,    2, 0x08 /* Private */,
-       7,    1,   74,    2, 0x08 /* Private */,
-      10,    0,   77,    2, 0x08 /* Private */,
-      11,    0,   78,    2, 0x08 /* Private */,
-      12,    0,   79,    2, 0x08 /* Private */,
-      13,    0,   80,    2, 0x08 /* Private */,
-      14,    0,   81,    2, 0x08 /* Private */,
-      15,    0,   82,    2, 0x08 /* Private */,
-      16,    0,   83,    2, 0x08 /* Private */,
+       4,    1,   72,    2, 0x0a /* Public */,
+       6,    0,   75,    2, 0x08 /* Private */,
+       7,    1,   76,    2, 0x08 /* Private */,
+      10,    0,   79,    2, 0x08 /* Private */,
+      11,    0,   80,    2, 0x08 /* Private */,
+      12,    0,   81,    2, 0x08 /* Private */,
+      13,    0,   82,    2, 0x08 /* Private */,
+      14,    0,   83,    2, 0x08 /* Private */,
+      15,    0,   84,    2, 0x08 /* Private */,
+      16,    0,   85,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 3,    2,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 4,    5,
+    QMetaType::Void, 0x80000000 | 3,    5,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 8,    9,
     QMetaType::Void,
@@ -112,7 +112,7 @@ void MenuForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         MenuForm *_t = static_cast<MenuForm *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->Sending_Data(); break;
+        case 0: _t->Sending_Data((*reinterpret_cast< TransferData*(*)>(_a[1]))); break;
         case 1: _t->CatchBufor((*reinterpret_cast< TransferData*(*)>(_a[1]))); break;
         case 2: _t->on_Button_save_quit_clicked(); break;
         case 3: _t->on_timerlist_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
@@ -128,7 +128,7 @@ void MenuForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (MenuForm::*)();
+            using _t = void (MenuForm::*)(TransferData * );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MenuForm::Sending_Data)) {
                 *result = 0;
                 return;
@@ -178,9 +178,10 @@ int MenuForm::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void MenuForm::Sending_Data()
+void MenuForm::Sending_Data(TransferData * _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

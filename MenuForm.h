@@ -41,13 +41,12 @@ public:
     int tab_status=0;
 
 
-    QString ReadingBufor(Arduino *object);
     void SavingBufor(Arduino *object);
     void SetTimerList();
     void seting_ui_timer(Timer *timer);
 
 signals:
-    void Sending_Data();
+    void Sending_Data(TransferData *);
 
 public slots:
     void CatchBufor(TransferData *bufor);

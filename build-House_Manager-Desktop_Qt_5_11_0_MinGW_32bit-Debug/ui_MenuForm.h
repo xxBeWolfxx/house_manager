@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
@@ -34,6 +35,8 @@ public:
     QListWidget *timerlist;
     QProgressBar *progressBar;
     QSpacerItem *verticalSpacer;
+    QSpacerItem *horizontalSpacer_3;
+    QGridLayout *gridLayout;
     QTabWidget *tabWidget;
     QWidget *tab;
     QWidget *verticalLayoutWidget_3;
@@ -77,12 +80,13 @@ public:
     QSpinBox *minutes_dur;
     QHBoxLayout *horizontalLayout;
     QPushButton *Button_set;
+    QSpacerItem *verticalSpacer_3;
 
     void setupUi(QWidget *MenuForm)
     {
         if (MenuForm->objectName().isEmpty())
             MenuForm->setObjectName(QString::fromUtf8("MenuForm"));
-        MenuForm->resize(1142, 677);
+        MenuForm->resize(1755, 955);
         MenuForm->setStyleSheet(QString::fromUtf8("QPushButton:pressed\n"
 "{\n"
 "background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
@@ -129,6 +133,12 @@ public:
 
         horizontalLayout_6->addLayout(verticalLayout_5);
 
+        horizontalSpacer_3 = new QSpacerItem(30, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_3);
+
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         tabWidget = new QTabWidget(MenuForm);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setStyleSheet(QString::fromUtf8("QTabWidget::tab-bar {\n"
@@ -515,12 +525,19 @@ public:
 
         tabWidget->addTab(Settings, QString());
 
-        horizontalLayout_6->addWidget(tabWidget);
+        gridLayout->addWidget(tabWidget, 1, 0, 1, 1);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout->addItem(verticalSpacer_3, 0, 0, 1, 1);
+
+
+        horizontalLayout_6->addLayout(gridLayout);
 
 
         retranslateUi(MenuForm);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MenuForm);
