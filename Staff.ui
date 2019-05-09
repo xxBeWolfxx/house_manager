@@ -233,7 +233,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <property name="minimumSize">
@@ -359,7 +359,7 @@
       <attribute name="title">
        <string>Wilgoć</string>
       </attribute>
-      <widget class="QLCDNumber" name="lcdNumber_5">
+      <widget class="QLCDNumber" name="lcd_humid2">
        <property name="geometry">
         <rect>
          <x>350</x>
@@ -369,7 +369,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLCDNumber" name="lcdNumber_6">
+      <widget class="QLCDNumber" name="lcd_humid1">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -379,7 +379,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QProgressBar" name="progressBar_5">
+      <widget class="QProgressBar" name="humid_bar1">
        <property name="geometry">
         <rect>
          <x>100</x>
@@ -395,7 +395,7 @@
         <enum>Qt::Vertical</enum>
        </property>
       </widget>
-      <widget class="QProgressBar" name="progressBar_6">
+      <widget class="QProgressBar" name="humid_bar2">
        <property name="geometry">
         <rect>
          <x>390</x>
@@ -483,9 +483,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>progressBar_5</sender>
+   <sender>humid_bar1</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>lcdNumber_6</receiver>
+   <receiver>lcd_humid1</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -499,9 +499,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>progressBar_6</sender>
+   <sender>humid_bar2</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>lcdNumber_5</receiver>
+   <receiver>lcd_humid2</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
