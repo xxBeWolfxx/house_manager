@@ -21,6 +21,8 @@ public:
     int temp2;
     int foto1;
     int foto2;
+    int hum1;
+    int hum2;
 
 
     void SavingData();

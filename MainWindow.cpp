@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <string.h>
+#include <QTextCodec>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -65,23 +66,7 @@ void MainWindow::SavingBufor(Arduino object, QString name, TransferData *transfe
     transfer->number_pin=object.number_pin;
     transfer->pin_state=object.pin_state;
     transfer->arduino_name=name;
-    /*
-    QString path=total_path +"/bufor.txt";
-    QFile file(path);
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-        // qDebug<<"Cant open file";
-        file.close();
-    }
-    QTextStream in(&file);
-    file.open(QIODevice::WriteOnly | QIODevice::Text);
-    in<<name<<endl;
-    in<<object.number_object<<endl;
-    in<<object.number_pin<<endl;
-    in<<object.pin_state<<endl;
-    file.close();
 
-    */
 }
 
 void MainWindow::on_Button_light_shed_clicked()
@@ -134,23 +119,24 @@ void MainWindow::on_Button_light_door_clicked()
 void MainWindow::Slotbox(TransferData *bufor) //Sending date
 {
 
+    Arduino *temp;
     switch (bufor->number_object)
     {
     case 1: //light_shed
     {
-        Arduino *temp=&light_shed;
+        temp=&light_shed;
         bufor->SaveObject(temp);
         break;
     }
     case 2: //chandelier
     {
-        Arduino *temp=&chandelier;
+        temp=&chandelier;
         bufor->SaveObject(temp);
         break;
     }
     case 3: //light_door
     {
-        Arduino *temp=&light_door;
+       temp=&light_door;
         bufor->SaveObject(temp);
         break;
     }
@@ -267,34 +253,11 @@ void MainWindow::SendingData(Arduino *object)
 
 }
 
-void MainWindow::ReadingBufor(Arduino *h_object)
-{
-    QString name;
-    QString path=total_path +"/bufor.txt";
-    QFile file(path);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        // qDebug<<"Cant open file";
-        file.close();
-    }
-    QTextStream in(&file);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    name=in.readLine(100);
-    h_object->number_object=in.readLine(100).toInt();
-    h_object->number_pin=in.readLine(10);
-    h_object->pin_state=in.readLine(10);
-    file.close();
 
-    /* to controlle a code
-    qDebug()<<h_object->number_pin;
-    qDebug()<<h_object->pin_state;
-    */
-}
 
 void MainWindow::ReceiveData()
 {
-    QByteArray *data;
-    data= new QByteArray;
+
     if (controller->isWritable())
     {
         controller->flush();
@@ -307,7 +270,7 @@ void MainWindow::ReceiveData()
         {
             controller->flush();
             controller->waitForReadyRead(-5);
-            //controller->read(data);
+            dataArduino=controller->readAll();
         }
     }
 }
@@ -316,17 +279,24 @@ void MainWindow::on_actionOnly_staff_triggered()
 {
     if (!status_staff)
     {
+        dataArduino="50;25;5;123";
         staff = new Staff();
         staff->show();
         status_staff =! status_staff;
+        ReceiveData();
+        transfer->value=QString::fromStdString(dataArduino.toStdString()); //convert bytearray to qstring
+        transfer->TranscriptValue(); //cut String to parts
+
+
+
+
         connect(staff, SIGNAL(SendInfo()),this,SLOT(RefreshStaff()));
         connect(this, SIGNAL(BuforTransfer(TransferData *)),staff,SLOT(CatchInfo(TransferData *)));
         emit BuforTransfer(transfer);
-
     }
     else
     {
-        QMessageBox::information(this,"UWAGA!","Nie można ponownie otworzyć okna!");
+        QMessageBox::information(this,"UWAGA!","Okno jest już otwarte!");
     }
 
 }

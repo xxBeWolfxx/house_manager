@@ -17,8 +17,13 @@ void TransferData::ReceiveData(TransferData *object)
 }
 void TransferData::TranscriptValue()
 {
-    QStringList lista_values = value.split(';',QString::SkipEmptyParts);
-    temp1= lista_values [0].toInt();
+    lista_values = value.split(';',QString::SkipEmptyParts);
+    temp1 = lista_values [0].toInt();
+    foto1 = lista_values[1].toInt();
+    hum1 = lista_values[2].toInt();
+    statusObject = lista_values[3].toInt();
+
+
 
 }
 
@@ -29,9 +34,15 @@ void TransferData::TranscriptObject(Arduino *object)
     this->number_object=object->number_object;
 
 }
+
 void TransferData::SaveObject(Arduino *object)
 {
     object->pin_state=this->pin_state;
     object->number_pin=this->number_pin;
     object->number_object=this->number_object;
+}
+
+int TransferData::MapBar(int x,int y, int z)
+{
+
 }

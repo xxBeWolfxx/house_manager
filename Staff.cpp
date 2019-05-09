@@ -10,7 +10,8 @@ Staff::Staff(QWidget *parent) :
     staff_transfer = new TransferData;
     ui->setupUi(this);
 
-
+    ui->tabWidget->setCurrentIndex(0);
+    ui->tabWidget->setTabEnabled(2,false);
 
     staff_object = new Arduino;
 }
@@ -34,5 +35,15 @@ void Staff::CatchInfo(TransferData *transfer)
    staff_transfer->TranscriptValue();
    ui->COM->setText(transfer->com_port);
    ui->ID->setText(transfer->arduino_id);
-   ui->lcd_temp_1->display(staff_transfer->temp1);
+
+   ui->lcd_temp_1->display(transfer->temp1);
+   ui->temp_bar1->setValue(transfer->temp1);
+
+   ui->lcd_bright_1->display(transfer->foto1);
+   ui->bright_bar1->setValue(transfer->foto1);
+
+
+
+
+
 }

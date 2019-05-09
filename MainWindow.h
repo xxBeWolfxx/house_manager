@@ -29,6 +29,7 @@ public:
     Arduino light_shed, chandelier, light_door;
     QSerialPort *controller;
     TransferData *transfer;
+    QByteArray dataArduino;
 
 
     static const quint16 arduino_uno_vendor_id = 10755;
@@ -45,7 +46,6 @@ public:
     void SendingData(Arduino *object);
     bool CheckBoxMarking(Arduino object);
     void SavingBufor(Arduino object, QString name, TransferData *transfer);
-    void ReadingBufor(Arduino *h_object);
     void Checkingbox();
     void ReceiveData();
 
