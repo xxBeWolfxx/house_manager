@@ -279,7 +279,7 @@ void MainWindow::on_actionOnly_staff_triggered()
 {
     if (!status_staff)
     {
-        dataArduino="50;25;5;123";
+        dataArduino="-10;25;40;123";
         staff = new Staff();
         staff->show();
         status_staff =! status_staff;

@@ -46,4 +46,5 @@ void Staff::CatchInfo(TransferData *transfer)
 
 
 
+
 }
