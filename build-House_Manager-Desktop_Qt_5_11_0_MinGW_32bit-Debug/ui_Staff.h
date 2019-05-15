@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
@@ -44,11 +45,11 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_5;
     QVBoxLayout *verticalLayout_2;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
-    QRadioButton *radioButton_3;
-    QRadioButton *radioButton_4;
-    QRadioButton *radioButton_5;
+    QRadioButton *obj1;
+    QRadioButton *obj2;
+    QRadioButton *obj3;
+    QRadioButton *foto_r;
+    QRadioButton *therm;
     QPushButton *pushButton;
     QFrame *line_4;
     QFrame *line_2;
@@ -59,17 +60,35 @@ public:
     QLCDNumber *lcd_temp_2;
     QProgressBar *temp_bar2;
     QLCDNumber *lcd_temp_1;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_3;
+    QLabel *label;
+    QSpacerItem *verticalSpacer_3;
+    QLabel *label_4;
+    QSpacerItem *verticalSpacer_2;
+    QLabel *label_6;
     QProgressBar *temp_bar1;
+    QSpacerItem *verticalSpacer;
     QWidget *tab_2;
     QLCDNumber *lcd_bright_1;
     QLCDNumber *lcd_bright_2;
-    QProgressBar *bright_bar1;
     QProgressBar *bright_bar2;
+    QWidget *gridLayoutWidget_2;
+    QGridLayout *gridLayout_2;
+    QVBoxLayout *verticalLayout_4;
+    QLabel *label_7;
+    QSpacerItem *verticalSpacer_4;
+    QLabel *label_8;
+    QSpacerItem *verticalSpacer_5;
+    QLabel *label_9;
+    QSpacerItem *verticalSpacer_6;
+    QProgressBar *bright_bar1;
     QWidget *tab_3;
-    QLCDNumber *lcdNumber_5;
-    QLCDNumber *lcdNumber_6;
-    QProgressBar *progressBar_5;
-    QProgressBar *progressBar_6;
+    QLCDNumber *lcd_humid2;
+    QLCDNumber *lcd_humid1;
+    QProgressBar *humid_bar1;
+    QProgressBar *humid_bar2;
 
     void setupUi(QWidget *Staff)
     {
@@ -158,37 +177,37 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        radioButton = new QRadioButton(Staff);
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        obj1 = new QRadioButton(Staff);
+        obj1->setObjectName(QString::fromUtf8("obj1"));
         QFont font2;
         font2.setPointSize(10);
-        radioButton->setFont(font2);
+        obj1->setFont(font2);
 
-        verticalLayout_2->addWidget(radioButton);
+        verticalLayout_2->addWidget(obj1);
 
-        radioButton_2 = new QRadioButton(Staff);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
-        radioButton_2->setFont(font2);
+        obj2 = new QRadioButton(Staff);
+        obj2->setObjectName(QString::fromUtf8("obj2"));
+        obj2->setFont(font2);
 
-        verticalLayout_2->addWidget(radioButton_2);
+        verticalLayout_2->addWidget(obj2);
 
-        radioButton_3 = new QRadioButton(Staff);
-        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
-        radioButton_3->setFont(font2);
+        obj3 = new QRadioButton(Staff);
+        obj3->setObjectName(QString::fromUtf8("obj3"));
+        obj3->setFont(font2);
 
-        verticalLayout_2->addWidget(radioButton_3);
+        verticalLayout_2->addWidget(obj3);
 
-        radioButton_4 = new QRadioButton(Staff);
-        radioButton_4->setObjectName(QString::fromUtf8("radioButton_4"));
-        radioButton_4->setFont(font2);
+        foto_r = new QRadioButton(Staff);
+        foto_r->setObjectName(QString::fromUtf8("foto_r"));
+        foto_r->setFont(font2);
 
-        verticalLayout_2->addWidget(radioButton_4);
+        verticalLayout_2->addWidget(foto_r);
 
-        radioButton_5 = new QRadioButton(Staff);
-        radioButton_5->setObjectName(QString::fromUtf8("radioButton_5"));
-        radioButton_5->setFont(font2);
+        therm = new QRadioButton(Staff);
+        therm->setObjectName(QString::fromUtf8("therm"));
+        therm->setFont(font2);
 
-        verticalLayout_2->addWidget(radioButton_5);
+        verticalLayout_2->addWidget(therm);
 
 
         horizontalLayout_2->addLayout(verticalLayout_2);
@@ -247,50 +266,165 @@ public:
         temp_bar2->setOrientation(Qt::Vertical);
         lcd_temp_1 = new QLCDNumber(tab);
         lcd_temp_1->setObjectName(QString::fromUtf8("lcd_temp_1"));
-        lcd_temp_1->setGeometry(QRect(60, 100, 101, 31));
-        temp_bar1 = new QProgressBar(tab);
+        lcd_temp_1->setGeometry(QRect(160, 90, 101, 31));
+        lcd_temp_1->setFrameShape(QFrame::StyledPanel);
+        lcd_temp_1->setFrameShadow(QFrame::Plain);
+        lcd_temp_1->setSegmentStyle(QLCDNumber::Flat);
+        gridLayoutWidget = new QWidget(tab);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(30, 140, 221, 451));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        label = new QLabel(gridLayoutWidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setMaximumSize(QSize(16777215, 16777215));
+        QFont font3;
+        font3.setPointSize(16);
+        label->setFont(font3);
+        label->setLayoutDirection(Qt::LeftToRight);
+
+        verticalLayout_3->addWidget(label);
+
+        verticalSpacer_3 = new QSpacerItem(60, 40, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
+
+        verticalLayout_3->addItem(verticalSpacer_3);
+
+        label_4 = new QLabel(gridLayoutWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setMaximumSize(QSize(16777215, 16777215));
+        label_4->setFont(font3);
+        label_4->setLayoutDirection(Qt::LeftToRight);
+
+        verticalLayout_3->addWidget(label_4);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
+
+        verticalLayout_3->addItem(verticalSpacer_2);
+
+        label_6 = new QLabel(gridLayoutWidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setMaximumSize(QSize(16777215, 16777215));
+        label_6->setFont(font3);
+        label_6->setLayoutDirection(Qt::LeftToRight);
+
+        verticalLayout_3->addWidget(label_6);
+
+
+        gridLayout->addLayout(verticalLayout_3, 1, 0, 1, 1);
+
+        temp_bar1 = new QProgressBar(gridLayoutWidget);
         temp_bar1->setObjectName(QString::fromUtf8("temp_bar1"));
-        temp_bar1->setGeometry(QRect(100, 160, 31, 331));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(60);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(temp_bar1->sizePolicy().hasHeightForWidth());
+        temp_bar1->setSizePolicy(sizePolicy);
+        temp_bar1->setMinimumSize(QSize(40, 60));
+        temp_bar1->setMinimum(-20);
+        temp_bar1->setMaximum(60);
         temp_bar1->setValue(0);
         temp_bar1->setOrientation(Qt::Vertical);
+
+        gridLayout->addWidget(temp_bar1, 1, 1, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout->addItem(verticalSpacer, 0, 1, 1, 1);
+
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         lcd_bright_1 = new QLCDNumber(tab_2);
         lcd_bright_1->setObjectName(QString::fromUtf8("lcd_bright_1"));
-        lcd_bright_1->setGeometry(QRect(60, 100, 101, 31));
+        lcd_bright_1->setGeometry(QRect(160, 90, 101, 31));
+        lcd_bright_1->setFrameShape(QFrame::StyledPanel);
+        lcd_bright_1->setFrameShadow(QFrame::Plain);
+        lcd_bright_1->setSegmentStyle(QLCDNumber::Flat);
         lcd_bright_2 = new QLCDNumber(tab_2);
         lcd_bright_2->setObjectName(QString::fromUtf8("lcd_bright_2"));
         lcd_bright_2->setGeometry(QRect(350, 100, 101, 31));
-        bright_bar1 = new QProgressBar(tab_2);
-        bright_bar1->setObjectName(QString::fromUtf8("bright_bar1"));
-        bright_bar1->setGeometry(QRect(100, 160, 31, 331));
-        bright_bar1->setValue(0);
-        bright_bar1->setOrientation(Qt::Vertical);
         bright_bar2 = new QProgressBar(tab_2);
         bright_bar2->setObjectName(QString::fromUtf8("bright_bar2"));
         bright_bar2->setGeometry(QRect(390, 160, 31, 331));
         bright_bar2->setValue(0);
         bright_bar2->setOrientation(Qt::Vertical);
+        gridLayoutWidget_2 = new QWidget(tab_2);
+        gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
+        gridLayoutWidget_2->setGeometry(QRect(30, 140, 221, 451));
+        gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        label_7 = new QLabel(gridLayoutWidget_2);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setMaximumSize(QSize(16777215, 16777215));
+        label_7->setFont(font3);
+        label_7->setLayoutDirection(Qt::LeftToRight);
+
+        verticalLayout_4->addWidget(label_7);
+
+        verticalSpacer_4 = new QSpacerItem(60, 40, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
+
+        verticalLayout_4->addItem(verticalSpacer_4);
+
+        label_8 = new QLabel(gridLayoutWidget_2);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setMaximumSize(QSize(16777215, 16777215));
+        label_8->setFont(font3);
+        label_8->setLayoutDirection(Qt::LeftToRight);
+
+        verticalLayout_4->addWidget(label_8);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
+
+        verticalLayout_4->addItem(verticalSpacer_5);
+
+        label_9 = new QLabel(gridLayoutWidget_2);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setMaximumSize(QSize(16777215, 16777215));
+        label_9->setFont(font3);
+        label_9->setLayoutDirection(Qt::LeftToRight);
+
+        verticalLayout_4->addWidget(label_9);
+
+
+        gridLayout_2->addLayout(verticalLayout_4, 1, 0, 1, 1);
+
+        verticalSpacer_6 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout_2->addItem(verticalSpacer_6, 0, 1, 1, 1);
+
+        bright_bar1 = new QProgressBar(gridLayoutWidget_2);
+        bright_bar1->setObjectName(QString::fromUtf8("bright_bar1"));
+        bright_bar1->setMinimumSize(QSize(40, 10));
+        bright_bar1->setValue(0);
+        bright_bar1->setOrientation(Qt::Vertical);
+
+        gridLayout_2->addWidget(bright_bar1, 1, 1, 1, 1);
+
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
-        lcdNumber_5 = new QLCDNumber(tab_3);
-        lcdNumber_5->setObjectName(QString::fromUtf8("lcdNumber_5"));
-        lcdNumber_5->setGeometry(QRect(350, 100, 101, 31));
-        lcdNumber_6 = new QLCDNumber(tab_3);
-        lcdNumber_6->setObjectName(QString::fromUtf8("lcdNumber_6"));
-        lcdNumber_6->setGeometry(QRect(60, 100, 101, 31));
-        progressBar_5 = new QProgressBar(tab_3);
-        progressBar_5->setObjectName(QString::fromUtf8("progressBar_5"));
-        progressBar_5->setGeometry(QRect(100, 160, 31, 331));
-        progressBar_5->setValue(0);
-        progressBar_5->setOrientation(Qt::Vertical);
-        progressBar_6 = new QProgressBar(tab_3);
-        progressBar_6->setObjectName(QString::fromUtf8("progressBar_6"));
-        progressBar_6->setGeometry(QRect(390, 160, 31, 331));
-        progressBar_6->setValue(0);
-        progressBar_6->setOrientation(Qt::Vertical);
+        lcd_humid2 = new QLCDNumber(tab_3);
+        lcd_humid2->setObjectName(QString::fromUtf8("lcd_humid2"));
+        lcd_humid2->setGeometry(QRect(350, 100, 101, 31));
+        lcd_humid1 = new QLCDNumber(tab_3);
+        lcd_humid1->setObjectName(QString::fromUtf8("lcd_humid1"));
+        lcd_humid1->setGeometry(QRect(60, 100, 101, 31));
+        humid_bar1 = new QProgressBar(tab_3);
+        humid_bar1->setObjectName(QString::fromUtf8("humid_bar1"));
+        humid_bar1->setGeometry(QRect(100, 160, 31, 331));
+        humid_bar1->setValue(0);
+        humid_bar1->setOrientation(Qt::Vertical);
+        humid_bar2 = new QProgressBar(tab_3);
+        humid_bar2->setObjectName(QString::fromUtf8("humid_bar2"));
+        humid_bar2->setGeometry(QRect(390, 160, 31, 331));
+        humid_bar2->setValue(0);
+        humid_bar2->setOrientation(Qt::Vertical);
         tabWidget->addTab(tab_3, QString());
 
         horizontalLayout->addWidget(tabWidget);
@@ -301,8 +435,8 @@ public:
         QObject::connect(temp_bar2, SIGNAL(valueChanged(int)), lcd_temp_2, SLOT(display(int)));
         QObject::connect(bright_bar1, SIGNAL(valueChanged(int)), lcd_bright_1, SLOT(display(int)));
         QObject::connect(bright_bar2, SIGNAL(valueChanged(int)), lcd_bright_2, SLOT(display(int)));
-        QObject::connect(progressBar_5, SIGNAL(valueChanged(int)), lcdNumber_6, SLOT(display(int)));
-        QObject::connect(progressBar_6, SIGNAL(valueChanged(int)), lcdNumber_5, SLOT(display(int)));
+        QObject::connect(humid_bar1, SIGNAL(valueChanged(int)), lcd_humid1, SLOT(display(int)));
+        QObject::connect(humid_bar2, SIGNAL(valueChanged(int)), lcd_humid2, SLOT(display(int)));
 
         tabWidget->setCurrentIndex(0);
 
@@ -318,13 +452,19 @@ public:
         label_3->setText(QApplication::translate("Staff", "COM:", nullptr));
         COM->setText(QApplication::translate("Staff", "<tekst>", nullptr));
         label_5->setText(QApplication::translate("Staff", "<html><head/><body><p>INPUTS/</p><p>OYTPUTS:</p></body></html>", nullptr));
-        radioButton->setText(QApplication::translate("Staff", "Object 1", nullptr));
-        radioButton_2->setText(QApplication::translate("Staff", "Object 2", nullptr));
-        radioButton_3->setText(QApplication::translate("Staff", "Object 3", nullptr));
-        radioButton_4->setText(QApplication::translate("Staff", "Foto resistor", nullptr));
-        radioButton_5->setText(QApplication::translate("Staff", "Thermometer", nullptr));
+        obj1->setText(QApplication::translate("Staff", "Object 1", nullptr));
+        obj2->setText(QApplication::translate("Staff", "Object 2", nullptr));
+        obj3->setText(QApplication::translate("Staff", "Object 3", nullptr));
+        foto_r->setText(QApplication::translate("Staff", "Foto resistor", nullptr));
+        therm->setText(QApplication::translate("Staff", "Thermometer", nullptr));
         pushButton->setText(QApplication::translate("Staff", "EXIT", nullptr));
+        label->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">60<span style=\" vertical-align:super;\">0</span>C-</p></body></html>", nullptr));
+        label_4->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">0<span style=\" vertical-align:super;\">0</span>C-</p></body></html>", nullptr));
+        label_6->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">-20<span style=\" vertical-align:super;\">0</span>C-</p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Staff", "Temperatura", nullptr));
+        label_7->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">100-</p></body></html>", nullptr));
+        label_8->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">50-</p></body></html>", nullptr));
+        label_9->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">0-</p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Staff", "Jasno\305\233\304\207", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("Staff", "Wilgo\304\207", nullptr));
     } // retranslateUi
