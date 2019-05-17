@@ -13,6 +13,15 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QCheckBox:unchecked {
+  color: red;
+}
+QCheckBox:checked {
+  color: green;
+}
+</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="Line" name="line">
@@ -119,7 +128,7 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
-            <widget class="QRadioButton" name="obj1">
+            <widget class="QCheckBox" name="obj1">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -131,7 +140,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="obj2">
+            <widget class="QCheckBox" name="obj2">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -143,7 +152,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="obj3">
+            <widget class="QCheckBox" name="obj3">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -155,7 +164,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="foto_r">
+            <widget class="QCheckBox" name="foto_r">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -167,7 +176,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="therm">
+            <widget class="QCheckBox" name="therm">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -245,37 +254,11 @@
       <attribute name="title">
        <string>Temperatura</string>
       </attribute>
-      <widget class="QLCDNumber" name="lcd_temp_2">
-       <property name="geometry">
-        <rect>
-         <x>350</x>
-         <y>100</y>
-         <width>101</width>
-         <height>31</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QProgressBar" name="temp_bar2">
-       <property name="geometry">
-        <rect>
-         <x>390</x>
-         <y>160</y>
-         <width>31</width>
-         <height>331</height>
-        </rect>
-       </property>
-       <property name="value">
-        <number>0</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
       <widget class="QLCDNumber" name="lcd_temp_1">
        <property name="geometry">
         <rect>
          <x>160</x>
-         <y>90</y>
+         <y>20</y>
          <width>101</width>
          <height>31</height>
         </rect>
@@ -294,7 +277,7 @@
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>140</y>
+         <y>70</y>
          <width>221</width>
          <height>451</height>
         </rect>
@@ -454,7 +437,7 @@
        <property name="geometry">
         <rect>
          <x>160</x>
-         <y>90</y>
+         <y>20</y>
          <width>101</width>
          <height>31</height>
         </rect>
@@ -469,37 +452,11 @@
         <enum>QLCDNumber::Flat</enum>
        </property>
       </widget>
-      <widget class="QLCDNumber" name="lcd_bright_2">
-       <property name="geometry">
-        <rect>
-         <x>350</x>
-         <y>100</y>
-         <width>101</width>
-         <height>31</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QProgressBar" name="bright_bar2">
-       <property name="geometry">
-        <rect>
-         <x>390</x>
-         <y>160</y>
-         <width>31</width>
-         <height>331</height>
-        </rect>
-       </property>
-       <property name="value">
-        <number>0</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
       <widget class="QWidget" name="gridLayoutWidget_2">
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>140</y>
+         <y>70</y>
          <width>221</width>
          <height>451</height>
         </rect>
@@ -719,22 +676,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>temp_bar2</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>lcd_temp_2</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1017</x>
-     <y>218</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1014</x>
-     <y>143</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>bright_bar1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcd_bright_1</receiver>
@@ -747,22 +688,6 @@
     <hint type="destinationlabel">
      <x>705</x>
      <y>154</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>bright_bar2</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>lcd_bright_2</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1017</x>
-     <y>265</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>983</x>
-     <y>158</y>
     </hint>
    </hints>
   </connection>

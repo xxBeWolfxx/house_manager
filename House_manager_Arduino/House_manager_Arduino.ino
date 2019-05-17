@@ -60,10 +60,16 @@ void setup()
 	while (on == 0)
 	{
 		digitalWrite(signal_diode, 1);
-		delay(125);
-		digitalWrite(signal_diode, 0);
-		delay(125);
+		delay(90);
+		
 		int check = Serial.parseInt();
+		if (check == 1)
+		{
+			on++;
+		}
+		digitalWrite(signal_diode, 0);
+		delay(90);
+		check = Serial.parseInt();
 		if (check == 1)
 		{
 			on++;
@@ -94,6 +100,16 @@ void loop()
 		Serial.println(pin_info);
 		Serial.println(pin);
 		*/
+
+		int temp = analogRead(A1);
+		int humidity = analogRead(sensor_humidity);
+
+
+		String sending = String(temp) + ";" + String(humidity);
+		Serial.println(sending);
+		Serial.flush();
+		delay(50);
+		
     if(pin_info == "1")
       state=1;
     else
@@ -133,13 +149,10 @@ void loop()
 			}
 			case 6:
 			{
-				int temp = sensors.getTempCByIndex(0);
-				int humidity = analogRead(sensor_humidity);
+				//int temp = sensors.getTempCByIndex(0);
+				
+				
 
-
-
-				String sending = String(temp) +";"+ String(humidity);
-				Serial.println(sending);
 				break;
 			}
 			default:

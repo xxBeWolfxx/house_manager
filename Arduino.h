@@ -14,7 +14,7 @@ public:
     QString number_pin;
     QString path;
     QString com_port;
-    QString arduino_id;
+    QString arduino_id="1111";
 
     //variables for inputs
     int temp1;

@@ -29,6 +29,14 @@ border-style: outset;
 border-width: 2px;
 border-radius: 10px;
 border-color: black;
+}
+QPushButton:hover  {
+    color:black;
+	background-color: qconicalgradient(cx:0.511236, cy:0.0340909, angle:89.3626, stop:0 rgba(57, 223, 54, 255), stop:1 rgba(115, 255, 143, 255));
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
 }</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -51,7 +59,13 @@ border-color: black;
       </spacer>
      </item>
      <item>
-      <widget class="QListWidget" name="timerlist"/>
+      <widget class="QListWidget" name="timerlist">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QProgressBar" name="progressBar">
@@ -322,7 +336,7 @@ background-color: white;
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>30</height>
+                <height>60</height>
                </size>
               </property>
               <property name="font">
@@ -340,7 +354,7 @@ background-color: white;
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>30</height>
+                <height>60</height>
                </size>
               </property>
               <property name="font">
@@ -362,7 +376,7 @@ background-color: white;
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>30</height>
+                <height>60</height>
                </size>
               </property>
               <property name="font">

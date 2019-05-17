@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/image">
         <file>arduino.jpg</file>
-        <file>photo1.png</file>
+        <file>wood.jpg</file>
     </qresource>
 </RCC>
