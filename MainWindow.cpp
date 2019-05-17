@@ -30,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent) :
     light_door.LoadingData();
     Checkingbox();
 
+
     qDebug() << "Number of available ports: " << QSerialPortInfo::availablePorts().length();
     foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
     {
@@ -50,9 +51,7 @@ MainWindow::MainWindow(QWidget *parent) :
     {
         if(serialPortInfo.hasVendorIdentifier() && serialPortInfo.hasProductIdentifier())
         {
-            if(serialPortInfo.vendorIdentifier() == arduino_uno_vendor_id)
-            {
-                transfer->arduino_id=QString::number( serialPortInfo.hasVendorIdentifier());
+            if(serialPortInfo.vendorIdentifier() == arduino_uno_vendor_id){
                 if(serialPortInfo.productIdentifier() == arduino_uno_product_id){
                     arduino_port_name = serialPortInfo.portName();
                     arduino_is_available = true;
@@ -70,25 +69,13 @@ MainWindow::MainWindow(QWidget *parent) :
         controller->setParity(QSerialPort::NoParity);
         controller->setStopBits(QSerialPort::OneStop);
         controller->setFlowControl(QSerialPort::NoFlowControl);
-        QObject::connect(controller,SIGNAL(readyRead()),this,SLOT(GetData()));
-
-
     }
-    else
-    {
-        // give error message if not available
-        QMessageBox::warning(this, "Uwaga!", "Nie wykryto Arduino!");
-        ui->box_arduino->setChecked(false);
-    }
+
 
 }
 
 MainWindow::~MainWindow()
 {
-    if(controller->isOpen())
-    {
-        controller->close();
-    }
     delete ui;
 }
 
@@ -218,17 +205,34 @@ void MainWindow::on_set_arduino_clicked()
 
     if(controller->isWritable())
     {
+        ui->Button_chandelier->setDisabled(false);
+        ui->Button_light_door->setDisabled(false);
+        ui->Button_light_shed->setDisabled(false);
         controller->write("1");
         controller->waitForBytesWritten(-5);
-
+        controller->flush();
         ui->box_arduino->setChecked(true);
+        QMessageBox::information(this,"Uwaga!","Połączenie się powiodło!");
+
+//**************preparing arduino to send data******************************//
+        controller->write("66");
+        controller->waitForBytesWritten(-5);
+        controller->flush();
+
+
+    }
+    else
+    {
+        // give error message if not available
+        QMessageBox::warning(this, "Uwaga!", "Nie wykryto Arduino!");
+        ui->box_arduino->setChecked(false);
+
         ui->Button_chandelier->setDisabled(false);
         ui->Button_light_door->setDisabled(false);
         ui->Button_light_shed->setDisabled(false);
 
-        QMessageBox::information(this,"Uwaga!","Połączenie się powiodło!");
-
     }
+
 
 
 
@@ -260,7 +264,37 @@ void MainWindow::SendingData(Arduino *object)
 
 }
 
+void MainWindow::ReceiveData()
+{
+    QByteArray temp=dataArduino;
+    if (controller->isWritable())
+    {
+        controller->write("66");
+        controller->flush();
 
+    }
+
+    controller->waitForBytesWritten(100);
+    controller->waitForReadyRead(100);
+    temp=controller->read(5);
+    //qDebug()<<temp;
+    if(temp=="")
+    {
+        controller->write("66");
+        controller->flush();
+        controller->waitForBytesWritten(100);
+        controller->waitForReadyRead(100);
+        dataArduino=controller->read(5);
+        //qDebug()<<dataArduino;
+    }
+    else
+    {
+        dataArduino=temp;
+
+    }
+
+
+}
 
 
 
@@ -268,19 +302,13 @@ void MainWindow::on_actionOnly_staff_triggered()
 {
     if (!status_staff)
     {
-        //dataArduino="-10;25;40;123";
         staff = new Staff();
         staff->show();
         status_staff =! status_staff;
+        ReceiveData();
 
-
-         //convert bytearray to qstring
-        qDebug()<<transfer->value;
-        //transfer->TranscriptValue(); //cut String to parts
         transfer->com_port=arduino_port_name;
-
-        transfer->statusObject=123;
-
+        transfer->arduino_id=arduino_uno_vendor_id;
 
         connect(staff, SIGNAL(SendInfo()),this,SLOT(RefreshStaff()));
         connect(this, SIGNAL(BuforTransfer(TransferData *)),staff,SLOT(CatchInfo(TransferData *)));
@@ -297,24 +325,5 @@ void MainWindow::RefreshStaff()
 {
     status_staff=!status_staff;
 }
-void MainWindow::GetData()
-{
-    //controller->waitForReadyRead();
-    dataArduino=controller->readAll();
 
-    QStringList bufferSplit = transfer->value.split(";");
-    if(transfer->value.length()<3)
-    {
-        dataArduino=controller->readAll();
-        transfer->value=QString::fromStdString(dataArduino.toStdString());
-    }
-    else
-    {
-        qDebug()<<bufferSplit;
-        transfer->value ="";
-    }
-
-
-    qDebug()<<dataArduino;
-}
 

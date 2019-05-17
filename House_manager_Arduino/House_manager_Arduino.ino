@@ -25,6 +25,7 @@
 
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
+String sending = "";
 
 // ***********************\\Empty pins\\*******************************
 /*
@@ -85,13 +86,16 @@ void loop()
 	String specifier = "";
 	String pin_info = "";
 	int pin = 0;
-
-	if (Serial.available())
-	{
+  int temp = analogRead(A1);
+  int humidity = analogRead(sensor_humidity);
+    
+    
+    
 		data = Serial.readString();
 		specifier = data.substring(0, 1);
 		pin_info = data.substring(1);
 		pin = specifier.toInt();
+    
 
 		// ***************************To controlle data in programe***************************** 
 		/*
@@ -100,15 +104,9 @@ void loop()
 		Serial.println(pin_info);
 		Serial.println(pin);
 		*/
-
-		int temp = analogRead(A1);
-		int humidity = analogRead(sensor_humidity);
-
-
-		String sending = String(temp) + ";" + String(humidity);
-		Serial.println(sending);
-		Serial.flush();
-		delay(50);
+  
+		//int temp = sensors.getTempCByIndex(0);
+        
 		
     if(pin_info == "1")
       state=1;
@@ -149,8 +147,15 @@ void loop()
 			}
 			case 6:
 			{
-				//int temp = sensors.getTempCByIndex(0);
-				
+
+				temp = map(temp, 0, 1024, 0, 50);
+				humidity = map(humidity, 0, 1024, 0, 100);
+				sending = String(temp) + ";" + String(humidity);
+        Serial.println(sending);
+        Serial.flush();
+        delay(100);
+        
+        
 				
 
 				break;
@@ -159,6 +164,7 @@ void loop()
 				break;
 			}
 		}
-	}
+	
+ 
 }
 
