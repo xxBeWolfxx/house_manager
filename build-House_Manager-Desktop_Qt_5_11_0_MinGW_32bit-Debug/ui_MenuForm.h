@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MenuForm.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.0
+** Created by: Qt User Interface Compiler version 5.11.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
@@ -28,11 +29,14 @@ QT_BEGIN_NAMESPACE
 class Ui_MenuForm
 {
 public:
-    QWidget *verticalLayoutWidget_4;
+    QHBoxLayout *horizontalLayout_6;
     QVBoxLayout *verticalLayout_5;
+    QSpacerItem *verticalSpacer_2;
     QListWidget *timerlist;
     QProgressBar *progressBar;
     QSpacerItem *verticalSpacer;
+    QSpacerItem *horizontalSpacer_3;
+    QGridLayout *gridLayout;
     QTabWidget *tabWidget;
     QWidget *tab;
     QWidget *verticalLayoutWidget_3;
@@ -76,34 +80,55 @@ public:
     QSpinBox *minutes_dur;
     QHBoxLayout *horizontalLayout;
     QPushButton *Button_set;
+    QSpacerItem *verticalSpacer_3;
 
     void setupUi(QWidget *MenuForm)
     {
         if (MenuForm->objectName().isEmpty())
-            MenuForm->setObjectName(QString::fromUtf8("MenuForm"));
-        MenuForm->resize(626, 411);
-        MenuForm->setStyleSheet(QString::fromUtf8("QPushButton\n"
+            MenuForm->setObjectName(QStringLiteral("MenuForm"));
+        MenuForm->resize(1755, 955);
+        MenuForm->setStyleSheet(QLatin1String("QPushButton:pressed\n"
 "{\n"
-"background-color: grey;\n"
+"background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"\n"
+"}\n"
+"QPushButton\n"
+"{\n"
+"background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(2, 255, 0, 255), stop:0.552885 rgba(7, 153, 0, 255), stop:0.995192 rgba(41, 81, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: black;\n"
+"}\n"
+"QPushButton:hover  {\n"
+"    color:black;\n"
+"	background-color: qconicalgradient(cx:0.511236, cy:0.0340909, angle:89.3626, stop:0 rgba(57, 223, 54, 255), stop:1 rgba(115, 255, 143, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: black;\n"
 "}"));
-        verticalLayoutWidget_4 = new QWidget(MenuForm);
-        verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(0, 0, 261, 381));
-        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_4);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        timerlist = new QListWidget(verticalLayoutWidget_4);
-        timerlist->setObjectName(QString::fromUtf8("timerlist"));
+        horizontalLayout_6 = new QHBoxLayout(MenuForm);
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_5->addItem(verticalSpacer_2);
+
+        timerlist = new QListWidget(MenuForm);
+        timerlist->setObjectName(QStringLiteral("timerlist"));
+        QFont font;
+        font.setPointSize(14);
+        timerlist->setFont(font);
 
         verticalLayout_5->addWidget(timerlist);
 
-        progressBar = new QProgressBar(verticalLayoutWidget_4);
-        progressBar->setObjectName(QString::fromUtf8("progressBar"));
+        progressBar = new QProgressBar(MenuForm);
+        progressBar->setObjectName(QStringLiteral("progressBar"));
         progressBar->setValue(0);
         progressBar->setTextVisible(false);
         progressBar->setOrientation(Qt::Horizontal);
@@ -116,10 +141,18 @@ public:
 
         verticalLayout_5->addItem(verticalSpacer);
 
+
+        horizontalLayout_6->addLayout(verticalLayout_5);
+
+        horizontalSpacer_3 = new QSpacerItem(30, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_3);
+
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         tabWidget = new QTabWidget(MenuForm);
-        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(260, 0, 361, 381));
-        tabWidget->setStyleSheet(QString::fromUtf8("QTabWidget::tab-bar {\n"
+        tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tabWidget->setStyleSheet(QLatin1String("QTabWidget::tab-bar {\n"
 "    left: 120%; \n"
 "}\n"
 "QTabBar::tab {\n"
@@ -165,39 +198,41 @@ public:
 ""));
         tabWidget->setMovable(true);
         tab = new QWidget();
-        tab->setObjectName(QString::fromUtf8("tab"));
+        tab->setObjectName(QStringLiteral("tab"));
         verticalLayoutWidget_3 = new QWidget(tab);
-        verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(20, 10, 331, 331));
+        verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
+        verticalLayoutWidget_3->setGeometry(QRect(20, 10, 521, 601));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget_3);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         label_7 = new QLabel(verticalLayoutWidget_3);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setMaximumSize(QSize(16777215, 50));
-        QFont font;
-        font.setPointSize(11);
-        label_7->setFont(font);
-        label_7->setStyleSheet(QString::fromUtf8("QLabel\n"
+        QFont font1;
+        font1.setPointSize(16);
+        label_7->setFont(font1);
+        label_7->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
         label_7->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_5->addWidget(label_7);
 
         name_object = new QLabel(verticalLayoutWidget_3);
-        name_object->setObjectName(QString::fromUtf8("name_object"));
+        name_object->setObjectName(QStringLiteral("name_object"));
         name_object->setMaximumSize(QSize(16777215, 50));
-        name_object->setFont(font);
-        name_object->setStyleSheet(QString::fromUtf8("QLabel\n"
+        QFont font2;
+        font2.setPointSize(11);
+        name_object->setFont(font2);
+        name_object->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
@@ -214,31 +249,31 @@ public:
         verticalLayout->addLayout(horizontalLayout_5);
 
         horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         label_9 = new QLabel(verticalLayoutWidget_3);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setMaximumSize(QSize(16777215, 50));
-        label_9->setFont(font);
-        label_9->setStyleSheet(QString::fromUtf8("QLabel\n"
+        label_9->setFont(font1);
+        label_9->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
         label_9->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_3->addWidget(label_9);
 
         pinout = new QLabel(verticalLayoutWidget_3);
-        pinout->setObjectName(QString::fromUtf8("pinout"));
+        pinout->setObjectName(QStringLiteral("pinout"));
         pinout->setMaximumSize(QSize(16777215, 50));
-        pinout->setFont(font);
-        pinout->setStyleSheet(QString::fromUtf8("QLabel\n"
+        pinout->setFont(font2);
+        pinout->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
@@ -258,16 +293,18 @@ public:
         verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         Button_on = new QPushButton(verticalLayoutWidget_3);
-        Button_on->setObjectName(QString::fromUtf8("Button_on"));
-        Button_on->setMinimumSize(QSize(0, 30));
+        Button_on->setObjectName(QStringLiteral("Button_on"));
+        Button_on->setMinimumSize(QSize(0, 60));
+        Button_on->setFont(font1);
 
         horizontalLayout_2->addWidget(Button_on);
 
         Button_off = new QPushButton(verticalLayoutWidget_3);
-        Button_off->setObjectName(QString::fromUtf8("Button_off"));
-        Button_off->setMinimumSize(QSize(0, 30));
+        Button_off->setObjectName(QStringLiteral("Button_off"));
+        Button_off->setMinimumSize(QSize(0, 60));
+        Button_off->setFont(font1);
 
         horizontalLayout_2->addWidget(Button_off);
 
@@ -275,10 +312,11 @@ public:
         verticalLayout->addLayout(horizontalLayout_2);
 
         verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         Button_save_quit = new QPushButton(verticalLayoutWidget_3);
-        Button_save_quit->setObjectName(QString::fromUtf8("Button_save_quit"));
-        Button_save_quit->setMinimumSize(QSize(0, 30));
+        Button_save_quit->setObjectName(QStringLiteral("Button_save_quit"));
+        Button_save_quit->setMinimumSize(QSize(0, 60));
+        Button_save_quit->setFont(font1);
 
         verticalLayout_2->addWidget(Button_save_quit);
 
@@ -287,25 +325,25 @@ public:
 
         tabWidget->addTab(tab, QString());
         Timer = new QWidget();
-        Timer->setObjectName(QString::fromUtf8("Timer"));
+        Timer->setObjectName(QStringLiteral("Timer"));
         verticalLayoutWidget_2 = new QWidget(Timer);
-        verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(20, 10, 331, 301));
+        verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
+        verticalLayoutWidget_2->setGeometry(QRect(20, 10, 511, 591));
         verticalLayout_11 = new QVBoxLayout(verticalLayoutWidget_2);
-        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
+        verticalLayout_11->setObjectName(QStringLiteral("verticalLayout_11"));
         verticalLayout_11->setContentsMargins(0, 0, 0, 0);
         Name_timer = new QHBoxLayout();
-        Name_timer->setObjectName(QString::fromUtf8("Name_timer"));
+        Name_timer->setObjectName(QStringLiteral("Name_timer"));
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
 
         Name_timer->addItem(horizontalSpacer);
 
         Name = new QLabel(verticalLayoutWidget_2);
-        Name->setObjectName(QString::fromUtf8("Name"));
-        QFont font1;
-        font1.setPointSize(13);
-        Name->setFont(font1);
-        Name->setStyleSheet(QString::fromUtf8("QLabel\n"
+        Name->setObjectName(QStringLiteral("Name"));
+        QFont font3;
+        font3.setPointSize(13);
+        Name->setFont(font3);
+        Name->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
@@ -326,28 +364,29 @@ public:
         verticalLayout_11->addLayout(Name_timer);
 
         horizontalLayout_20 = new QHBoxLayout();
-        horizontalLayout_20->setObjectName(QString::fromUtf8("horizontalLayout_20"));
+        horizontalLayout_20->setObjectName(QStringLiteral("horizontalLayout_20"));
         label = new QLabel(verticalLayoutWidget_2);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setStyleSheet(QString::fromUtf8("QLabel\n"
+        label->setObjectName(QStringLiteral("label"));
+        label->setFont(font1);
+        label->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_20->addWidget(label);
 
         set_time = new QLabel(verticalLayoutWidget_2);
-        set_time->setObjectName(QString::fromUtf8("set_time"));
-        QFont font2;
-        font2.setPointSize(11);
-        font2.setKerning(true);
-        set_time->setFont(font2);
-        set_time->setStyleSheet(QString::fromUtf8("QLabel\n"
+        set_time->setObjectName(QStringLiteral("set_time"));
+        QFont font4;
+        font4.setPointSize(11);
+        font4.setKerning(true);
+        set_time->setFont(font4);
+        set_time->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
@@ -364,25 +403,25 @@ public:
         verticalLayout_11->addLayout(horizontalLayout_20);
 
         horizontalLayout_21 = new QHBoxLayout();
-        horizontalLayout_21->setObjectName(QString::fromUtf8("horizontalLayout_21"));
+        horizontalLayout_21->setObjectName(QStringLiteral("horizontalLayout_21"));
         label_5 = new QLabel(verticalLayoutWidget_2);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setStyleSheet(QString::fromUtf8("QLabel\n"
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_21->addWidget(label_5);
 
         duration = new QLabel(verticalLayoutWidget_2);
-        duration->setObjectName(QString::fromUtf8("duration"));
-        duration->setFont(font2);
-        duration->setStyleSheet(QString::fromUtf8("QLabel\n"
+        duration->setObjectName(QStringLiteral("duration"));
+        duration->setFont(font4);
+        duration->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
@@ -399,16 +438,18 @@ public:
         verticalLayout_11->addLayout(horizontalLayout_21);
 
         horizontalLayout_19 = new QHBoxLayout();
-        horizontalLayout_19->setObjectName(QString::fromUtf8("horizontalLayout_19"));
+        horizontalLayout_19->setObjectName(QStringLiteral("horizontalLayout_19"));
         Timer_on = new QPushButton(verticalLayoutWidget_2);
-        Timer_on->setObjectName(QString::fromUtf8("Timer_on"));
+        Timer_on->setObjectName(QStringLiteral("Timer_on"));
         Timer_on->setMinimumSize(QSize(0, 40));
+        Timer_on->setFont(font1);
 
         horizontalLayout_19->addWidget(Timer_on);
 
         Timer_off = new QPushButton(verticalLayoutWidget_2);
-        Timer_off->setObjectName(QString::fromUtf8("Timer_off"));
+        Timer_off->setObjectName(QStringLiteral("Timer_off"));
         Timer_off->setMinimumSize(QSize(0, 40));
+        Timer_off->setFont(font1);
 
         horizontalLayout_19->addWidget(Timer_off);
 
@@ -417,33 +458,37 @@ public:
 
         tabWidget->addTab(Timer, QString());
         Settings = new QWidget();
-        Settings->setObjectName(QString::fromUtf8("Settings"));
+        Settings->setObjectName(QStringLiteral("Settings"));
         verticalLayoutWidget = new QWidget(Settings);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(30, 0, 311, 221));
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(30, 0, 501, 611));
         verticalLayout_10 = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
+        verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
         verticalLayout_10->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_18 = new QHBoxLayout();
-        horizontalLayout_18->setObjectName(QString::fromUtf8("horizontalLayout_18"));
+        horizontalLayout_18->setObjectName(QStringLiteral("horizontalLayout_18"));
         label_3 = new QLabel(verticalLayoutWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setStyleSheet(QString::fromUtf8("QLabel\n"
+        label_3->setObjectName(QStringLiteral("label_3"));
+        QFont font5;
+        font5.setPointSize(16);
+        font5.setKerning(true);
+        label_3->setFont(font5);
+        label_3->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
-"\n"
+"color:white;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_18->addWidget(label_3);
 
         timer_3 = new QTimeEdit(verticalLayoutWidget);
-        timer_3->setObjectName(QString::fromUtf8("timer_3"));
+        timer_3->setObjectName(QStringLiteral("timer_3"));
         timer_3->setMinimumSize(QSize(0, 50));
-        timer_3->setFont(font);
+        timer_3->setFont(font2);
 
         horizontalLayout_18->addWidget(timer_3);
 
@@ -451,24 +496,26 @@ public:
         verticalLayout_10->addLayout(horizontalLayout_18);
 
         horizontalLayout_17 = new QHBoxLayout();
-        horizontalLayout_17->setObjectName(QString::fromUtf8("horizontalLayout_17"));
+        horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
         label_2 = new QLabel(verticalLayoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setStyleSheet(QString::fromUtf8("QLabel\n"
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setFont(font1);
+        label_2->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
+"color:white;\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
 "border-radius: 10px;\n"
 "border-color: black;\n"
-"background-color: grey;\n"
+"background-color: rgb(0, 85, 0);\n"
 "}"));
 
         horizontalLayout_17->addWidget(label_2);
 
         minutes_dur = new QSpinBox(verticalLayoutWidget);
-        minutes_dur->setObjectName(QString::fromUtf8("minutes_dur"));
+        minutes_dur->setObjectName(QStringLiteral("minutes_dur"));
         minutes_dur->setMinimumSize(QSize(0, 50));
-        minutes_dur->setFont(font);
+        minutes_dur->setFont(font2);
 
         horizontalLayout_17->addWidget(minutes_dur);
 
@@ -476,10 +523,11 @@ public:
         verticalLayout_10->addLayout(horizontalLayout_17);
 
         horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         Button_set = new QPushButton(verticalLayoutWidget);
-        Button_set->setObjectName(QString::fromUtf8("Button_set"));
+        Button_set->setObjectName(QStringLiteral("Button_set"));
         Button_set->setMinimumSize(QSize(0, 40));
+        Button_set->setFont(font1);
 
         horizontalLayout->addWidget(Button_set);
 
@@ -488,9 +536,19 @@ public:
 
         tabWidget->addTab(Settings, QString());
 
+        gridLayout->addWidget(tabWidget, 1, 0, 1, 1);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout->addItem(verticalSpacer_3, 0, 0, 1, 1);
+
+
+        horizontalLayout_6->addLayout(gridLayout);
+
+
         retranslateUi(MenuForm);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MenuForm);
@@ -508,15 +566,15 @@ public:
         Button_save_quit->setText(QApplication::translate("MenuForm", "Save/Quit", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MenuForm", "Device", nullptr));
         Name->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
-        label->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; text-decoration: underline;\">Set on:</span></p></body></html>", nullptr));
+        label->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" text-decoration: underline;\">Set on:</span></p></body></html>", nullptr));
         set_time->setText(QString());
-        label_5->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; text-decoration: underline;\">Duration (min):</span></p></body></html>", nullptr));
+        label_5->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; text-decoration: underline;\">Duration (min):</span></p></body></html>", nullptr));
         duration->setText(QString());
         Timer_on->setText(QApplication::translate("MenuForm", "Timer ON", nullptr));
         Timer_off->setText(QApplication::translate("MenuForm", "Timer OFF", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Timer), QApplication::translate("MenuForm", "Timer", nullptr));
-        label_3->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; text-decoration: underline;\">Set time:</span></p></body></html>", nullptr));
-        label_2->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; text-decoration: underline;\">The length of time:</span></p></body></html>", nullptr));
+        label_3->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" text-decoration: underline;\">Set time:</span></p></body></html>", nullptr));
+        label_2->setText(QApplication::translate("MenuForm", "<html><head/><body><p align=\"center\"><span style=\" text-decoration: underline;\">The length of time:</span></p></body></html>", nullptr));
         Button_set->setText(QApplication::translate("MenuForm", "Set", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Settings), QApplication::translate("MenuForm", "Settings", nullptr));
     } // retranslateUi

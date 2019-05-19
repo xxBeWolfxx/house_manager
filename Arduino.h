@@ -13,13 +13,26 @@ public:
     QString pin_state;
     QString number_pin;
     QString path;
+    QString com_port;
+    QString arduino_id="1111";
+
+    //variables for inputs
+    int temp1;
+    int temp2;
+    int foto1;
+    int foto2;
+    int hum1;
+    int hum2;
+
 
     void SavingData();
     void LoadingData();
     void SendingData();
+    void ReceiveData();
 
     int number_object;
     static int total_number_pin;
+
 public slots:
 
 

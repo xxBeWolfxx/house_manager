@@ -10,6 +10,7 @@
 #include "MainWindow.h"
 #include "Arduino.h"
 #include "Timer.h"
+#include "TransferData.h"
 
 
 class MainWindow;
@@ -24,23 +25,31 @@ class MenuForm : public QWidget
     Q_OBJECT
 
 public:
-    explicit MenuForm(QWidget *parent = 0);
+    explicit MenuForm(QWidget *parent = nullptr);
     ~MenuForm();
     QString path;
+    QString name;
     Arduino *object;
     Arduino h_timer;
     Timer *timer;
     QTimer *counter;
     QTime time;
     MainWindow *window;
+    TransferData *transfer;
+
+
     int tab_status=0;
 
-    QString ReadingBufor(Arduino *object);
+
+    void SavingBufor(Arduino *object);
     void SetTimerList();
     void seting_ui_timer(Timer *timer);
 
 signals:
-    void Sending_Data();
+    void Sending_Data(TransferData *);
+
+public slots:
+    void CatchBufor(TransferData *bufor);
 
 private slots:
 

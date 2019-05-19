@@ -8,8 +8,8 @@ Arduino::Arduino()
 
     if(total_number_pin != 3)
     {
-    total_number_pin++;
-    number_object=total_number_pin;
+
+    number_object=++total_number_pin;
     path=QCoreApplication::applicationDirPath();
     path=path+"/"+QString::number(number_object)+".txt";
     }
@@ -56,3 +56,5 @@ void Arduino::SendingData()
 
 
 }
+
+

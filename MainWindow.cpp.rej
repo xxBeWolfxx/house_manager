@@ -1,0 +1,73 @@
+diff a/MainWindow.cpp b/MainWindow.cpp	(rejected hunks)
+@@ -255,39 +262,24 @@
+ 
+ 
+ 
+-void MainWindow::ReceiveData()
+-{
+ 
+-    if (controller->isWritable())
+-    {
+-        controller->flush();
+-        controller->waitForBytesWritten(-5);
+-        controller->write("6");
+-        controller->waitForBytesWritten(-5);
+-        controller->clear();
+-
+-        if(controller->isReadable())
+-        {
+-            controller->flush();
+-            controller->waitForReadyRead(-5);
+-            dataArduino=controller->readAll();
+-        }
+-    }
+-}
+ 
+ void MainWindow::on_actionOnly_staff_triggered()
+ {
+     if (!status_staff)
+     {
+-        dataArduino="-10;25;40;123";
++        //dataArduino="-10;25;40;123";
+         staff = new Staff();
+         staff->show();
+         status_staff =! status_staff;
+-        ReceiveData();
+-        transfer->value=QString::fromStdString(dataArduino.toStdString()); //convert bytearray to qstring
+-        transfer->TranscriptValue(); //cut String to parts
+ 
+ 
++         //convert bytearray to qstring
++        qDebug()<<transfer->value;
++        //transfer->TranscriptValue(); //cut String to parts
++        transfer->com_port=arduino_port_name;
++
++        transfer->statusObject=123;
+ 
+ 
+         connect(staff, SIGNAL(SendInfo()),this,SLOT(RefreshStaff()));
+@@ -305,4 +297,24 @@
+ {
+     status_staff=!status_staff;
+ }
++void MainWindow::GetData()
++{
++    //controller->waitForReadyRead();
++    dataArduino=controller->readAll();
++
++    QStringList bufferSplit = transfer->value.split(";");
++    if(transfer->value.length()<3)
++    {
++        dataArduino=controller->readAll();
++        transfer->value=QString::fromStdString(dataArduino.toStdString());
++    }
++    else
++    {
++        qDebug()<<bufferSplit;
++        transfer->value ="";
++    }
++
++
++    qDebug()<<dataArduino;
++}
+ 

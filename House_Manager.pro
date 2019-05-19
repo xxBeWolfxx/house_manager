@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,17 +29,24 @@ SOURCES += \
         MainWindow.cpp \
     MenuForm.cpp \
     Arduino.cpp \
-    Timer.cpp
+    Timer.cpp \
+    Staff.cpp \
+    TransferData.cpp
 
 HEADERS += \
         MainWindow.h \
     MenuForm.h \
     Arduino.h \
-    Timer.h
+    Timer.h \
+    Staff.h \
+    TransferData.h
 
 FORMS += \
         MainWindow.ui \
-    MenuForm.ui
+    MenuForm.ui \
+    Staff.ui
+
+QMAKE_CXXFLAGS += -std=gnu++14
 
 RESOURCES += \
     database.qrc

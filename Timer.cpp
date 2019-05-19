@@ -30,7 +30,6 @@ void Timer::SavingTimers()
     in<<hours<<endl;
     in<<minutes<<endl;
     in<<duration<<endl;
-    in<<status<<endl;
 
     file.close();
 
@@ -52,7 +51,6 @@ void Timer::LoadingTimers()
     hours = in.readLine(10).toInt();
     minutes = in.readLine(10).toInt();
     duration = in.readLine(10).toInt();
-    status = in.readLine(10).toInt();
 
     file.close();
 
