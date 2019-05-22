@@ -8,5 +8,6 @@ int main(int argc, char *argv[])
     w.setWindowTitle("House Manager");
     w.showMaximized();
 
+
     return a.exec();
 }
