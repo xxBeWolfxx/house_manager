@@ -17,11 +17,12 @@ void TransferData::ReceiveData(TransferData *object)
 }
 void TransferData::TranscriptValue()
 {
-    lista_values = value.split(';',QString::SkipEmptyParts);
-    temp1 = lista_values [0].toInt();
-    foto1 = lista_values[1].toInt();
-    hum1 = lista_values[2].toInt();
-    statusObject = lista_values[3].toInt();
+
+   // lista_values = value.split(';',QString::SkipEmptyParts);
+   // temp1 = lista_values [0].toInt();
+   // foto1 = lista_values[1].toInt();
+    //hum1 = lista_values[2].toInt();
+   //statusObject = lista_values[3].toInt();
 
 
 
@@ -42,7 +43,4 @@ void TransferData::SaveObject(Arduino *object)
     object->number_object=this->number_object;
 }
 
-int TransferData::MapBar(int x,int y, int z)
-{
 
-}

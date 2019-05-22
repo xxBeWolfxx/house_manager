@@ -21,7 +21,6 @@ public:
     void TranscriptValue();
     void TranscriptObject(Arduino *object);
     void SaveObject(Arduino *object);
-    int MapBar(int x, int y, int z);
 
 public slots:
     void ReceiveData(TransferData *object);

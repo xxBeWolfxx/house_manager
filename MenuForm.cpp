@@ -100,6 +100,7 @@ void MenuForm::on_Timer_on_clicked() //swithing on timers
     {
     QTimer::singleShot(timer->CalculationsPeriod()-300,this,SLOT(counterout())); //set timers on
     timer->status=false;
+    qDebug()<<"okay";
     }
     else if (timer->status == false)
     QMessageBox::information(this, "UWAGA!","Timer jest załączony!");

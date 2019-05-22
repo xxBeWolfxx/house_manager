@@ -25,6 +25,7 @@
 
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
+String sending = "";
 
 // ***********************\\Empty pins\\*******************************
 /*
@@ -60,10 +61,16 @@ void setup()
 	while (on == 0)
 	{
 		digitalWrite(signal_diode, 1);
-		delay(125);
-		digitalWrite(signal_diode, 0);
-		delay(125);
+		delay(90);
+		
 		int check = Serial.parseInt();
+		if (check == 1)
+		{
+			on++;
+		}
+		digitalWrite(signal_diode, 0);
+		delay(90);
+		check = Serial.parseInt();
 		if (check == 1)
 		{
 			on++;
@@ -79,13 +86,16 @@ void loop()
 	String specifier = "";
 	String pin_info = "";
 	int pin = 0;
-
-	if (Serial.available())
-	{
+  int temp = analogRead(A1);
+  int humidity = analogRead(sensor_humidity);
+    
+    
+    
 		data = Serial.readString();
 		specifier = data.substring(0, 1);
 		pin_info = data.substring(1);
 		pin = specifier.toInt();
+    
 
 		// ***************************To controlle data in programe***************************** 
 		/*
@@ -94,6 +104,10 @@ void loop()
 		Serial.println(pin_info);
 		Serial.println(pin);
 		*/
+  
+		//int temp = sensors.getTempCByIndex(0);
+        
+		
     if(pin_info == "1")
       state=1;
     else
@@ -133,19 +147,24 @@ void loop()
 			}
 			case 6:
 			{
-				int temp = sensors.getTempCByIndex(0);
-				int humidity = analogRead(sensor_humidity);
 
+				temp = map(temp, 0, 1024, 0, 50);
+				humidity = map(humidity, 0, 1024, 0, 100);
+				sending = String(temp) + ";" + String(humidity);
+        Serial.println(sending);
+        Serial.flush();
+        delay(100);
+        
+        
+				
 
-
-				String sending = String(temp) +";"+ String(humidity);
-				Serial.println(sending);
 				break;
 			}
 			default:
 				break;
 			}
 		}
-	}
+	
+ 
 }
 
