@@ -116,7 +116,7 @@ void Staff::CatchInfo(TransferData *transfer)
    }
 
 
-    ui->ID->setText(transfer->value);
+
 
 
 
