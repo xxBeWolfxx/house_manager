@@ -7,16 +7,14 @@ Staff::Staff(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Staff)
 {
-    staff_object = new Arduino;
     staff_transfer = new TransferData;
     ui->setupUi(this);
 
-    ui->tabWidget->setCurrentIndex(0);
+    ui->tabWidget->setCurrentIndex(0); //setting of table
     ui->tabWidget->setTabEnabled(2,false);
 
 
 
-    staff_object = new Arduino;
 }
 
 Staff::~Staff()
@@ -32,7 +30,7 @@ void Staff::closeEvent(QCloseEvent *event)
 {
     emit SendInfo();
 }
-void Staff::CatchInfo(TransferData *transfer)
+void Staff::CatchInfo(TransferData *transfer) //show received data
 {
    staff_transfer->ReceiveData(transfer);
    staff_transfer->TranscriptValue();
@@ -114,12 +112,6 @@ void Staff::CatchInfo(TransferData *transfer)
 
        break;
    }
-
-
-
-
-
-
    }
 
 

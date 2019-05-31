@@ -187,7 +187,6 @@ void MainWindow::Slotbox(TransferData *bufor) //Sending date
     }
     Checkingbox();
     ui->centralWidget->show();
-
     SendingData(bufor);
 
 
@@ -224,11 +223,6 @@ void MainWindow::on_set_arduino_clicked()
         // give error message if not available
         QMessageBox::warning(this, "Uwaga!", "Nie wykryto Arduino!");
         ui->box_arduino->setChecked(false);
-
-        ui->Button_chandelier->setDisabled(false);
-        ui->Button_light_door->setDisabled(false);
-        ui->Button_light_shed->setDisabled(false);
-
     }
 
 }
@@ -246,7 +240,6 @@ void MainWindow::SendingData(Arduino *object) //creating data to send to arduino
 
     std::string helper=controller_date.toUtf8().constData();
     QByteArray date=QByteArray::fromStdString(helper);
-    //qDebug()<<date; to controll a code
     if(controller->isWritable())
     {
         controller->flush();
@@ -266,13 +259,10 @@ void MainWindow::ReceiveData() // prepare to receive data from arduino
     {
         controller->write("66");
         controller->flush();
-
     }
-
     controller->waitForBytesWritten(100);
     controller->waitForReadyRead(100);
     temp=controller->read(5);
-    //qDebug()<<temp;
     if(temp=="") //if received data is empty, rereceived data
     {
         controller->write("66");
@@ -305,7 +295,7 @@ void MainWindow::on_actionOnly_staff_triggered()
         ReceiveData();
 
         transfer->com_port=arduino_port_name;
-        transfer->arduino_id=QString (arduino_uno_vendor_id);
+        transfer->arduino_id="10755";
         transfer->TranscriptValue();
 
         connect(staff, SIGNAL(SendInfo()),this,SLOT(RefreshStaff()));
@@ -317,7 +307,8 @@ void MainWindow::on_actionOnly_staff_triggered()
         QMessageBox::information(this,"UWAGA!","Okno jest już otwarte!");
     }
     }
-    else {
+    else
+    {
         QMessageBox::information(this,"UWAGA!","Arduino nie podłączone");
     }
 

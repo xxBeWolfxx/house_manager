@@ -50,11 +50,6 @@ void Arduino::LoadingData()
     file.close();
 }
 
-void Arduino::SendingData()
-{
 
-
-
-}
 
 
