@@ -26,12 +26,15 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent= nullptr);
     QString total_path;
-    Arduino light_shed, chandelier, light_door;
-    QSerialPort *controller;
-    TransferData *transfer;
-    QByteArray dataArduino;
+
+    Arduino light_shed, chandelier, light_door; //objects
+
+    QSerialPort *controller; //USB
+    TransferData *transfer; //bufor, which will be sending to every windows
+    QByteArray dataArduino; //received data from arduino
 
 
+    //*******************variables, for usb settings******************************8
     static const quint16 arduino_uno_vendor_id = 10755;
     static const quint16 arduino_uno_product_id = 67;
     QString arduino_port_name;
@@ -43,8 +46,8 @@ public:
     void hide_menu();
     void window_closing();
     void window_opening();
-    void SendingData(Arduino *object);
-    bool CheckBoxMarking(Arduino object);
+    void SendingData(Arduino *object); //
+    bool CheckBoxMarking(Arduino object); //to set proper marker
     void SavingBufor(Arduino object, QString name, TransferData *transfer);
     void Checkingbox();
     void ReceiveData();

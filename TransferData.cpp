@@ -18,7 +18,7 @@ void TransferData::ReceiveData(TransferData *object)
 }
 void TransferData::TranscriptValue()
 {
-    if(value != "")
+    if(value != "" && value.size()<3)
     {
     lista_values = value.split(";");
     QString variable = lista_values.at(0).toLocal8Bit().constData();

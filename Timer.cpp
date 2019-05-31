@@ -6,8 +6,8 @@
 Timer::Timer(QString name, int ordinals_object)
 {
     this->name_timer=name;
-    this->ordinals_object=ordinals_object;
-    path = QCoreApplication::applicationDirPath();
+    this->ordinals_object=ordinals_object; //which object was clicked, 1,2 or 3
+    path = QCoreApplication::applicationDirPath(); //path rejester of timer
     path = path + "/Timer/" + QString::number(ordinals_object)+"/"+ name_timer + ".txt";
 }
 
@@ -59,13 +59,12 @@ void Timer::LoadingTimers()
 
 int Timer::CalculationsPeriod()
 {
-    int h_minutes,h_hours, set_time;
+    int h_minutes,h_hours; //temporary values
     h_hours=QTime::currentTime().hour()*3600*1000;
     h_minutes=QTime::currentTime().minute()*60*1000;
-    set_time= abs(hours*3600*1000+minutes*60*1000-h_hours-h_minutes);
 
 
-    return set_time;
+    return abs(hours*3600*1000+minutes*60*1000-h_hours-h_minutes);
 
 
 

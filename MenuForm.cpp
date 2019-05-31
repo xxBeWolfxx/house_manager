@@ -9,7 +9,6 @@ MenuForm::MenuForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MenuForm)
 {
-    path=QCoreApplication::applicationDirPath();
     ui->setupUi(this);
     ui->progressBar->hide();
 
