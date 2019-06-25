@@ -14,6 +14,7 @@ public:
     QString arduino_name;
     QStringList lista_values;
     int statusObject;
+    bool close_window=false;
     //**************123 every object is working*************//
 
     TransferData();

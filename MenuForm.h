@@ -49,7 +49,7 @@ signals:
     void Sending_Data(TransferData *); //to send info to MainWindow
 
 public slots:
-    void CatchBufor(TransferData *bufor); //to receive data
+    void CatchBufor(TransferData *bufor); //to receive data from MainWindow
 
 private slots:
 

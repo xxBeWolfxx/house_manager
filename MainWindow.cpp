@@ -76,6 +76,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+
+    light_shed.SavingData();
+    chandelier.SavingData();
+    light_door.SavingData();
     delete ui;
 }
 
@@ -185,8 +189,11 @@ void MainWindow::Slotbox(TransferData *bufor) //Sending date
 
 
     }
-    Checkingbox();
-    ui->centralWidget->show();
+    if (bufor->close_window==true) //checking, if the menu  form is close, do a if
+    {
+        Checkingbox();
+        ui->centralWidget->show();
+    }
     SendingData(bufor);
 
 

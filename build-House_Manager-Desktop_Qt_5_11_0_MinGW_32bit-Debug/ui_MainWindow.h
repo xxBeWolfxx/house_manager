@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MainWindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.0
+** Created by: Qt User Interface Compiler version 5.11.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
@@ -42,9 +43,12 @@ public:
     QLabel *label;
     QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout_5;
-    QPushButton *set_arduino;
-    QCheckBox *box_arduino;
     QSpacerItem *horizontalSpacer_3;
+    QPushButton *set_arduino;
+    QSpacerItem *horizontalSpacer_10;
+    QCheckBox *box_arduino;
+    QSpacerItem *horizontalSpacer_11;
+    QLabel *label_2;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
     QPushButton *Button_light_shed;
@@ -74,18 +78,19 @@ public:
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+            MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(1135, 639);
-        MainWindow->setStyleSheet(QString::fromUtf8("QCheckBox:unchecked {\n"
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/image/rasp.png"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
+        MainWindow->setStyleSheet(QLatin1String("QCheckBox:unchecked {\n"
 "  color: red;\n"
 "}\n"
 "QCheckBox:checked {\n"
 "  color: green;\n"
 "}\n"
-"\n"
 "QMainWindow{\n"
-"background-image: url(:/image/wood.jpg);\n"
-"\n"
+"background-color: rgb(255, 255, 255);\n"
 "}\n"
 "\n"
 "\n"
@@ -95,17 +100,17 @@ public:
 "\n"
 ""));
         actionSettings = new QAction(MainWindow);
-        actionSettings->setObjectName(QString::fromUtf8("actionSettings"));
+        actionSettings->setObjectName(QStringLiteral("actionSettings"));
         actionOnly_staff = new QAction(MainWindow);
-        actionOnly_staff->setObjectName(QString::fromUtf8("actionOnly_staff"));
+        actionOnly_staff->setObjectName(QStringLiteral("actionOnly_staff"));
         centralWidget = new QWidget(MainWindow);
-        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setObjectName(QStringLiteral("centralWidget"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
         centralWidget->setSizePolicy(sizePolicy);
-        centralWidget->setStyleSheet(QString::fromUtf8("QPushButton:pressed\n"
+        centralWidget->setStyleSheet(QLatin1String("QPushButton:pressed\n"
 "{\n"
 "background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "border-style: outset;\n"
@@ -142,27 +147,27 @@ public:
         verticalLayout = new QVBoxLayout(centralWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         menu_view = new QWidget(centralWidget);
-        menu_view->setObjectName(QString::fromUtf8("menu_view"));
+        menu_view->setObjectName(QStringLiteral("menu_view"));
         sizePolicy.setHeightForWidth(menu_view->sizePolicy().hasHeightForWidth());
         menu_view->setSizePolicy(sizePolicy);
         window = new QGridLayout(menu_view);
         window->setSpacing(6);
         window->setContentsMargins(11, 11, 11, 11);
-        window->setObjectName(QString::fromUtf8("window"));
+        window->setObjectName(QStringLiteral("window"));
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(6);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalSpacer = new QSpacerItem(80, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
         label = new QLabel(menu_view);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName(QStringLiteral("label"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -172,7 +177,7 @@ public:
         QFont font;
         font.setPointSize(20);
         label->setFont(font);
-        label->setStyleSheet(QString::fromUtf8("QLabel\n"
+        label->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "border-style: outset;\n"
 "border-width: 2px;\n"
@@ -194,25 +199,33 @@ public:
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
-        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalSpacer_3 = new QSpacerItem(100, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_3);
+
         set_arduino = new QPushButton(menu_view);
-        set_arduino->setObjectName(QString::fromUtf8("set_arduino"));
-        QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+        set_arduino->setObjectName(QStringLiteral("set_arduino"));
+        QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(set_arduino->sizePolicy().hasHeightForWidth());
         set_arduino->setSizePolicy(sizePolicy2);
-        set_arduino->setMinimumSize(QSize(0, 30));
+        set_arduino->setMinimumSize(QSize(50, 30));
         set_arduino->setMaximumSize(QSize(1000, 80));
         QFont font1;
         font1.setPointSize(18);
         set_arduino->setFont(font1);
-        set_arduino->setStyleSheet(QString::fromUtf8(""));
+        set_arduino->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_5->addWidget(set_arduino);
 
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_10);
+
         box_arduino = new QCheckBox(menu_view);
-        box_arduino->setObjectName(QString::fromUtf8("box_arduino"));
+        box_arduino->setObjectName(QStringLiteral("box_arduino"));
         QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy3.setHorizontalStretch(0);
         sizePolicy3.setVerticalStretch(0);
@@ -221,24 +234,44 @@ public:
         box_arduino->setMinimumSize(QSize(160, 60));
         box_arduino->setMaximumSize(QSize(80, 16777215));
         box_arduino->setFont(font);
+        box_arduino->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_5->addWidget(box_arduino);
 
-        horizontalSpacer_3 = new QSpacerItem(60, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-        horizontalLayout_5->addItem(horizontalSpacer_3);
+        horizontalLayout_5->addItem(horizontalSpacer_11);
+
+        label_2 = new QLabel(menu_view);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setMaximumSize(QSize(200, 200));
+        label_2->setStyleSheet(QLatin1String("QLabel\n"
+"{\n"
+"border: 0px;\n"
+"background-color: rgba(255, 255, 255, 0);\n"
+"\n"
+"}"));
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/image/arduino.jpg")));
+        label_2->setScaledContents(true);
+        label_2->setWordWrap(false);
+        label_2->setMargin(3);
+        label_2->setIndent(44);
+        label_2->setOpenExternalLinks(false);
+        label_2->setTextInteractionFlags(Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse);
+
+        horizontalLayout_5->addWidget(label_2);
 
 
         gridLayout_2->addLayout(horizontalLayout_5, 6, 0, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         gridLayout_3 = new QGridLayout();
         gridLayout_3->setSpacing(6);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         Button_light_shed = new QPushButton(menu_view);
-        Button_light_shed->setObjectName(QString::fromUtf8("Button_light_shed"));
+        Button_light_shed->setObjectName(QStringLiteral("Button_light_shed"));
         sizePolicy.setHeightForWidth(Button_light_shed->sizePolicy().hasHeightForWidth());
         Button_light_shed->setSizePolicy(sizePolicy);
         Button_light_shed->setMinimumSize(QSize(0, 40));
@@ -258,9 +291,9 @@ public:
 
         gridLayout_7 = new QGridLayout();
         gridLayout_7->setSpacing(6);
-        gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
         Button_chandelier = new QPushButton(menu_view);
-        Button_chandelier->setObjectName(QString::fromUtf8("Button_chandelier"));
+        Button_chandelier->setObjectName(QStringLiteral("Button_chandelier"));
         sizePolicy3.setHeightForWidth(Button_chandelier->sizePolicy().hasHeightForWidth());
         Button_chandelier->setSizePolicy(sizePolicy3);
         Button_chandelier->setMinimumSize(QSize(0, 40));
@@ -278,9 +311,9 @@ public:
 
         gridLayout_8 = new QGridLayout();
         gridLayout_8->setSpacing(6);
-        gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
+        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
         Button_light_door = new QPushButton(menu_view);
-        Button_light_door->setObjectName(QString::fromUtf8("Button_light_door"));
+        Button_light_door->setObjectName(QStringLiteral("Button_light_door"));
         sizePolicy3.setHeightForWidth(Button_light_door->sizePolicy().hasHeightForWidth());
         Button_light_door->setSizePolicy(sizePolicy3);
         Button_light_door->setMinimumSize(QSize(20, 40));
@@ -297,16 +330,16 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalSpacer_8 = new QSpacerItem(250, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         horizontalLayout_3->addItem(horizontalSpacer_8);
 
         gridLayout_10 = new QGridLayout();
         gridLayout_10->setSpacing(6);
-        gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
+        gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
         Box_light_shed = new QCheckBox(menu_view);
-        Box_light_shed->setObjectName(QString::fromUtf8("Box_light_shed"));
+        Box_light_shed->setObjectName(QStringLiteral("Box_light_shed"));
         QSizePolicy sizePolicy4(QSizePolicy::Maximum, QSizePolicy::Fixed);
         sizePolicy4.setHorizontalStretch(0);
         sizePolicy4.setVerticalStretch(0);
@@ -329,14 +362,14 @@ public:
 
         gridLayout_13 = new QGridLayout();
         gridLayout_13->setSpacing(6);
-        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
+        gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
         Box_chandelier = new QCheckBox(menu_view);
-        Box_chandelier->setObjectName(QString::fromUtf8("Box_chandelier"));
+        Box_chandelier->setObjectName(QStringLiteral("Box_chandelier"));
         sizePolicy4.setHeightForWidth(Box_chandelier->sizePolicy().hasHeightForWidth());
         Box_chandelier->setSizePolicy(sizePolicy4);
         Box_chandelier->setFont(font);
         Box_chandelier->setLayoutDirection(Qt::LeftToRight);
-        Box_chandelier->setStyleSheet(QString::fromUtf8(""));
+        Box_chandelier->setStyleSheet(QStringLiteral(""));
         Box_chandelier->setCheckable(true);
         Box_chandelier->setTristate(false);
 
@@ -351,9 +384,9 @@ public:
 
         gridLayout_14 = new QGridLayout();
         gridLayout_14->setSpacing(6);
-        gridLayout_14->setObjectName(QString::fromUtf8("gridLayout_14"));
+        gridLayout_14->setObjectName(QStringLiteral("gridLayout_14"));
         Box_light_door = new QCheckBox(menu_view);
-        Box_light_door->setObjectName(QString::fromUtf8("Box_light_door"));
+        Box_light_door->setObjectName(QStringLiteral("Box_light_door"));
         sizePolicy4.setHeightForWidth(Box_light_door->sizePolicy().hasHeightForWidth());
         Box_light_door->setSizePolicy(sizePolicy4);
         Box_light_door->setFont(font);
@@ -389,13 +422,13 @@ public:
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
-        menuBar->setObjectName(QString::fromUtf8("menuBar"));
+        menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 1135, 20));
         menuStaff = new QMenu(menuBar);
-        menuStaff->setObjectName(QString::fromUtf8("menuStaff"));
+        menuStaff->setObjectName(QStringLiteral("menuStaff"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
+        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
 
         menuBar->addAction(menuStaff->menuAction());
@@ -416,6 +449,7 @@ public:
         label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:28pt; font-weight:600; text-decoration: underline;\">Inteligentny Dom</span></p></body></html>", nullptr));
         set_arduino->setText(QApplication::translate("MainWindow", "Za\305\202\304\205cz ARDUINO", nullptr));
         box_arduino->setText(QApplication::translate("MainWindow", "ARDUINO", nullptr));
+        label_2->setText(QString());
         Button_light_shed->setText(QApplication::translate("MainWindow", "Lampa wiata", nullptr));
         Button_chandelier->setText(QApplication::translate("MainWindow", "\305\273yrandol wiata", nullptr));
         Button_light_door->setText(QApplication::translate("MainWindow", "Drzwi", nullptr));
