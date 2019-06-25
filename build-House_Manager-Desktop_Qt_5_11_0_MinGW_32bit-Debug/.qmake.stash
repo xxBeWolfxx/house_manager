@@ -1,21 +1,22 @@
 QMAKE_CXX.INCDIRS = \
-    C:/programowanie/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include \
-    C:/programowanie/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed \
-    C:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include \
-    C:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++ \
-    C:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 \
-    C:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.16.27023\\ATLMFC\\include" \
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.16.27023\\include" \
+    "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\include\\um" \
+    "D:\\Windows Kits\\10\\include\\10.0.17763.0\\ucrt" \
+    "D:\\Windows Kits\\10\\include\\10.0.17763.0\\shared" \
+    "D:\\Windows Kits\\10\\include\\10.0.17763.0\\um" \
+    "D:\\Windows Kits\\10\\include\\10.0.17763.0\\winrt" \
+    "D:\\Windows Kits\\10\\include\\10.0.17763.0\\cppwinrt"
 QMAKE_CXX.LIBDIRS = \
-    C:/programowanie/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0 \
-    C:/programowanie/Tools/mingw530_32/lib/gcc \
-    C:/programowanie/Tools/mingw530_32/i686-w64-mingw32/lib \
-    C:/programowanie/Tools/mingw530_32/lib
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.16.27023\\ATLMFC\\lib\\x86" \
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.16.27023\\lib\\x86" \
+    "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\lib\\um\\x86" \
+    "D:\\Windows Kits\\10\\lib\\10.0.17763.0\\ucrt\\x86" \
+    "D:\\Windows Kits\\10\\lib\\10.0.17763.0\\um\\x86"
 QMAKE_CXX.QT_COMPILER_STDCXX = 199711L
-QMAKE_CXX.QMAKE_GCC_MAJOR_VERSION = 5
-QMAKE_CXX.QMAKE_GCC_MINOR_VERSION = 3
-QMAKE_CXX.QMAKE_GCC_PATCH_VERSION = 0
+QMAKE_CXX.QMAKE_MSC_VER = 1916
+QMAKE_CXX.QMAKE_MSC_FULL_VER = 191627025
 QMAKE_CXX.COMPILER_MACROS = \
     QT_COMPILER_STDCXX \
-    QMAKE_GCC_MAJOR_VERSION \
-    QMAKE_GCC_MINOR_VERSION \
-    QMAKE_GCC_PATCH_VERSION
+    QMAKE_MSC_VER \
+    QMAKE_MSC_FULL_VER

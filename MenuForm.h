@@ -27,18 +27,18 @@ class MenuForm : public QWidget
 public:
     explicit MenuForm(QWidget *parent = nullptr);
     ~MenuForm();
-    QString path;
-    QString name;
     Arduino *object;
-    Arduino h_timer;
+
     Timer *timer;
     QTimer *counter;
     QTime time;
-    MainWindow *window;
     TransferData *transfer;
 
+    MainWindow *window;
 
-    int tab_status=0;
+
+
+    bool tab_status=0; //to secure option in which no timer has been chosen
 
 
     void SavingBufor(Arduino *object);
@@ -46,10 +46,10 @@ public:
     void seting_ui_timer(Timer *timer);
 
 signals:
-    void Sending_Data(TransferData *);
+    void Sending_Data(TransferData *); //to send info to MainWindow
 
 public slots:
-    void CatchBufor(TransferData *bufor);
+    void CatchBufor(TransferData *bufor); //to receive data from MainWindow
 
 private slots:
 

@@ -447,9 +447,9 @@ public:
         label_4->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">0<span style=\" vertical-align:super;\">0</span>C-</p></body></html>", nullptr));
         label_6->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">-20<span style=\" vertical-align:super;\">0</span>C-</p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Staff", "Temperatura", nullptr));
-        label_7->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">100-</p></body></html>", nullptr));
-        label_8->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">50-</p></body></html>", nullptr));
-        label_9->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">0-</p></body></html>", nullptr));
+        label_7->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">100%-</p></body></html>", nullptr));
+        label_8->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">50%-</p></body></html>", nullptr));
+        label_9->setText(QApplication::translate("Staff", "<html><head/><body><p align=\"right\">0%-</p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Staff", "Jasno\305\233\304\207", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("Staff", "Wilgo\304\207", nullptr));
     } // retranslateUi

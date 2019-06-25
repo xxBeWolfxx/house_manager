@@ -1,4 +1,5 @@
 #include "TransferData.h"
+#include <QDebug>
 
 
 TransferData::TransferData()
@@ -17,12 +18,20 @@ void TransferData::ReceiveData(TransferData *object)
 }
 void TransferData::TranscriptValue()
 {
+    if(value != "" && value.size()<3)
+    {
+    lista_values = value.split(";");
+    QString variable = lista_values.at(0).toLocal8Bit().constData();
+    temp1 = variable.toInt();
+    variable = lista_values.at(1).toLocal8Bit().constData();
+    foto1 = variable.toInt();
+    }
+    else
+    {
+        temp1=-10;
+        foto1 =0;
 
-   // lista_values = value.split(';',QString::SkipEmptyParts);
-   // temp1 = lista_values [0].toInt();
-   // foto1 = lista_values[1].toInt();
-    //hum1 = lista_values[2].toInt();
-   //statusObject = lista_values[3].toInt();
+    }
 
 
 

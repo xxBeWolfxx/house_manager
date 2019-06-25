@@ -123,7 +123,8 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_database.cpp
 release/qrc_database.cpp: ../database.qrc \
 		../../../../Programowanie/Qt/5.11.2/mingw53_32/bin/rcc.exe \
-		../arduino.jpg
+		../arduino.jpg \
+		../wood.jpg
 	D:\Programowanie\Qt\5.11.2\mingw53_32\bin\rcc.exe -name database ..\database.qrc -o release\qrc_database.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -289,7 +290,7 @@ release/moc_MainWindow.cpp: ../../../../../Programowanie/Qt/5.11.2/mingw53_32/in
 		../MainWindow.h \
 		release/moc_predefs.h \
 		../../../../Programowanie/Qt/5.11.2/mingw53_32/bin/moc.exe
-	D:\Programowanie\Qt\5.11.2\mingw53_32\bin\moc.exe $(DEFINES) --include "D:/Projekty/Git projekt/House_Manager/build-House_Manager-Desktop_Qt_5_11_0_MinGW_32bit-Debug/release/moc_predefs.h" -ID:/Programowanie/Qt/5.11.2/mingw53_32/mkspecs/win32-g++ -I"D:/Projekty/Git projekt/House_Manager" -ID:/Programowanie/Qt/5.11.2/mingw53_32/include -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtGui -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtANGLE -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtSerialPort -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtCore -I. -IC:/programowanie/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/programowanie/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\MainWindow.h -o release\moc_MainWindow.cpp
+	D:\Programowanie\Qt\5.11.2\mingw53_32\bin\moc.exe $(DEFINES) --include "D:/Projekty/Git projekt/House_Manager/build-House_Manager-Desktop_Qt_5_11_0_MinGW_32bit-Debug/release/moc_predefs.h" -ID:/Programowanie/Qt/5.11.2/mingw53_32/mkspecs/win32-g++ -I"D:/Projekty/Git projekt/House_Manager" -ID:/Programowanie/Qt/5.11.2/mingw53_32/include -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtGui -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtANGLE -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtSerialPort -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"D:\Windows Kits\10\include\10.0.17763.0\ucrt" -I"D:\Windows Kits\10\include\10.0.17763.0\shared" -I"D:\Windows Kits\10\include\10.0.17763.0\um" -I"D:\Windows Kits\10\include\10.0.17763.0\winrt" -I"D:\Windows Kits\10\include\10.0.17763.0\cppwinrt" ..\MainWindow.h -o release\moc_MainWindow.cpp
 
 release/moc_MenuForm.cpp: ../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/QWidget \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/qwidget.h \
@@ -445,7 +446,7 @@ release/moc_MenuForm.cpp: ../../../../../Programowanie/Qt/5.11.2/mingw53_32/incl
 		../MenuForm.h \
 		release/moc_predefs.h \
 		../../../../Programowanie/Qt/5.11.2/mingw53_32/bin/moc.exe
-	D:\Programowanie\Qt\5.11.2\mingw53_32\bin\moc.exe $(DEFINES) --include "D:/Projekty/Git projekt/House_Manager/build-House_Manager-Desktop_Qt_5_11_0_MinGW_32bit-Debug/release/moc_predefs.h" -ID:/Programowanie/Qt/5.11.2/mingw53_32/mkspecs/win32-g++ -I"D:/Projekty/Git projekt/House_Manager" -ID:/Programowanie/Qt/5.11.2/mingw53_32/include -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtGui -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtANGLE -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtSerialPort -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtCore -I. -IC:/programowanie/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/programowanie/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\MenuForm.h -o release\moc_MenuForm.cpp
+	D:\Programowanie\Qt\5.11.2\mingw53_32\bin\moc.exe $(DEFINES) --include "D:/Projekty/Git projekt/House_Manager/build-House_Manager-Desktop_Qt_5_11_0_MinGW_32bit-Debug/release/moc_predefs.h" -ID:/Programowanie/Qt/5.11.2/mingw53_32/mkspecs/win32-g++ -I"D:/Projekty/Git projekt/House_Manager" -ID:/Programowanie/Qt/5.11.2/mingw53_32/include -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtGui -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtANGLE -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtSerialPort -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"D:\Windows Kits\10\include\10.0.17763.0\ucrt" -I"D:\Windows Kits\10\include\10.0.17763.0\shared" -I"D:\Windows Kits\10\include\10.0.17763.0\um" -I"D:\Windows Kits\10\include\10.0.17763.0\winrt" -I"D:\Windows Kits\10\include\10.0.17763.0\cppwinrt" ..\MenuForm.h -o release\moc_MenuForm.cpp
 
 release/moc_Staff.cpp: ../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/QWidget \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/qwidget.h \
@@ -562,7 +563,7 @@ release/moc_Staff.cpp: ../../../../../Programowanie/Qt/5.11.2/mingw53_32/include
 		../Staff.h \
 		release/moc_predefs.h \
 		../../../../Programowanie/Qt/5.11.2/mingw53_32/bin/moc.exe
-	D:\Programowanie\Qt\5.11.2\mingw53_32\bin\moc.exe $(DEFINES) --include "D:/Projekty/Git projekt/House_Manager/build-House_Manager-Desktop_Qt_5_11_0_MinGW_32bit-Debug/release/moc_predefs.h" -ID:/Programowanie/Qt/5.11.2/mingw53_32/mkspecs/win32-g++ -I"D:/Projekty/Git projekt/House_Manager" -ID:/Programowanie/Qt/5.11.2/mingw53_32/include -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtGui -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtANGLE -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtSerialPort -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtCore -I. -IC:/programowanie/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/programowanie/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/programowanie/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\Staff.h -o release\moc_Staff.cpp
+	D:\Programowanie\Qt\5.11.2\mingw53_32\bin\moc.exe $(DEFINES) --include "D:/Projekty/Git projekt/House_Manager/build-House_Manager-Desktop_Qt_5_11_0_MinGW_32bit-Debug/release/moc_predefs.h" -ID:/Programowanie/Qt/5.11.2/mingw53_32/mkspecs/win32-g++ -I"D:/Projekty/Git projekt/House_Manager" -ID:/Programowanie/Qt/5.11.2/mingw53_32/include -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtGui -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtANGLE -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtSerialPort -ID:/Programowanie/Qt/5.11.2/mingw53_32/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"D:\Windows Kits\10\include\10.0.17763.0\ucrt" -I"D:\Windows Kits\10\include\10.0.17763.0\shared" -I"D:\Windows Kits\10\include\10.0.17763.0\um" -I"D:\Windows Kits\10\include\10.0.17763.0\winrt" -I"D:\Windows Kits\10\include\10.0.17763.0\cppwinrt" ..\Staff.h -o release\moc_Staff.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1417,7 +1418,10 @@ release/Staff.o: ../Staff.cpp ../Staff.h \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/QSpacerItem \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/QTabWidget \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/qtabwidget.h \
-		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/QVBoxLayout
+		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/QMessageBox \
+		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/qmessagebox.h \
+		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Staff.o ..\Staff.cpp
 
 release/TransferData.o: ../TransferData.cpp ../TransferData.h \
@@ -1493,7 +1497,8 @@ release/TransferData.o: ../TransferData.cpp ../TransferData.h \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtCore/QCoreApplication \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtCore/qcoreapplication.h \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtCore/qeventloop.h \
-		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtCore/QStringList
+		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtCore/QStringList \
+		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\TransferData.o ..\TransferData.cpp
 
 release/qrc_database.o: release/qrc_database.cpp 

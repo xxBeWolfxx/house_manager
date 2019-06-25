@@ -21,20 +21,18 @@ class Staff : public QWidget
 public:
     explicit Staff(QWidget *parent = nullptr);
     ~Staff();
-    int value_foto=0;
-    Arduino *staff_object;
-    TransferData *staff_transfer;
 
+    TransferData *staff_transfer; //bufor of data
     void closeEvent(QCloseEvent *event);
 
 signals:
-    void SendInfo();
+    void SendInfo(); //to send info to MainWindow
 
 private slots:
     void on_pushButton_clicked();
 
 public slots:
-    void CatchInfo(TransferData *transfer);
+    void CatchInfo(TransferData *transfer); //to receive data from MainWindow
 
 private:
     Ui::Staff *ui;

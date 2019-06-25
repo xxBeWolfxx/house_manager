@@ -10,11 +10,11 @@ class Arduino
 {
 public:
     Arduino();
-    QString pin_state;
-    QString number_pin;
-    QString path;
+    QString pin_state; //status of pin; it is on/off
+    QString number_pin; //number of pin in arduino
+    QString path; // path in files
     QString com_port;
-    QString arduino_id="1111";
+    QString arduino_id="1111"; //id arduino, which is connected
 
     //variables for inputs
     int temp1;
@@ -27,8 +27,6 @@ public:
 
     void SavingData();
     void LoadingData();
-    void SendingData();
-    void ReceiveData();
 
     int number_object;
     static int total_number_pin;

@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
@@ -42,9 +43,12 @@ public:
     QLabel *label;
     QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout_5;
-    QPushButton *set_arduino;
-    QCheckBox *box_arduino;
     QSpacerItem *horizontalSpacer_3;
+    QPushButton *set_arduino;
+    QSpacerItem *horizontalSpacer_10;
+    QCheckBox *box_arduino;
+    QSpacerItem *horizontalSpacer_11;
+    QLabel *label_2;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
     QPushButton *Button_light_shed;
@@ -76,13 +80,18 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(1135, 639);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/image/rasp.png"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         MainWindow->setStyleSheet(QLatin1String("QCheckBox:unchecked {\n"
 "  color: red;\n"
 "}\n"
 "QCheckBox:checked {\n"
 "  color: green;\n"
 "}\n"
-"\n"
+"QMainWindow{\n"
+"background-color: rgb(255, 255, 255);\n"
+"}\n"
 "\n"
 "\n"
 "\n"
@@ -191,14 +200,18 @@ public:
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalSpacer_3 = new QSpacerItem(100, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_3);
+
         set_arduino = new QPushButton(menu_view);
         set_arduino->setObjectName(QStringLiteral("set_arduino"));
-        QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+        QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(set_arduino->sizePolicy().hasHeightForWidth());
         set_arduino->setSizePolicy(sizePolicy2);
-        set_arduino->setMinimumSize(QSize(0, 30));
+        set_arduino->setMinimumSize(QSize(50, 30));
         set_arduino->setMaximumSize(QSize(1000, 80));
         QFont font1;
         font1.setPointSize(18);
@@ -206,6 +219,10 @@ public:
         set_arduino->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_5->addWidget(set_arduino);
+
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_10);
 
         box_arduino = new QCheckBox(menu_view);
         box_arduino->setObjectName(QStringLiteral("box_arduino"));
@@ -216,15 +233,33 @@ public:
         box_arduino->setSizePolicy(sizePolicy3);
         box_arduino->setMinimumSize(QSize(160, 60));
         box_arduino->setMaximumSize(QSize(80, 16777215));
-        QFont font2;
-        font2.setPointSize(16);
-        box_arduino->setFont(font2);
+        box_arduino->setFont(font);
+        box_arduino->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_5->addWidget(box_arduino);
 
-        horizontalSpacer_3 = new QSpacerItem(60, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-        horizontalLayout_5->addItem(horizontalSpacer_3);
+        horizontalLayout_5->addItem(horizontalSpacer_11);
+
+        label_2 = new QLabel(menu_view);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setMaximumSize(QSize(200, 200));
+        label_2->setStyleSheet(QLatin1String("QLabel\n"
+"{\n"
+"border: 0px;\n"
+"background-color: rgba(255, 255, 255, 0);\n"
+"\n"
+"}"));
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/image/arduino.jpg")));
+        label_2->setScaledContents(true);
+        label_2->setWordWrap(false);
+        label_2->setMargin(3);
+        label_2->setIndent(44);
+        label_2->setOpenExternalLinks(false);
+        label_2->setTextInteractionFlags(Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse);
+
+        horizontalLayout_5->addWidget(label_2);
 
 
         gridLayout_2->addLayout(horizontalLayout_5, 6, 0, 1, 1);
@@ -310,7 +345,7 @@ public:
         sizePolicy4.setVerticalStretch(0);
         sizePolicy4.setHeightForWidth(Box_light_shed->sizePolicy().hasHeightForWidth());
         Box_light_shed->setSizePolicy(sizePolicy4);
-        Box_light_shed->setFont(font2);
+        Box_light_shed->setFont(font);
         Box_light_shed->setLayoutDirection(Qt::LeftToRight);
         Box_light_shed->setIconSize(QSize(50, 50));
         Box_light_shed->setCheckable(true);
@@ -332,7 +367,7 @@ public:
         Box_chandelier->setObjectName(QStringLiteral("Box_chandelier"));
         sizePolicy4.setHeightForWidth(Box_chandelier->sizePolicy().hasHeightForWidth());
         Box_chandelier->setSizePolicy(sizePolicy4);
-        Box_chandelier->setFont(font2);
+        Box_chandelier->setFont(font);
         Box_chandelier->setLayoutDirection(Qt::LeftToRight);
         Box_chandelier->setStyleSheet(QStringLiteral(""));
         Box_chandelier->setCheckable(true);
@@ -354,7 +389,7 @@ public:
         Box_light_door->setObjectName(QStringLiteral("Box_light_door"));
         sizePolicy4.setHeightForWidth(Box_light_door->sizePolicy().hasHeightForWidth());
         Box_light_door->setSizePolicy(sizePolicy4);
-        Box_light_door->setFont(font2);
+        Box_light_door->setFont(font);
         Box_light_door->setLayoutDirection(Qt::LeftToRight);
         Box_light_door->setCheckable(true);
         Box_light_door->setTristate(false);
@@ -414,6 +449,7 @@ public:
         label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:28pt; font-weight:600; text-decoration: underline;\">Inteligentny Dom</span></p></body></html>", nullptr));
         set_arduino->setText(QApplication::translate("MainWindow", "Za\305\202\304\205cz ARDUINO", nullptr));
         box_arduino->setText(QApplication::translate("MainWindow", "ARDUINO", nullptr));
+        label_2->setText(QString());
         Button_light_shed->setText(QApplication::translate("MainWindow", "Lampa wiata", nullptr));
         Button_chandelier->setText(QApplication::translate("MainWindow", "\305\273yrandol wiata", nullptr));
         Button_light_door->setText(QApplication::translate("MainWindow", "Drzwi", nullptr));
