@@ -51,7 +51,7 @@ void MenuForm::on_Button_save_quit_clicked() //function which saves information 
     if(tab_status==1)
     timer->SavingTimers();
 
-
+    transfer->close_window=true;
     transfer->TranscriptObject(object);
     emit Sending_Data(transfer);
     MenuForm::close();
@@ -163,6 +163,7 @@ void MenuForm::counterout()//after the timer, switch on the pins
     {
     object->pin_state="1";
 
+    transfer->close_window=true;
     transfer->TranscriptObject(object);
     emit Sending_Data(transfer);
     QTimer::singleShot(timer->duration*60*1000,this,SLOT(stop_timer()));
@@ -174,6 +175,7 @@ void MenuForm::stop_timer()
 {
     object->pin_state="0";
 
+    transfer->close_window=true;
     transfer->TranscriptObject(object);
     emit Sending_Data(transfer);
     timer->status=true;
