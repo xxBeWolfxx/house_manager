@@ -50,6 +50,7 @@ signals:
 
 public slots:
     void CatchBufor(TransferData *bufor); //to receive data from MainWindow
+    void DestroyingVariables();
 
 private slots:
 

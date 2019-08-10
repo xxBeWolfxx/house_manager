@@ -35,6 +35,8 @@ MenuForm::MenuForm(QWidget *parent) :
 
 MenuForm::~MenuForm()
 {
+    delete object;
+    delete window;
     delete ui;
 }
 
@@ -54,6 +56,7 @@ void MenuForm::on_Button_save_quit_clicked() //function which saves information 
     transfer->close_window=true;
     transfer->TranscriptObject(object);
     emit Sending_Data(transfer);
+
     MenuForm::close();
 
 
@@ -162,8 +165,6 @@ void MenuForm::counterout()//after the timer, switch on the pins
     if (timer->status==false)
     {
     object->pin_state="1";
-
-    transfer->close_window=true;
     transfer->TranscriptObject(object);
     emit Sending_Data(transfer);
     QTimer::singleShot(timer->duration*60*1000,this,SLOT(stop_timer()));
@@ -175,7 +176,6 @@ void MenuForm::stop_timer()
 {
     object->pin_state="0";
 
-    transfer->close_window=true;
     transfer->TranscriptObject(object);
     emit Sending_Data(transfer);
     timer->status=true;
@@ -186,11 +186,18 @@ void MenuForm::stop_timer()
 
 void MenuForm::CatchBufor(TransferData *bufor)//to catch information between windows
 {
+
     object->pin_state=bufor->pin_state;
     object->number_pin=bufor->number_pin;
     object->number_object=bufor->number_object;
+    transfer->close_window=bufor->close_window;
 
     ui->name_object->setText(bufor->arduino_name);
     ui->pinout->setText(bufor->number_pin);
+
+}
+void MenuForm::DestroyingVariables()
+{
+    delete timer;
 
 }

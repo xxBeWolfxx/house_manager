@@ -10,6 +10,8 @@
 #include "Arduino.h"
 #include "Staff.h"
 #include "TransferData.h"
+#include "ErrorsWarnings.h"
+
 
 
 class MenuForm;
@@ -49,14 +51,12 @@ public:
     void SendingData(Arduino *object); //
     bool CheckBoxMarking(Arduino object); //to set proper marker
     void SavingBufor(Arduino object, QString name, TransferData *transfer);
-    void Checkingbox();
-    void ReceiveData();
-
+    void Checkingbox(); //setting gui check box etc.
+    void ReceiveData(); //
     ~MainWindow();
 public slots:
     void Slotbox(TransferData *bufor);
     void RefreshStaff();
-    void GetData();
 
 
 private slots:
@@ -71,6 +71,8 @@ private slots:
 
 
     void on_actionOnly_staff_triggered();
+
+    void on_actionSettings_triggered();
 
 signals:
     void BuforTransfer(TransferData *);

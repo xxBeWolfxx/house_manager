@@ -31,7 +31,8 @@ SOURCES += \
     Arduino.cpp \
     Timer.cpp \
     Staff.cpp \
-    TransferData.cpp
+    TransferData.cpp \
+    ErrorsWarnings.cpp
 
 HEADERS += \
         MainWindow.h \
@@ -39,7 +40,8 @@ HEADERS += \
     Arduino.h \
     Timer.h \
     Staff.h \
-    TransferData.h
+    TransferData.h \
+    ErrorsWarnings.h
 
 FORMS += \
         MainWindow.ui \

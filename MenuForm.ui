@@ -14,15 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton:pressed
-{
-background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));
-border-style: outset;
-border-width: 2px;
-border-radius: 10px;
-border-color: black;
-}
-QPushButton
+   <string notr="true">QPushButton
 {
 background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(2, 255, 0, 255), stop:0.552885 rgba(7, 153, 0, 255), stop:0.995192 rgba(41, 81, 0, 255), stop:1 rgba(255, 255, 255, 255));
 border-style: outset;
@@ -33,6 +25,14 @@ border-color: black;
 QPushButton:hover  {
     color:black;
 	background-color: qconicalgradient(cx:0.511236, cy:0.0340909, angle:89.3626, stop:0 rgba(57, 223, 54, 255), stop:1 rgba(115, 255, 143, 255));
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+}
+QPushButton:pressed
+{
+background-color: qconicalgradient(cx:0.466346, cy:0, angle:98.8604, stop:0.240385 rgba(1, 122, 0, 255), stop:0.552885 rgba(3, 64, 0, 255), stop:0.995192 rgba(10, 20, 0, 255), stop:1 rgba(255, 255, 255, 255));
 border-style: outset;
 border-width: 2px;
 border-radius: 10px;
@@ -97,7 +97,7 @@ border-color: black;
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>7</height>
+         <height>300</height>
         </size>
        </property>
       </spacer>

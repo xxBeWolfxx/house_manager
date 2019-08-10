@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     arduino_port_name = "";
     controller = new QSerialPort;
     transfer = new TransferData;
+    transfer->close_window=false;
 
     //ui settings
     ui->Button_chandelier->setDisabled(true);
@@ -30,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     light_door.LoadingData();
     Checkingbox();
 
-
+    //*************************************Prepare Arduino to comunication***************************************
     qDebug() << "Number of available ports: " << QSerialPortInfo::availablePorts().length();
     foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
     {
@@ -119,7 +120,7 @@ void MainWindow::on_Button_light_shed_clicked()
 {
     QString name="Light shed";
     SavingBufor(light_shed, name,transfer);
-    options = new MenuForm(this);
+    transfer->close_window=false;
     connect(options, SIGNAL(Sending_Data(TransferData*)),this,SLOT(Slotbox(TransferData*)));
     connect(this, SIGNAL(BuforTransfer(TransferData*)),options,SLOT(CatchBufor(TransferData *)));
 
@@ -135,7 +136,8 @@ void MainWindow::on_Button_chandelier_clicked()
 {
     QString name="Chandelier";
     SavingBufor(chandelier, name,transfer);
-    options=new MenuForm(this);
+    transfer->close_window=false;
+
     connect(options, SIGNAL(Sending_Data(TransferData*)),this,SLOT(Slotbox(TransferData*)));
     connect(this, SIGNAL(BuforTransfer(TransferData*)),options,SLOT(CatchBufor(TransferData *)));
 
@@ -151,7 +153,8 @@ void MainWindow::on_Button_light_door_clicked()
 {
     QString name="Light_door";
     SavingBufor(light_door,name,transfer);
-    options=new MenuForm(this);
+    transfer->close_window=false;
+
     connect(options, SIGNAL(Sending_Data(TransferData*)),this,SLOT(Slotbox(TransferData*)));
     connect(this, SIGNAL(BuforTransfer(TransferData*)),options,SLOT(CatchBufor(TransferData *)));
 
@@ -182,7 +185,7 @@ void MainWindow::Slotbox(TransferData *bufor) //Sending date
     }
     case 3: //light_door
     {
-       temp=&light_door;
+        temp=&light_door;
         bufor->SaveObject(temp);
         break;
     }
@@ -194,6 +197,7 @@ void MainWindow::Slotbox(TransferData *bufor) //Sending date
         Checkingbox();
         ui->centralWidget->show();
     }
+
     SendingData(bufor);
 
 
@@ -208,7 +212,8 @@ void MainWindow::window_closing()
 void MainWindow::on_set_arduino_clicked()
 {
 
-
+    try
+    {
     if(controller->isWritable())
     {
         ui->Button_chandelier->setDisabled(false);
@@ -224,13 +229,24 @@ void MainWindow::on_set_arduino_clicked()
         controller->write("66");
         controller->waitForBytesWritten(-5);
         controller->flush();
-    }
+        options=new MenuForm(this);
+
+
+    }   
     else
     {
         // give error message if not available
-        QMessageBox::warning(this, "Uwaga!", "Nie wykryto Arduino!");
         ui->box_arduino->setChecked(false);
+        ErrorConnection error;
+        throw error;
     }
+    }
+    catch (ErrorConnection error)
+    {
+        error.PrintError(this);
+
+    }
+
 
 }
 
@@ -292,6 +308,8 @@ void MainWindow::ReceiveData() // prepare to receive data from arduino
 
 void MainWindow::on_actionOnly_staff_triggered()
 {
+    try {
+
     if (arduino_is_available)
     {
     if (!status_staff)
@@ -312,11 +330,18 @@ void MainWindow::on_actionOnly_staff_triggered()
     else
     {
         QMessageBox::information(this,"UWAGA!","Okno jest już otwarte!");
+        throw WarningConnection();
     }
     }
     else
     {
         QMessageBox::information(this,"UWAGA!","Arduino nie podłączone");
+        throw ErrorConnection();
+    }
+    }
+    catch (ErrorsWarnings())
+    {
+        ErrorsWarnings::PrintError(this);
     }
 
 }
@@ -327,3 +352,13 @@ void MainWindow::RefreshStaff()
 }
 
 
+
+void MainWindow::on_actionSettings_triggered()
+{
+    ui->Button_chandelier->setDisabled(false);
+    ui->Button_light_door->setDisabled(false);
+    ui->Button_light_shed->setDisabled(false);
+    options=new MenuForm(this);
+
+
+}
