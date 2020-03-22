@@ -345,7 +345,10 @@ public:
         sizePolicy4.setVerticalStretch(0);
         sizePolicy4.setHeightForWidth(Box_light_shed->sizePolicy().hasHeightForWidth());
         Box_light_shed->setSizePolicy(sizePolicy4);
-        Box_light_shed->setFont(font);
+        QFont font2;
+        font2.setPointSize(20);
+        font2.setUnderline(true);
+        Box_light_shed->setFont(font2);
         Box_light_shed->setLayoutDirection(Qt::LeftToRight);
         Box_light_shed->setIconSize(QSize(50, 50));
         Box_light_shed->setCheckable(true);
@@ -367,7 +370,7 @@ public:
         Box_chandelier->setObjectName(QStringLiteral("Box_chandelier"));
         sizePolicy4.setHeightForWidth(Box_chandelier->sizePolicy().hasHeightForWidth());
         Box_chandelier->setSizePolicy(sizePolicy4);
-        Box_chandelier->setFont(font);
+        Box_chandelier->setFont(font2);
         Box_chandelier->setLayoutDirection(Qt::LeftToRight);
         Box_chandelier->setStyleSheet(QStringLiteral(""));
         Box_chandelier->setCheckable(true);
@@ -389,7 +392,7 @@ public:
         Box_light_door->setObjectName(QStringLiteral("Box_light_door"));
         sizePolicy4.setHeightForWidth(Box_light_door->sizePolicy().hasHeightForWidth());
         Box_light_door->setSizePolicy(sizePolicy4);
-        Box_light_door->setFont(font);
+        Box_light_door->setFont(font2);
         Box_light_door->setLayoutDirection(Qt::LeftToRight);
         Box_light_door->setCheckable(true);
         Box_light_door->setTristate(false);

@@ -56,7 +56,6 @@ public:
 public slots:
     void Slotbox(TransferData *bufor);
     void RefreshStaff();
-    void GetData();
 
 
 private slots:

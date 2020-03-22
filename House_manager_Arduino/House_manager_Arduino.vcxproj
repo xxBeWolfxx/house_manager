@@ -89,10 +89,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\House_manager_Arduino;C:\Users\serwis\Documents\Arduino\libraries\DallasTemperature;C:\Users\serwis\Documents\Arduino\libraries\OneWire;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\libraries\Wire\src;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\libraries\Wire\src\utility;$(ProjectDir)..\..\..\..\Programowanie\Arduino\libraries;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\libraries;C:\Users\serwis\Documents\Arduino\libraries;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\cores\arduino;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\variants\standard;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\avr\include\;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\avr\include\avr\;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\House_manager_Arduino;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\libraries\Wire\src;C:\Users\serwis\Documents\Arduino\libraries\OneWire;C:\Users\serwis\Documents\Arduino\libraries\DallasTemperature;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\libraries\Wire\src\utility;$(ProjectDir)..\..\..\..\Programowanie\Arduino\libraries;C:\Users\serwis\Documents\Arduino\libraries;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\libraries;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\cores\arduino;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\arduino\avr\variants\standard;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\avr\include;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\avr\include\avr;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\..\Programowanie\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)__vm\.House_manager_Arduino.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
-      <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;F_CPU=16000000L;ARDUINO=10805;ARDUINO_AVR_UNO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__AVR_atmega328p__;__AVR_ATmega328P__;__AVR_ATmega328p__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=10805;ARDUINO_AVR_UNO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -117,7 +117,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties arduino.upload.port="COM3" />
+      <UserProperties config.Debug.customdebug_uno_debugger_type="universal" arduino.upload.port="COM3" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

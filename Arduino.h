@@ -24,7 +24,7 @@ public:
     int hum1;
     int hum2;
 
-
+    //methods
     void SavingData();
     void LoadingData();
 

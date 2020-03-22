@@ -123,6 +123,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_database.cpp
 debug/qrc_database.cpp: ../database.qrc \
 		../../../../Programowanie/Qt/5.11.2/mingw53_32/bin/rcc.exe \
+		../rasp.png \
 		../arduino.jpg \
 		../wood.jpg
 	D:\Programowanie\Qt\5.11.2\mingw53_32\bin\rcc.exe -name database ..\database.qrc -o debug\qrc_database.cpp
@@ -907,6 +908,7 @@ debug/MainWindow.o: ../MainWindow.cpp ../MainWindow.h \
 		../Staff.h \
 		ui_MainWindow.h \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtCore/QVariant \
+		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtGui/QIcon \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/QAction \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/qaction.h \
 		../../../../../Programowanie/Qt/5.11.2/mingw53_32/include/QtWidgets/qactiongroup.h \
