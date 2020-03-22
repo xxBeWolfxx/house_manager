@@ -498,6 +498,7 @@ background-color: rgba(255, 255, 255, 0);
                <property name="font">
                 <font>
                  <pointsize>20</pointsize>
+                 <underline>true</underline>
                 </font>
                </property>
                <property name="layoutDirection">
@@ -551,6 +552,7 @@ background-color: rgba(255, 255, 255, 0);
                <property name="font">
                 <font>
                  <pointsize>20</pointsize>
+                 <underline>true</underline>
                 </font>
                </property>
                <property name="layoutDirection">
@@ -601,6 +603,7 @@ background-color: rgba(255, 255, 255, 0);
                <property name="font">
                 <font>
                  <pointsize>20</pointsize>
+                 <underline>true</underline>
                 </font>
                </property>
                <property name="layoutDirection">
